@@ -125,7 +125,7 @@ The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall 
 In the first case, if the first packet of a client arrives, the client gets redirected to a pseudo-IP address and port number pair. This new destination IP address contains a Massage Authentication Code (MAC) that's encrypted with a symmetric key shared between the firewall and the perimeter routers. If the senders IP address is spoofed, the HTTP redirect message will never reach him.
 To avoid the collecting of valid MAC's from legitimate clients, the Key changes over time and gets a small timestamp or version number.
 
-in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a "no loitering" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction.
+in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a \"no loitering\" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction.
 
 The main problems are, that a IP spoofed DDoS attack can make it hard for legitimate clients to get their first package through to get redirected and if all attackers use their fair share using genuine IP address, the service can suffer a response time too big for real customers to deal with [15].
 
@@ -139,31 +139,110 @@ Ford and Gordon (2006) describe their Multihost Adware Revenue Killer (MARK), to
 
 Li et al. (2009) propose a similar strategy, with the goal to make it more troublesome for botmasters to maintain their botnets. They focus more on DDoS attacks and propose to use honeypots to introduce uncertainties to the optimizing problem of botmasters and clients. The honeypots do not participate in DDoS attacks, for this reason the required number of bots for a successful attack increases and the value of a single bot decreases by consistent maintenance costs. According to their model the profits of attackers and botmasters can decrease dramatically [2].
 
+ 
+\section{Economics}
+	\subsection{Introduction}
+	As a subset of the cybercrime economy, the botnet economy plays out on underground black markets. Over time there has been a shift in incentives, where the attackers are no longer motivated by self-fulfillment and proof of skill, but rather the financial gain attributed to such attacks. (Li et al. \"Botnet economics: Uncertainty matters\") As part of this shift towards economic incentives, cybercriminals have developed business models that shall guarantee the profitability of their botnets. (Li et al. \"Botnet economics: Uncertainty matters\")
 
-	\subsection{Business Model}
-		\subsubsection{Stakeholders}
-			Text
-		\subsubsection{Life cycle}
-			Text
-		\subsubsection{Cost Structure}
-			Text
-		\subsubsection{Revenue Streams}
-			Text
-		\subsubsection{Channels}
-			Text
-		\subsubsection{Customers}
-			Text
-	\subsection{Economic Impact}
-		\subsubsection{Metrics}
-			Text
-		\subsubsection{Comparison of Types}
-			Text
-	\subsection{Solutions}
-		\subsubsection{Incentives to defend}
-			Text
-		\subsubsection{Technical Solutions}
-			Text
-		\subsubsection{Economic Solutions}
+The many victims affected by botnets are faced with a serious economic threat. Successful DDoS attacks on companies may lead to both direct economic costs, as well as indirect losses which are much harder to quantify. Direct costs occur due lost revenue during the server’s downtime. Indirect losses measure the long-term effect loss of customers trust and market share have on revenues. The value destroyed by these attacks also inflict costs on society at large. The damages, although difficult to quantify, are estimated to be in the tens of billions of dollars every year. (H. Asghari et al. \"Economics of fighting botnets: Lessons from a decade of mitigation\")
+This chapter shall give an overview of the different stakeholders involved, the business models used to operate successful botnets, as well as an attempt to model the different types of economic damage a botnet attack can inflict. 
+
+	\subsection{Stakeholders}
+			In order to gain a better perspective on incentives and the botnet economy as a whole, we first have to define the relevant partners effected by botnets. We will analyze both the parties involved on the attacker and the victim sides.
+			
+		\subsubsection{Attackers}
+
+			The following is a list of key partners involved on the side of the attacker. We based this list on papers written by C.G.J. Putman et al. \”Business Model of a Botnet\” and G. Bottazzi et al. \”The Botnet Revenue Model\”.
+
+			\textbf{\textit{a. Malware Developers}}\\
+			Malware Developers are mainly IT professionals involved in the research and development stage of the botnet life cycle. They identify vulnerabilities in software, develop new malicious software to exploit these vulnerabilities, and maintain existing software. No illegal activities take place in this step of R&D. Only the use of the software is considered illegal.
+
+			\textbf{\textit{b. Money Handlers}}\\
+			The goal of money handlers is to offer payment services with a high degree of anonymity. They allow people buying malicious software to remain anonymous. The malware developers from the first stage also have an interest in remaining unidentifiable, as to not be charged as an accessory to any crimes committed by the buyer. The supply of anonymous payment services is also not considered illegal and can be achieved through the use of cryptocurrencies.
+
+			\textbf{\textit{c. Command and Control Bulletproof Hosting Providers}}\\
+			Bulletproof Hosting allows the botnet end-user to store any stolen information such as passwords, banking accounts, or other credentials. The control center for the botnet, which can also be provided through the hosting service, consists of one or multiple computers.
+
+			\textbf{\textit{d. PPI (Pay Per Install) Distributors}}\\
+			The distribution and multiplication of malicious software is constantly evolving, and many developers lack the necessary resources to spread their malware effectively. For this purpose, developers use a PPI model, which essentially allows them to spread their software by commissioning third parties with the infection and paying them a certain fee per infected device. According to research by Brian Krebs proposed in his paper \”Most Malware Tied to Pay-Per-Install Market\”, PPI costs are estimated to vary from \$7 to \$180 per 1000 installations.
+
+			\textbf{\textit{e. Botnet Owners}}\\
+	Botnet owners, also known as botmasters, are the ones who actually perform the attacks. They either perform these malicious activities for their own personal benefit, or on the behalf of third-party users for financial gain. The latter is the becoming more common according to Li et al. in their paper \”Botnet Economics: Uncertainty Matters\”.
+
+			\textbf{\textit{f. Botnet Users}}\\
+			Botnet users are the final piece in the botnet supply chain. They are customers willing to pay money to make use of the botnet and perform attacks. Users are mainly charged by the pay-per-use model.
+
+The figure below provides an overview of different stages of the botnet life cycle and the parties involved. 
+
+		\subsubsection{Victims and Defenders}
+	The following is a list of victims affected by botnet attacks and third parties involved in defensive measures, as well as their incentives to protect themselves from these attacks.
+
+			\textbf{\textit{a. Victims of DDoS and Spamming}}\\
+			The first and probably most obvious victims are the ones that suffer from DDos attacks and spamming carried out by botnets. The victims of such attacks suffer far-reaching financial consequences from such attacks. Oftentimes, the targets are businesses who suffer direct losses in the form of lost revenue due to the unavailability of their online services. But they also suffer indirect impacts, such as a loss of customer trust and market value. These damages are usually far more severe (Anderson et al. in \"Measuring the cost of cybercrime\”) and harder to quantify due to the difficulty of attributing these losses directly to botnet attacks. As a result, businesses with a certain exposure to malicious attacks and a strong reliance on online presence, have very strong incentives to protect themselves from botnet attacks. Additionally, the loss of customer trust and market shares that these attacks entail, lead companies to try and keep information about suffered attacks out of the public eye.
+
+			\textbf{\textit{b. End-users of Infected Devices}}\\
+			Another obvious direct victim are the end-users of the infected devices. In the case of DDos and spamming attacks, the users of infected devices are not directly affected by any negative consequences, as they are simply used as a means to an end. Therefore, they may lack certain incentives to protect themselves adequately from malware and not become part of a larger botnet. (Asghari et al. \"Economics of fighting botnets: Lessons from a decade of mitigation\”) Why should a device owner pay for security measures, when he does not suffer any direct economic consequences from being infected? Another explanation might be that many end-users are simply not aware of the danger malware entails and therefore lack the knowledge required to adequately protect themselves from such attacks.
+
+Other forms of botnet attacks, such as identity and information theft, bank fraud, and phishing, do however pose a direct threat to owners of infected devices. According to an estimation by Anderson et al. in \"Measuring the cost of cybercrime\”, consumers globally suffer losses in the range of \$70 million due to online banking fraud. For business, that number rises to around \$300 million. Furthermore, Anderson et al. estimate that global expenditure on antivirus protection reached \$3.4 billion in 2012. While the indirect cost for users for the clean-up of malware in the same year is estimated to be around \$10 billion globally and \$500 million in the UK alone.
+
+			\textbf{\textit{c. Antivirus Software Vendors}}\\
+		As mentioned in the section above, security vendors have very strong financial incentives to provide protection from malicious software, as the global expenditure is estimated to be around \$3.4 billion any a large majority of consumers have some sort of antivirus software. Additionally, global expenditure on clean-up is estimated at \$10 billion and therefore provides even more financial motivation for security vendors. (Anderson et al. in \” Measuring the cost of cybercrime \”)
+
+At this point however, it has to be state that this includes cost for protection against malware in general and not only related to botnet attacks. Vendors of such software are also faced with large development and maintenance costs, as cybercriminals constantly try to find new ways of circumventing existing protection measures.
+
+			\textbf{\textit{d. Internet Service Providers}}\\
+		Internet Sevice Providers (ISPs) play a large role in botnet mitigation, as they are able to perform measures on a very large scale and therefore more economically that single end-users. They do however lack accountability, as they are not the cause of botnets, and economic motivators, as such counter measure can be very costly, and ISPs do not suffer any direct consequences by users being affected by cybercrime. Advanced detection and follow up actions can also cause privacy concerns of customer data. (Pijpker et al. \” The Role of Internet Service Providers in Botnet Mitigation \”)
+
+Still internet service providers do play a role in botnet mitigation due to organizational and institutional incentives. \” Relevant organizational factors for ISPs to address botnet mitigation include the size of their customer base, the internal organization of their abuse desk, and the cost spend on various security measures. \” (Pijpker et al. \” The Role of Internet Service Providers in Botnet Mitigation \”) Institutional incentives on the other hand are not imposed internally, but rather by policy makers and market conditions. They include for example the regulatory context and market settings. (Pijpker et al. \” The Role of Internet Service Providers in Botnet Mitigation \”)
+
+Research shows that ISPs currently focus more on prevention and notification of customers and that there is still quite a lot of room for improvement due to a lock of incentives for botnet detection, remediation, and recovery on the behalf of internet service providers. (Pijpker et al. \” The Role of Internet Service Providers in Botnet Mitigation \”)
+
+			\textbf{\textit{e. Law Enforcement}}\\
+		As costs for cybercrime mitigation can be very high, additional investments in law enforcement can be an effective counter measure. The cost for law enforcement is generated by the time required to find and prosecute cyber criminals [10]. Anderson et al. estimate that the global expenditure on law enforcement for cyber crime defense is around \$400 million, while that of the UK is about \$15 million in 2010 [10]. When compared to the cost of cybercriminal infrastructure of private corporation, this modest number may be one reason for the low success rate in finding and punishing cyber criminals. 
+		
+	\subsection{Revenue Streams and Incentives for Botnet Owners}
+		Even though botmasters are not always solely financially motivated, there are several potential revenue streams for botnet owners. The following chapter shall provide a non-extensive list of possible revenue streams for botnet owners with some estimations on the revenue they generate.
+		
+		\subsubsection{DDoS Attacks}
+		DDoS attacks are one of the most common malicious activities performed with the use of botnets that can be highly lucrative. The goal of a DDoS attack is to force a computer system into denial of service for legitimate customers by sending enough requests to the computer of a victim that it can no longer process all of them [1]. Two possible revenue streams can be implemented for DDoS attacks.
+
+The first of which is extortion [4]. Owners of botnets can generate profits with simply threatening to perform a cyber-attack. Oftentimes large companies give in to such demands due to the immense costs associated with a successful DDoS attack, both direct and indirect [1].
+
+Additionally, botnet owners can offer their services in underground forums in the form of a DDoS-for-hire service which operate on a subscription or pay per use basis. Prices for single DDoS attacks vary largely on the number of bots needed to perform the attack. They can range from only about \$50 for an attack on a small unprotected online store to several thousand dollars for attacks on large international companies who have well protected web sites. This makes sense, as the cost of operating a botnet increases immensely with higher number of devices controlled by the botnet. [1] Subscriptions allow users to manually perform an unlimited or limited number attacks any time they would like through front-end web servers. Prices for these subscriptions vary from just \$5 up to \$300 dollars and allow customers to use the service for one to three months, depending on the tier of the subscription [4].
+
+One example of such a booter service is VDoS. VDoS generated revenue in the region of \$25,985 per month over the course of two years of operation, with their lowest performing month at \$9,956 and their best performing moth at \$42,924 [4]. As they are almost impossible to quantify, there is no information on profits generated from extortion [1].
+
+		\subsubsection{Information Theft}
+		Another source of revenue for botnet owners is the sale and misuse of personal information such as bank accounts and credit card information, online credentials, or identity information. This type of data is directly extracted from the infected bots [2]. Cybercriminals can decide whether they want to use the gathered information for their own use or sell them to third parties. The price for a bank account can range between \$1 and \$1,500. The low value of this information can be attributed to strong competition from other vendors. In order to generate a lucrative and sustainable revenue stream, botmasters constantly need an inflow of new data and a large botnet [1].
+
+One example that shows how lucrative bank account theft can be is the case of Eurograbber. In an attack on European online banking customers through a Zeus based mobile trojan, the perpetrators were able to illicitly transfer funds over 36 million Euros from more than 30,000 bank customers. [3]
+
+		\subsubsection{Phishing}
+		In order to protect phishing sites from being shut down and extend their lifetime, cybercriminals are offering an implementation of fast flux technology, which allows phishers to change their website’s IP address every few minutes without altering the domain name. This technique of using infected home computers as web servers with phishing content also makes them harder to track down. [1]
+
+In order to acquire a ready-made botnet for their fast flux solution, phishers pay botnet owners \$1,000 to \$2,000 per month. The average income and damage to consumers is in the millions of dollars per year and comparable to that from theft of personal information. [1]
+
+		\subsubsection{Spam}
+		One of the most important applications for botnets is sending spam. Spammers use different business models; some make profits by luring users to infected websites where they might download malware while others are part of phishing campaigns designed to steal user credentials for reasons mentioned above. Botnets provide the required infrastructure necessary for carrying out spamming services. [5]
+
+Prices for spamming services depend on the size of the target audience and can range from just \$70 for a few thousand addresses up to \$1,000 for tens of millions of addresses. [1] In their paper \” The Economics of Spam \” Justin Rao and David Riley estimate that American firms and consumers experience costs of about \$20 billion per year due to spam messages. Furthermore, they estimate that spammers and spam-advertised merchants make revenues of about \$200 million worldwide annually. This means that the externalities caused by spam messages has a ration of 100:1. [6]
+
+		\subsubsection{Spamdexing}
+		Spamdexing, also known as search engine spam, are a form of deliberate manipulation of search engine indexes to improve a website\’s position in search engine results. The idea behind this is that websites with a higher position generate more clicks and therefore revenue. 
+
+There are several criteria search engines use to judge the relevance of a website for a given search input. The number of links to that particular website on other websites is one of the main factors in determining which result is displayed at the top. Botnets are used to create many posts and comments containing the link to websites being promoted and related keywords. The price for such services averages at about \$300 per month. [1]
+
+		\subsubsection{Adware and Malware Installation}
+		An additional revenue stream for botnet owners can be the installation of adware on infected computers. Adware is software that generates revenue for its creator by automatically and unwantedly displays advertisements in the user’s interface, most often a web browser [7]. Companies that offer such adware often pay between 30 cents and \$1.50 for the installation. With thousands of computers at their fingertips the installation of adware and other forms of malware can be a lucrative and simple way to generate additional profits for botnet owners. A famous example is John Kenneth Schiefer, a hacker convicted in 2007 that used a botnet to distribute adware and managed to generate profits of around \$14’000 in one month. [1]
+
+The pay-per-install business model is also used by cybercriminals when distributing malware. The average price for an installation varies depending on the geographical location of the computer, as an infected computer in developed countries are capable of generating a lot more profit because the information is oftentimes more valuable. The price for 1,000 installs in the United States for example can reach up to \$120, while the same number of installs on Chinese computers of generates about \$3 in profits. [1]
+
+		\subsubsection{Cyber Fraud}
+		Cyber fraud has many different forms. One very common form is click fraud, where websites and botnet owners generate profits from clicks on advertisements. This type of click fraud relies on pay-per-click advertising where companies that place advertisements on other websites, through Google AdSense for example, pay for these ads based on the number of clicks that they receive. A clickbot helps an attacker commit click fraud by generating fake clicks on ads. This technology can be used in a few different ways. For example, a company can generate a lot of clicks on the ad of a competitor in order to diminish their budget and create more costs. Alternatively, websites that publish the advertisements can also use clickbots to click on the ads placed on their own websites, as they receive a share of the profit from ad clicks. [8] Botnets allow attackers to generate thousands of clicks per day, all from different computers as to not raise any suspicions [1]. By analyzing Clickbot.A, N. Dawasi and M. Stoppelman estimated that Google can lose around \$50,000 with botnet of 100,000 bots. A share of this profit generated by advertisers then goes to the botnet owners. [8] Another click fraud botnet, ZeroAccess, has generated ad losses up to \$900,000 daily with 140 million clicks a day [2].
+
+Another way to commit cyber fraud is by creating fake user ratings and customer reviews on websites or with the rising importance of cryptocurrencies, botnet owners can abuse the computing power of their botnets to mine cryptocurrencies [9].
+
+
 		
 \section{Case Study 1}
 	\subsection{Description}
