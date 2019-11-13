@@ -89,8 +89,7 @@ An increasingly popular form of DDoS attacks are DDoS amplification attacks, lik
 
 	\subsection{DDoS Defense Systems}
 		\subsubsection{Technical Solutions}
-\textit{a. Aggregate-based congestion control (ACC)}
-
+\textbf{\textit{a. Aggregate-based congestion control (ACC)}}\\
 Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms. The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these.
 
 The identification of the offending aggregates is very difficult. The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes. The traffic might cluster in multiple dimensions (e.g. a particular server or network link) and the attacker may change their target to avoid detection.
@@ -101,30 +100,26 @@ The second ACC mechanism is the pushback mechanism. The congested router pushes 
 
 The pushback will not be effective against a DDoS attack, if the traffic is distributed evenly across the inbound connections. This can be possible, if the attacker uses an amplification (or reflector) attack with sufficiently distributed reflectors. Pushback can also overcompensate by throttling aggregates upstream that would not have been a problem downstream. Or if the pushback algorithm is not able to differentiate between malicious and legitimate traffic coming from the same edge network, that does not support the pushback mechanism. This fact could even be abused by blocking legitimate incoming traffic from a particular source by launching the attack from a host that is close to this source [11].
 
-\textit{b. Max-Min Fair Server-Centric Router Throttles}
-
+\textbf{\textit{b. Max-Min Fair Server-Centric Router Throttles}}\\
 Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic. This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router. The throttles depend on the current demand and have to be negotiated dynamically between server and network.
 
 If a server load crosses the load limits, the server installs the throttle at some of its upstream routers. There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again.
 
 The fair throttle algorithm tries to minimize the throttling on well behaving routers, by not just decreasing the allowed traffic from every router, but by multicasting a uniform leaky bucket rate (i.e. the throttle rate) to all targeted routers. This way, busier routers drop much more packets then calm ones, which may not have to drop any [12].
 
-\textit{c. Probabilistic Packet Marking}
-
+\textbf{\textit{c. Probabilistic Packet Marking}}\\
 Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM). The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).In DPM, each router inscribes its local path information onto the passing packet. Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop.
 
 In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1. This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback.
 
 In the case of DDoS attacks with a high number of attacking sources, this technique gets rendered more and more useless. The uncertainty grows more and more while the probability to find the sources becomes smaller and smaller [13].
 
-\textit{d. Hash-Based IP Traceback}
-
+\textbf{\textit{d. Hash-Based IP Traceback}}\\
 Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet. They developed the Source Path Isolation Engine (SPIE). The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time. The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network.
 
 To achieve those goals, SPIE produces a 32-bit packet digest using a hash function. As hash input, it uses the invariant portion of the IP header and the first 8 bytes of the payload. Because it is not possible to store the digest of every packet forwarded on the router, SPIE uses a Bloom filter. This filter computes k distinct digests using k distinct hash functions. The hash function have to be uniform. The n-bit results get indexed to a bit array of the size 2n. If the copy of the file to trace back gets indexed to only 1-bits, with high possibility, the packet got forwarded by this router [14].
 
-\textit{e. Packet Filtering using Traffic Quota}
-
+\textbf{\textit{e. Packet Filtering using Traffic Quota}}\\
 The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall is the bottleneck during a DDoS attack. The Server and Client do not need to be changed and the firewall issues the filtering operation. The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP. Those so-called perimeter routers should distinguish between DDoS and legitimate traffic. They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used.
 
 In the first case, if the first packet of a client arrives, the client gets redirected to a pseudo-IP address and port number pair. This new destination IP address contains a Massage Authentication Code (MAC) that's encrypted with a symmetric key shared between the firewall and the perimeter routers. If the senders IP address is spoofed, the HTTP redirect message will never reach him.
@@ -134,8 +129,7 @@ in the second case, where the attacker uses the real IP addresses, they cannot b
 
 The main problems are, that a IP spoofed DDoS attack can make it hard for legitimate clients to get their first package through to get redirected and if all attackers use their fair share using genuine IP address, the service can suffer a response time too big for real customers to deal with [15].
 
-\textit{f. Hop-count Filering}
-
+\textbf{\textit{f. Hop-count Filering}}\\
 Jin et al. (2003) propose a hop-count-based approach to filter out spoofed IP packets. They use a victim-based approach that does not need the support of the ISP's. The only information needed is contained in the package header, assuming that in most cases of IP spoofing the hop-count of the package does not correspond to the expected hop-count of the IP address. The hop-count can be inferred from the TTL field of the incoming packets. To avoid dropping packets of legitimate clients because the hop-count information is not correct, the filtering only takes place if an attack gets detected [16]. 
 
 		\subsubsection{Economic DDoS Defense (Honeypots)}
@@ -159,65 +153,68 @@ This chapter shall give an overview of the different stakeholders involved, the 
 
 			The following is a list of key partners involved on the side of the attacker. We based this list on papers written by C.G.J. Putman et al. "Business Model of a Botnet" and G. Bottazzi et al. "The Botnet Revenue Model".
 
-			\textit{a. Malware Developers}
-			
+			\textbf{\textit{a. Malware Developers}}\\
 			Malware Developers are mainly IT professionals involved in the research and development stage of the botnet life cycle. They identify vulnerabilities in software, develop new malicious software to exploit these vulnerabilities, and maintain existing software. No illegal activities take place in this step of R\&D. Only the use of the software is considered illegal.
 
-			\textit{b. Money Handlers}
-			
+			\textbf{\textit{b. Money Handlers}}\\
 			The goal of money handlers is to offer payment services with a high degree of anonymity. They allow people buying malicious software to remain anonymous. The malware developers from the first stage also have an interest in remaining unidentifiable, as to not be charged as an accessory to any crimes committed by the buyer. The supply of anonymous payment services is also not considered illegal and can be achieved through the use of cryptocurrencies.
 
-			\textit{c. Command and Control Bulletproof Hosting Providers}
-			
+			\textbf{\textit{c. Command and Control Bulletproof Hosting Providers}}\\
 			Bulletproof Hosting allows the botnet end-user to store any stolen information such as passwords, banking accounts, or other credentials. The control center for the botnet, which can also be provided through the hosting service, consists of one or multiple computers.
 
-			\textit{d. PPI (Pay Per Install) Distributors}
-			
+			\textbf{\textit{d. PPI (Pay Per Install) Distributors}}\\
 			The distribution and multiplication of malicious software is constantly evolving, and many developers lack the necessary resources to spread their malware effectively. For this purpose, developers use a PPI model, which essentially allows them to spread their software by commissioning third parties with the infection and paying them a certain fee per infected device. According to research by Brian Krebs proposed in his paper "Most Malware Tied to Pay-Per-Install Market", PPI costs are estimated to vary from \$7 to \$180 per 1000 installations.
 
-			\textit{e. Botnet Owners}
-			
+			\textbf{\textit{e. Botnet Owners}}\\
 	Botnet owners, also known as botmasters, are the ones who actually perform the attacks. They either perform these malicious activities for their own personal benefit, or on the behalf of third-party users for financial gain. The latter is the becoming more common according to Li et al. in their paper "Botnet Economics: Uncertainty Matters".
 
-			\textit{f. Botnet Users}
-			
+			\textbf{\textit{f. Botnet Users}}\\
 			Botnet users are the final piece in the botnet supply chain. They are customers willing to pay money to make use of the botnet and perform attacks. Users are mainly charged by the pay-per-use model.
 
 The figure below provides an overview of different stages of the botnet life cycle and the parties involved. 
 
+
+\begin{figure}[ht]
+\begin{center} \includegraphics[scale=0.6]{Talk11/RevenueModel} \end{center}
+\caption{The Botnet Revenue Model}
+\label{label}
+\end{figure}
+
 		\subsubsection{Victims and Defenders}
 	The following is a list of victims affected by botnet attacks and third parties involved in defensive measures, as well as their incentives to protect themselves from these attacks.
 
-			\textit{a. Victims of DDoS and Spamming}
-			
+			\textbf{\textit{a. Victims of DDoS and Spamming}}\\
 			The first and probably most obvious victims are the ones that suffer from DDos attacks and spamming carried out by botnets. The victims of such attacks suffer far-reaching financial consequences from such attacks. Oftentimes, the targets are businesses who suffer direct losses in the form of lost revenue due to the unavailability of their online services. But they also suffer indirect impacts, such as a loss of customer trust and market value. These damages are usually far more severe (Anderson et al. in "Measuring the cost of cybercrime") and harder to quantify due to the difficulty of attributing these losses directly to botnet attacks. As a result, businesses with a certain exposure to malicious attacks and a strong reliance on online presence, have very strong incentives to protect themselves from botnet attacks. Additionally, the loss of customer trust and market shares that these attacks entail, lead companies to try and keep information about suffered attacks out of the public eye.
 
-			\textit{b. End-users of Infected Devices}
-			
+			\textbf{\textit{b. End-users of Infected Devices}}\\
 			Another obvious direct victim are the end-users of the infected devices. In the case of DDos and spamming attacks, the users of infected devices are not directly affected by any negative consequences, as they are simply used as a means to an end. Therefore, they may lack certain incentives to protect themselves adequately from malware and not become part of a larger botnet. (Asghari et al. "Economics of fighting botnets: Lessons from a decade of mitigation") Why should a device owner pay for security measures, when he does not suffer any direct economic consequences from being infected? Another explanation might be that many end-users are simply not aware of the danger malware entails and therefore lack the knowledge required to adequately protect themselves from such attacks.
 
 Other forms of botnet attacks, such as identity and information theft, bank fraud, and phishing, do however pose a direct threat to owners of infected devices. According to an estimation by Anderson et al. in "Measuring the cost of cybercrime", consumers globally suffer losses in the range of \$70 million due to online banking fraud. For business, that number rises to around \$300 million. Furthermore, Anderson et al. estimate that global expenditure on antivirus protection reached \$3.4 billion in 2012. While the indirect cost for users for the clean-up of malware in the same year is estimated to be around \$10 billion globally and \$500 million in the UK alone.
 
-			\textit{c. Antivirus Software Vendors}
-			
+			\textbf{\textit{c. Antivirus Software Vendors}}\\
 		As mentioned in the section above, security vendors have very strong financial incentives to provide protection from malicious software, as the global expenditure is estimated to be around \$3.4 billion any a large majority of consumers have some sort of antivirus software. Additionally, global expenditure on clean-up is estimated at \$10 billion and therefore provides even more financial motivation for security vendors. (Anderson et al. in "Measuring the cost of cybercrime ")
 
 At this point however, it has to be state that this includes cost for protection against malware in general and not only related to botnet attacks. Vendors of such software are also faced with large development and maintenance costs, as cybercriminals constantly try to find new ways of circumventing existing protection measures.
 
-			\textit{d. Internet Service Providers}
-			
+			\textbf{\textit{d. Internet Service Providers}}\\
 		Internet Sevice Providers (ISPs) play a large role in botnet mitigation, as they are able to perform measures on a very large scale and therefore more economically that single end-users. They do however lack accountability, as they are not the cause of botnets, and economic motivators, as such counter measure can be very costly, and ISPs do not suffer any direct consequences by users being affected by cybercrime. Advanced detection and follow up actions can also cause privacy concerns of customer data. (Pijpker et al. " The Role of Internet Service Providers in Botnet Mitigation ")
 
 Still internet service providers do play a role in botnet mitigation due to organizational and institutional incentives. " Relevant organizational factors for ISPs to address botnet mitigation include the size of their customer base, the internal organization of their abuse desk, and the cost spend on various security measures. " (Pijpker et al. " The Role of Internet Service Providers in Botnet Mitigation ") Institutional incentives on the other hand are not imposed internally, but rather by policy makers and market conditions. They include for example the regulatory context and market settings. (Pijpker et al. "The Role of Internet Service Providers in Botnet Mitigation ")
 
 Research shows that ISPs currently focus more on prevention and notification of customers and that there is still quite a lot of room for improvement due to a lock of incentives for botnet detection, remediation, and recovery on the behalf of internet service providers. (Pijpker et al. " The Role of Internet Service Providers in Botnet Mitigation ")
 
-			\textit{e. Law Enforcement}
-			
-		As costs for cybercrime mitigation can be very high, additional investments in law enforcement can be an effective counter measure. The cost for law enforcement is generated by the time required to find and prosecute cyber criminals [10]. Anderson et al. estimate that the global expenditure on law enforcement for cyber crime defense is around \$400 million, while that of the UK is about \$15 million in 2010 [10]. When compared to the cost of cybercriminal infrastructure of private corporation, this modest number may be one reason for the low success rate in finding and punishing cyber criminals. 
+			\textbf{\textit{e. Law Enforcement}}\\
+		As costs for cybercrime mitigation can be very high, additional investments in law enforcement can be an effective counter measure. The cost for law enforcement is generated by the time required to find and prosecute cyber criminals [10]. Anderson et al. estimate that the global expenditure on law enforcement for cyber crime defense is around \$400 million, while that of the UK is about \$15 million in 2010 [10]. When compared to the cost of cybercriminal infrastructure of private corporations, this modest number may be one reason for the low success rate in finding and punishing cyber criminals. 
 		
 	\subsection{Revenue Streams and Incentives for Botnet Owners}
-		Even though botmasters are not always solely financially motivated, there are several potential revenue streams for botnet owners. The following chapter shall provide a non-extensive list of possible revenue streams for botnet owners with some estimations on the revenue they generate.
+		Even though botmasters are not always solely financially motivated, there are several potential revenue streams for botnet owners. The following chapter shall provide a non-extensive list of possible revenue streams for botnet owners with some estimations on the revenue they generate. The following figure provides an overview of all the different revenue streams mentioned in this chapter.
+		
+		
+\begin{figure}[ht]
+\begin{center} \includegraphics[scale=0.6]{Talk11/RevenueStreams} \end{center}
+\caption{Botnet Revenue Streams}
+\label{label}
+\end{figure}
 		
 		\subsubsection{DDoS Attacks}
 		DDoS attacks are one of the most common malicious activities performed with the use of botnets that can be highly lucrative. The goal of a DDoS attack is to force a computer system into denial of service for legitimate customers by sending enough requests to the computer of a victim that it can no longer process all of them [1]. Two possible revenue streams can be implemented for DDoS attacks.
