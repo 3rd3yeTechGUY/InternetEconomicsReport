@@ -1,6 +1,6 @@
 \chapter{Botnet Economics and Business Models}
 \markboth{Botnet Economics and Business Models}{}
-\chaptauthors{Famos Tobias, Mannhart Thomas ,Tham David, Waltert Gian }
+\chaptauthors{Famos Tobias, Mannhart Thomas, Tham David, Waltert Gian }
 
 \Kurzfassung{%
 This is the abstract.
@@ -241,13 +241,88 @@ The pay-per-install business model is also used by cybercriminals when distribut
 
 Another way to commit cyber fraud is by creating fake user ratings and customer reviews on websites or with the rising importance of cryptocurrencies, botnet owners can abuse the computing power of their botnets to mine cryptocurrencies [9].
 		
-\section{Case Study 1}
-	\subsection{Description}
-	Text
+\section{Case Study: Mirai}
+	\subsection{Scenario}
+	On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients. Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter. During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours. The attack was believed to be caused by Mirai, a botnet exploiting security weaknesses in IoT devices.
+	
+		\subsubsection{Timeline}
+		According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses. The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services. At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored.
+		
+Followed by that a more globally distributed set of attacks started at 15:50 UTC. Since this second set of attack used the same protocol as the first attack, Dyn could mitigate the attack for the most part by 17:00 UTC.
+ 
+In addition to the attacks on Dyn, there were simultaneous attacks on Xbox Live, Microsoft DNS infrastructure, Playstation, Nuclear Fallout game hosting servers and Valve Steam servers. At 22:17 UTC, the final 10-hour long attack was issued on a set of Dyn and Playstation infrastructure. This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage. Cloudflare also came to this conclusion, as the other targets attacked DYN variant were all related to providing services for videogames.
+
+In the following days numerous smaller TCP attack occurred, which were mitigated by the efforts of Dyn and left their customers with no signs of disturbance.
+“There was a 71\% intersection noted in a study between the 107K IP addresses spotted that attacked Dyn and the Mirai scanning in their network telescope. They concluded that while Mirai was clearly involved in the attack, there may have been other hosts involved as well.”
+
+		\subsubsection{Motives}
+		Two days after the attack the New York Times stated that investigators suggested that the attack was either conducted by a criminal group that wanted to extort the company or were motivated by hacktivism. They also mentioned the possibility of a foreign power, which wanted to remind the United States of its vulnerability.
+In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the supposed name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum “HackForums” under the name “Anna-Senpai” on September 30. 
+
+Following investigation and questioning by the FBI Paras Jha, Josiah White and Dalton Norman entered a guilty plea in December 2017. Jha was fined \$8.6 million and sentenced to 2’500 hours of community service for using Mirai to attack the computer system of his university.
+
+Paras Jha admitted to investigators that he launched his attacks on the computer system of Rutgers University not out of financial gain, but for other personal motivations. The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam. Other attacks on the computer system were launched for his personal amusement to see outrage.
+
+Furthermore botnets similar to Mirai or early prototypes were already in use as early as 2014 by a group of hackers going by the name of “lelddos”, which targeted Web servers hosting Minecraft, a very popular sandbox video game, where you can build your own world with other players in a blocky realm. The Minecraft server hosting market is very competitive, and a very successful server owner can make over 50’000 USD per month from renting space for players to build their world. Lelddos has targeted these lucrative Minecraft servers for years with their attacks and extortion attempts. 
+
+Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it’s unknown who the perpetrators behind the cyberattack on Dyn were. A group called “New World Hackers” claimed responsibility shortly after the attack. Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed.
+
+The facts that the targeted services were associated with gaming and Jha’s personal use of the botnet suggests that there was no personal financial gain as a motive behind the Dyn attack, but it served as an act of internet vandalism.
+
+
 	\subsection{Business Model}
-	Text
+		\subsubsection{Operation}
+		Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devices running on ARC processors, such as IP cameras and home routers. In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist. On recognizing a potential victim, Mirai then tries to log into the device with a brute force attack using 10 randomly selected username and password combinations out of a list of 62 common factory default usernames and passwords (e. g. ‘admin’ & password).
+		
+After a successful login various characteristic are sent to a report server through a different port. These reports are used by a C&C server to continually determine new prospective victims. This server also communicates with the report server to get the current status.
+
+The botmaster then sends an infect command in a separate loader program with the necessary details, such as IP address, system environment and hardware architecture. A separate loader program then logs into the target device and gets it to download the corresponding binary, usually via GNU Wget or using FTP (File Transfer Protocol). 
+
+The loader then executes the corresponding binary version of the malware on the device. If the execution of the malware was successful it is stored in the RAM of the device. Due to this fact, a reboot of the device will remove the malware. At this point Mirai is ready for further instructions from the botmaster while continually scanning the environment for prospective targets.
+
+Additionally, Mirai attempts to conceal its presence by removing the downloaded binary and change its process name to a pseudorandom alphanumeric string. Furthermore, access points such as telnet or SSH services are shut down to protect itself from other Malware. In another step Mirai attempts to conceal its presence by removing the downloaded binary and changeing its process name to a pseudorandom alphanumeric string.
+
+Besides this point Mirai doesn’t care about the footprint it leaves behind, relying on the fact that IoT devices have very loose security in comparison to the likes of personal computers. Every stage of infection is recognizable by signatures such as sequentially testing specific credentials in specific port during the brute force access phase or sending reports with distinctive pattern to the report server.
+
+During a DDoS attack the infected devices receive an attack command by a C&C server and only must resolve a hardcoded domain name in the executable of the malware. This leads to a lower need for communication as the botmaster can choose another target IP address without changing the binary and additional communication.
+Mirai makes use of 10 different attack methods, which can be distinguished within four categories:
+
+In the attack on Dyn most of the attacks used were SYN floods on the DNS port 53 with few GRE IP attacks. Additionally, the attacks on the gaming services, mostly Playstation Networks infrastructure were carried out via ACK and GRE IP floods with VSE suggesting that another target were the Valve Steam Servers.
+
+	\subsubsection{Costs}
+	In a case study in 2016 regarding the Mirai Botnet it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets. Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks.
+	
+The maintenance of a botnet consisting of IoT devices is more lucrative, which Mirai takes advantage of. Although rebooting would remove the malware, only changing the password or more drastic measures would remove the risk of reinfection. Furthermore, users generally have little control over IoT devices, which makes them only more attractive of a target. These factors lead to reinfection being very likely to succeed for the maintainer of a botnet.
+
+A person controlling the botnet only must keep a list of the IP addresses, which have been infected in the past, and scan if they’re still connected to the botnet. The cost for reinfection has been estimated to be at \$0.0935 per device. In addition to that there are additional costs, such as keeping the software updated in the arms race between hackers and defenders.
+Also, the costs are estimated to be around \$7 to \$180 per 1’000 installations (\$0.007 to \$0.18 per device). Furthermore, the cost for spreading is estimated to be at around \$0,016 per device.
+
+According to a case study of Charlie Miller, a level 1 malware develop earns around \$125k a year. Based on this estimation and under the assumption that the developer works 8 hours a day and 22 days in a month, the cost of maintaining a botnet can be estimated to be \$59 per hour.
+From the conclusion of another study they concluded that the initial investment such as acquiring and spreading the malware and the recurring costs are nearly insignificant compared to the revenue it makes. Furthermore, there was noted that out of three of four case studies, the set-up costs for a botnet accounted to a maximum of 1,1\% of the found monthly revenue.
+
+	\subsubsection{Revenue}
+	Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little if no money. The hacker Popopret gave an example of the cost of renting out a modern variation of the Mirai botnet. A botnet attack of 50’000 bots with an attack duration of 1 hour and a 5-10-minute cooldown goes for roughly 3-4k per two weeks. This botnet is controllable through a console on the Tor network and can be accessed via telnet.
+	
+In addition, the Mirai botnet was also used by Jha and Norman to commit advertising fraud, including click fraud as a less noticeable way to generate passive income by abusing pay-per-click online advertising sytems with more than 100’000 infected devices.
+
+IBM X-Force researchers found out that some modern variations of the Mirai botnet were also using the computation power of infected devices to mine cryptocurrency. Although this kind of usage is more noticeable in the IoT devices as it could damage by overheating the devices little central processing and graphical processing unit resources.
+
 	\subsection{Economic Impact}
-	Text
+	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident. Dyn lost business of about 8\% of their domains, about 14’500 shortly after the attack of their total 178’000, which were analyzed by Bitsight. 
+The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8’000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6’000 websites. Bitsight stated though that there’s no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites.
+Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. 
+
+Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 would be around \$260’000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other affected internet giants, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
+
+	\subsection{Aftermath}
+	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned.
+	
+Since Jha releasing the source code of Mirai back in 2017 there have been many copycats using modern variations of the Mirai botnet even to this day, increasing the number of C&C servers by a large amount. Due to this fact, it has been more difficult to track down the origins of attacks of mirai-like botnets nowadays.
+Mirai experienced a resurgence in 2019 with a focus-shift in targeting enterprise environments due to a greater number of devices than in households. In enterprise environment many of the targets (more than 80\%) are in the media/information services or insurance industries.
+
+Whereas there were around 15 billion connected IoT devices in 2016, forecasts estimate that this number will exceed the 20 billion mark in 2019. In a Securelist report it was estimated that about 21\% of IoT device infections in 2018 were carried out by Mirai-clones.
+
+
 
 \section{Evaluation and Discussion}
 Text
