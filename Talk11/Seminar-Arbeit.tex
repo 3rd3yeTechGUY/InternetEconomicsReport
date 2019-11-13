@@ -33,6 +33,31 @@ Furthermore the threads concerning IoT devices are equally rising. Symantec has 
 In terms of threads, the top three accounted for over 75\% of the attacks on the IoT honeypots. Namely they were Linux.Lightaidra, Linux.Kaiten and Linux.Mirai. Thus the Mirai Botnet still is an active thread with 15\% of attacks originating in it. [7] 
 Overall one can state, that Phishing is still the most popular and easiest way to commit a cybercrime. Due to the low costs of Phishing and the perceived low risk of getting caught phishing remains an attractive attack vector.[4]
 
+\subsection{Botnet Landscape}
+
+Due to the high publicity distributed denial of service attacks get, the public opinion is, that most botnets are used for DDOS attacks. But there are many other usages of Botnets such as Web injection, URL spoofing, DNS spoofing and data collection. [8]
+
+As a beginning, we will asses, what criminals target with their botnets followed by a short description of a few big botnets.
+
+ As observed by Kaspersky, the largest part of the attacks performed were targeted at financial service providers such as banks, online stores and other resources for financial transactions. This category made for 77.5 \% of the attacks observed by Kaspersky. The second largest category is the Global Portals and Social Networks category. This includes Email providers, search engines and social network platforms.[8]
+As the third largest category with 5.08 \% is the providers of various products. Part of this category are Hosting providers, telecom providers and providers of other services. 
+The full distribution of the targeted categories is shown in figure \ref{fig:KasperskyAttacks}
+
+\begin{figure}[ht]
+\begin{center} \includegraphics[scale=0.5]{Talk11/kasperskyAttacks} \end{center}
+\caption{Kaspersky Attacks}
+\label{fig:KasperskyAttacks}
+\end{figure}
+
+ 
+
+Emotet is a banking Trojan that has emerged into a spam and malware as a service botnet which is globally distributed. It is Distributed via corrupted attachments or links in emails sent from an already compormised device. According to Proofprint, the Emotet botnet was responsible for half of the spam emails generated in Q1 2019, all containing malicious attachments or links. Emonets Comand and Control server structure is very complex. The emonet actors maintain over 100 comand and control servers which are update frequently. This makes Emotets C2 structure highliy resistant to sinlge interruptions of a C2 server.[9]
+
+Mirai is a Botnet targeting Internet of Things devices. Due to its simple usage for scaling the botnets up it has become a popular platform for distributed denial of service attacks. The initial Mirai code has been published and is evolving into different variations. In the first quarter of 2019 Netscout saw over 20000 unique samples of the Mirai code. [2]
+To infect its Bots, mirai scans for IoT devices and tries a dictoionary of default passwords and usernames. Mirai's Comand and control structure is quite simple. For a given botnet, there is only one Comand and Control Server. [9]
+
+Necurs is a botnet initaily used for spam and malware distribution, such as bank trojans and ransomware. Over time, it evolved into a tool capable of more malicious activities such as crypot mining, DDOS attacks and more. Such as Emotet, Necurs is distributed mainly through phishing emails. Known are Russion dating scams and pum and dump stock scams. Necurs tragets mostly unpatched or pirated versions of windows. Thus its main targets are in developing nations. [9]
+
  
 \subsection{Organisation / Outline}
 In the following Paper, we want to show the importance of further research about Botnets and the importance of Botnets itself. By giving a brief overview about the topic of Botnets and their possible usage we want to add to the awareness of the reader about the dangers of botnets and the importance of the influence of botnets on the economy. This is underlined by applying the stated analysis and facts onto a botnet in the case study. 
@@ -301,6 +326,59 @@ The pay-per-install business model is also used by cybercriminals when distribut
 		Cyber fraud has many different forms. One very common form is click fraud, where websites and botnet owners generate profits from clicks on advertisements. This type of click fraud relies on pay-per-click advertising where companies that place advertisements on other websites, through Google AdSense for example, pay for these ads based on the number of clicks that they receive. A clickbot helps an attacker commit click fraud by generating fake clicks on ads. This technology can be used in a few different ways. For example, a company can generate a lot of clicks on the ad of a competitor in order to diminish their budget and create more costs. Alternatively, websites that publish the advertisements can also use clickbots to click on the ads placed on their own websites, as they receive a share of the profit from ad clicks. [8] Botnets allow attackers to generate thousands of clicks per day, all from different computers as to not raise any suspicions [1]. By analyzing Clickbot.A, N. Dawasi and M. Stoppelman estimated that Google can lose around \$50,000 with botnet of 100,000 bots. A share of this profit generated by advertisers then goes to the botnet owners. [8] Another click fraud botnet, ZeroAccess, has generated ad losses up to \$900,000 daily with 140 million clicks a day [2].
 
 Another way to commit cyber fraud is by creating fake user ratings and customer reviews on websites or with the rising importance of cryptocurrencies, botnet owners can abuse the computing power of their botnets to mine cryptocurrencies [9].
+
+\subsection{Modeling Costs}
+Costs of cybercrime are hard to model. There are many aspects of the costs to an individual, company or a whole economy originating in cybercrime. As an approach to model those costs, Anderson et al propose a Framework to model the costs of cybercrime in the paper measuring the changing cost of cybercrime. They concluded, that there are 4 categories of costs due to cybercrime. A Graphical representation of the framework is given in the figure \ref{CostsCybercrime}. [10]
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.25]{Talk11/CostsCybercrime}
+\end{center}
+\caption{consts of cybercrime}
+\label{CostsCybercrime}
+\end{figure}
+
+\begin{description}
+\item[Criminal Revenue] The criminal revenue are the revenues generated by the criminal. As examples here could be named the money withdrawn from a account via credential theft, random payed in consequence of infecting devices with ransomware or the income generated by a botmaster by sending spam or selling installations on the infected devices.  [10]
+
+\item[Direct Loss] The direct loss are the losses  and damages on the side of the victimes as a direct consequence of the criminal activity. For example securing the compormised bank account after the withdraw form the first example or setting up the infrastructure after everything has been encrypted by the ransomware would be direct damages and losses. [10]
+
+\item[Indirect costs] Indirect costs are generally speaking the oportunity costs of the cybercriminal activiy. They can generally not be attributed to individual victims or perpetrators. [2] Examples for those losses would be the loss of trust in a service after it has been hacked which leads to the loss in income generated by this service or the loss of appontiments after a booking platform is taken down via a Distributed denial of service attack. [10]
+ 
+\item[Defence costs] Defence costs are the costs that occour in prevention efforts. Examples here would be the purchase of security products that aim to prevent cybercrim such as anti virus software of spamfilters, the costs of law enforcement trying to defend against cybercrime or the opportunity costs of missed appointments by marking them falsely as spam. [10]
+\end{description}
+
+
+To get the overall costs cybercrime the four types of costs must be added together to build an approximation of the crime. This leads to the following formula to asses the cost of cybercrime.
+
+\begin{equation}
+\text{Cost of cybercrime} = \text{Criminal Revenue} +\text{ Direct Losses} + \text{Indirect Losses} + \text{Defencse Costs}
+\end{equation}
+
+To model the costs for a specific enterprise the cost of cybercrimes such as DDOS attacks can be approximated by modeling the cost of downtime for this enterprise. 
+Patterson has states a formula on in his paper to measure the cost of downtime in an effective and simple way. [12] He states that the estimated costs of one hour of downtime is the sum of the losses by the employees that would have worker but could not, and the average revenue that is affected by the outage that would have been generated otherwise.
+This leads to the following equation for the cost per hour of downtime: 
+\begin{equation}
+\text{cost/hour} = \text{Empl. cost/hour} * \frac{\text{Empl affected}}{\text{All empl}} + \text{Rev./hour} * \frac{\text{Rev. affected}}{\text{All Rev.}}
+\end{equation}
+
+
+According to Gartner [10] this cost of downtime can be set to aproximately 5600 USD per minute. This number comes from a survey they did in the year 2014. This adds up to over 300000 USD per hour. This is just an approximation of the number and an average. 
+
+Although the 5600 USD estimated by gardner are high, this estimate is based on 5 year old numbers. Since there are a lot of shifts in todays economy, with things like industry 4.0, the dependence of enterprises on their IT infrastructure has risen significantly over the last year. 
+
+A more recent sturdy by the Ponemon instutute has a even higher estimate. They claim that the cost per minute of the downtime of an enterprises IT network would be as high as 9000 USD per week[13]
+
+
+
+
+
+[10] gartner https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/
+[11] Anderson et all Measuring the changing cost of cybercrime
+[12] Patterson A Simple Way to Estimate the Cost of Downtime
+[13]https://www.vertiv.com/globalassets/documents/reports/2016-cost-of-data-center-outages-11-11_51190_1.pdf
+
+
 		
 \section{Case Study: Mirai}
 	\subsection{Scenario}
@@ -390,3 +468,7 @@ Text
 
 \section{Summary}
 Text
+
+\begin{thebibliography}{99}
+\bibitem {leitfaden} Martin Waldburger, Patrick Poullie, Burkhard Stiller: \emph{Guideline for Seminar Reports}, Communication Systems Group, Department of Infromatics, University of Zurich, January 2013. \url{http://www.csg.uzh.ch/teaching/guideline-seminar-report-v05.pdf}.
+\end{thebibliography}
