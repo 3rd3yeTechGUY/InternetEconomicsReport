@@ -15,38 +15,66 @@ It fits pretty much on one page and is definitely not longer.}
 \section{Introduction}
 
 \subsection{Motivation}
-Online crime has shifted in the last 20 years. Where earlier attacks and malicious actions were performed by individual hackers, trying to break things mostly for fun, there are now organised groups build like companies that act as malicious actors in the cyber space.
-Cybercrime is a field of high revenue. It is estimated that the global revenue from cybercrime is at least \$ 1.5 trillion \cite{McGuire18}. In context, that would be roughly equivalent to the GDP of Australia in the year 2018 \cite{Worldbank19}.
-The damage done by cybercrime is estimated to have risen about 12\% from 2017 to 2018 \cite{Accenture17} and in total numbers estimated to be \$ 600 billion \cite{McAfee18}.
+Online crime has shifted in the last 20 years.
+Where earlier attacks and malicious actions were performed by individual hackers, trying to break things mostly for fun, there are now organised groups build like companies that act as malicious actors in the cyber space.
+Cybercrime is a field of high revenue.
+It is estimated that the global revenue from cybercrime is at least \$ 1.5 trillion~\cite{McGuire18}.
+In context, that would be roughly equivalent to the GDP of Australia in the year 2018~\cite{Worldbank19}.
+The damage done by cybercrime is estimated to have risen about 12\% from 2017 to 2018~\cite{Accenture17} and in total numbers estimated to be \$ 600 billion~\cite{McAfee18}.
 
-Some of the currently big threats in the cyber security landscape are coupled to botnets, a network of computers controlled by attackers \cite{Putman}. Botnets can be used for various malicious intents and actions such as Distributed Denial of Service (DDoS) attacks, generation of spam, information theft and data exfiltration.
+Some of the currently big threats in the cyber security landscape are coupled to botnets, a network of computers controlled by attackers~\cite{Putman}.
+Botnets can be used for various malicious intents and actions such as Distributed Denial of Service (DDoS) attacks, generation of spam, information theft and data exfiltration.
 
-There is an increasing number of devices connected to the internet every day. Furthermore, there are predictions that there will be 75 billion IoT devices in the world by the year 2025 \cite{Statista}.
-And many of them are poorly secured, if at all. This leads to a serious incentive for botnet providers to target not only personal computers and smartphones, but also IoT devices such as security cameras, washing machines or doorbells. Devastating examples of the abuse of vulnerabilities in IoT devices, such as default or hard coded credentials can be found in mass. Huge botnets like Linux.Aidra, Mirai or Bashlite infect tens of thousands of devices and use them for malicious purposes.
+There is an increasing number of devices connected to the internet every day.
+Furthermore, there are predictions that there will be 75 billion IoT devices in the world by the year 2025~\cite{Statista}.
+And many of them are poorly secured, if at all.
+This leads to a serious incentive for botnet providers to target not only personal computers and smartphones, but also IoT devices such as security cameras, washing machines or doorbells.
+Devastating examples of the abuse of vulnerabilities in IoT devices, such as default or hard coded credentials can be found in mass.
+Huge botnets like Linux.Aidra, Mirai or Bashlite infect tens of thousands of devices and use them for malicious purposes.
 
 The high number of devices connected to the internet, paired with the trend for more bandwidth and manufacturing devices with more CPU power and better network cards to output higher bandwidths, gives malicious actors more possibilities to abuse foreign infrastructure and devices.
 Additionally there is a lack of incentives for device owners to secure their devices, since there is no direct, perceptible impact from an insecure device onto them, or so they think.
 
 \subsection{Malware in numbers}
-As the revenue from cybercrime is growing, the development of malware is too. Researchers estimate, that there are 300'000 to 1'000'000 new viruses developed every day. \cite{McAfee18} Currently, the fastest growing malware thread is ransomware \cite{McAfee18}. The FBI estimates that there are more than 4'000 ransomware attacks preformed every day, with \$ 209 million in ransom payed in the first quarter of 2016. This is a rapid growth compared to the \$ 24 million total in ransom payment throughout the year 2015.
-The deployment of malware onto personal computers is also changing and growing. The Symantec Threat Report states that the primary delivery of malware has changed in recent years, from malicious URLs to malicious attachments. From the malicious attachments seen by Symantec, 48 \% are Office files with macros used to download malware.
-A interesting rise in the cyber crime landscape is the mobile ransomware. These malware target mobile devices and lock them down. \cite{Symantec19}
+As the revenue from cybercrime is growing, the development of malware is too.
+Researchers estimate, that there are 300'000 to 1'000'000 new viruses developed every day~\cite{McAfee18}.
+Currently, the fastest growing malware thread is ransomware~\cite{McAfee18}.
+The FBI estimates that there are more than 4'000 ransomware attacks preformed every day, with \$ 209 million in ransom payed in the first quarter of 2016.
+This is a rapid growth compared to the \$ 24 million total in ransom payment throughout the year 2015.
+The deployment of malware onto personal computers is also changing and growing.
+The Symantec Threat Report states that the primary delivery of malware has changed in recent years, from malicious URLs to malicious attachments.
+From the malicious attachments seen by Symantec, 48 \% are Office files with macros used to download malware.
+A interesting rise in the cyber crime landscape is the mobile ransomware.
+These malware target mobile devices and lock them down.\cite{Symantec19}
 
-Furthermore the threats concerning IoT devices are equally rising. Symantec has seen an increase in IoT attacks in the year 2017 and the attack numbers are stabilising in the year 2018 \cite{Symantec19}. The most attacked devices in their IoT honeypots were routers and security cameras. Together they accounted for 90\% of the IoT attacks, with routers having 75\% and security cameras at 15\% \cite{Symantec19}. Telnet was the most used protocol with 90\% of attempted attacks using it in 2018. This is up from 50\% usage in the year 2017 \cite{Symantec19}.
+Furthermore the threats concerning IoT devices are equally rising.
+Symantec has seen an increase in IoT attacks in the year 2017 and the attack numbers are stabilising in the year 2018~\cite{Symantec19}.
+The most attacked devices in their IoT honeypots were routers and security cameras.
+Together they accounted for 90\% of the IoT attacks, with routers having 75\% and security cameras at 15\%~\cite{Symantec19}.
+Telnet was the most used protocol with 90\% of attempted attacks using it in 2018.
+This is up from 50\% usage in the year 2017~\cite{Symantec19}.
 
-In terms of threads, the top three accounted for over 75\% of the attacks on the IoT honeypots. Namely they were Linux.Lightaidra, Linux.Kaiten and Linux.Mirai. Thus the Mirai botnet still is an active thread with 15\% of attacks originating in it. \cite{Symantec19}
+In terms of threads, the top three accounted for over 75\% of the attacks on the IoT honeypots.
+Namely they were Linux.Lightaidra, Linux.Kaiten and Linux.Mirai.
+Thus the Mirai botnet still is an active thread with 15\% of attacks originating in it.\cite{Symantec19}
 
-Overall one can state, that phishing is still the most popular and easiest way to commit a cybercrime. Due to the low costs of phishing and the perceived low risk of getting caught phishing remains an attractive attack vector. \cite{McAfee18}
+Overall one can state, that phishing is still the most popular and easiest way to commit a cybercrime.
+Due to the low costs of phishing and the perceived low risk of getting caught phishing remains an attractive attack vector.\cite{McAfee18}
 
 \subsection{Botnet Landscape}
 
-Due to the high publicity distributed denial-of-service attacks get, the public opinion is, that most botnets are being used for only DDoS attacks. But there are many other usages of botnets such as web injection, URL spoofing, DNS spoofing and data collection. \cite{Eremin19}
+Due to the high publicity distributed denial-of-service attacks get, the public opinion is, that most botnets are being used for only DDoS attacks.
+But there are many other usages of botnets such as web injection, URL spoofing, DNS spoofing and data collection.\cite{Eremin19}
 
 We will assess, what criminals target with their botnets followed by a short description of a few big botnets.
 
- As observed by Kaspersky Lab, the largest part of the attacks performed were targeted at financial service providers such as banks, online stores and other resources for financial transactions. This category made for 77.5 \% of the attacks observed by Kaspersky. The second largest category is the Global Portals and Social Networks category. This includes email providers, search engines and social network platforms.\cite{Eremin19}
-The third largest category with 5.08 \% are the providers of various products. Part of this category are hosting providers, telecom providers and providers of other services.
-The full distribution of the targeted categories is shown in figure \ref{fig:KasperskyAttacks}.
+As observed by Kaspersky Lab, the largest part of the attacks performed were targeted at financial service providers such as banks, online stores and other resources for financial transactions.
+This category made for 77.5 \% of the attacks observed by Kaspersky.
+The second largest category is the Global Portals and Social Networks category.
+This includes email providers, search engines and social network platforms.\cite{Eremin19}
+The third largest category with 5.08 \% are the providers of various products.
+Part of this category are hosting providers, telecom providers and providers of other services.
+The full distribution of the targeted categories is shown in figure~\ref{fig:KasperskyAttacks}.
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.5]{Talk11/kasperskyAttacks} \end{center}
@@ -54,37 +82,53 @@ The full distribution of the targeted categories is shown in figure \ref{fig:Kas
 \label{fig:KasperskyAttacks}
 \end{figure}
 
-In terms of the botnet landscape there are many big botnets \cite{CenturyLink19}. We chose to describe three of them.
+In terms of the botnet landscape there are many big botnets~\cite{CenturyLink19}.
+We chose to describe three of them.
 
 \begin{description}
 
-\item[Emotet] is a banking Trojan that has emerged into a spam and malware as a service botnet which is globally distributed. It is distributed via corrupted attachments or links in emails sent from an already compromised device. According to Proofprint, the Emotet botnet was responsible for half of the spam emails generated in the first quarter of 2019, all containing malicious attachments or links. Emotet's command and control server structure is very complex. The Emotet actors maintain over 100 command and control servers which are updated frequently. This makes Emotets C2 (command and control) structure highly resistant to single interruptions of a C2 server.\cite{CenturyLink19}
+\item[Emotet] is a banking Trojan that has emerged into a spam and malware as a service botnet which is globally distributed.
+It is distributed via corrupted attachments or links in emails sent from an already compromised device.
+According to Proofprint, the Emotet botnet was responsible for half of the spam emails generated in the first quarter of 2019, all containing malicious attachments or links.
+Emotet's command and control server structure is very complex.
+The Emotet actors maintain over 100 command and control servers which are updated frequently.
+This makes Emotets C2 (command and control) structure highly resistant to single interruptions of a C2 server.\cite{CenturyLink19}
 
-\item[Mirai] is a botnet targeting IoT devices. Due to its simple usage for scaling the botnets up, it has become a popular platform for distributed denial-of-service attacks. The initial Mirai code has been published and is evolving into different variations. In the first quarter of 2019 Netscout saw over 20'000 unique samples of the Mirai code \cite{Netscout19}.
-To infect its bots, mirai scans for IoT devices and tries a dictoionary of default passwords and usernames. Mirai's command and control structure is quite simple. For a given botnet, there is only one command and control server. \cite{CenturyLink19}
+\item[Mirai] is a botnet targeting IoT devices.
+Due to its simple usage for scaling the botnets up, it has become a popular platform for distributed denial-of-service attacks.
+The initial Mirai code has been published and is evolving into different variations.
+In the first quarter of 2019 Netscout saw over 20'000 unique samples of the Mirai code~\cite{Netscout19}.
+To infect its bots, mirai scans for IoT devices and tries a dictoionary of default passwords and usernames.
+Mirai's command and control structure is quite simple.
+For a given botnet, there is only one command and control server.\cite{CenturyLink19}
 
-\item[Necurs] is a botnet initaily used for spam and malware distribution, such as bank trojans and ransomware. Over time, it evolved into a tool capable of more malicious activities such as crypot mining, DDoS attacks and more. Similar to Emotet, Necurs is distributed mainly through phishing emails. Known phishing attempts are Russian dating scams and pump-and-dump stock scams. Necurs tragets mostly unpatched or pirated versions of windows. Thus its main targets are in developing nations. \cite{CenturyLink19}
+\item[Necurs] is a botnet initaily used for spam and malware distribution, such as bank trojans and ransomware.
+Over time, it evolved into a tool capable of more malicious activities such as crypot mining, DDoS attacks and more.
+Similar to Emotet, Necurs is distributed mainly through phishing emails.
+Known phishing attempts are Russian dating scams and pump-and-dump stock scams.
+Necurs tragets mostly unpatched or pirated versions of windows.
+Thus its main targets are in developing nations.\cite{CenturyLink19}
 
 \end{description}
- 
 
 
- 
+
+
 \subsection{Organisation / Outline}
 In the following paper, we want to show the importance of further research about botnets and the importance of botnets itself. By giving a brief overview about the topic of botnets and their possible usage we want to add to the awareness of the reader about their dangers and highlight their influence on the economy. This is underlined by applying the stated analysis and facts onto a botnet in the case study.
 
-		
+
 \section{Background}
-	\subsection{Botnet}
-		\subsubsection{Definition}
-			A botnet is a network of infected end-hosts called bots (also referred to as zombies or drones) under the control of a botmaster.
-			Botnets recruit vulnerable machines using basic methods of malware distribution.
-			The botmaster is the manager of the botnet and controls his bots by using command and control (C\&C) channels.
-			These channels are used by the botmaster to distribute his commands to his bots.
-			These channels can use multiple communication mechanisms like P2P or Internet Relay Chat (IRC).
-			A vast majority are using IRC.~\cite{AbuRajab06}
-			
-		\subsubsection{Malware}
+\subsection{Botnet}
+\subsubsection{Definition}
+A botnet is a network of infected end-hosts called bots (also referred to as zombies or drones) under the control of a botmaster.
+Botnets recruit vulnerable machines using basic methods of malware distribution.
+The botmaster is the manager of the botnet and controls his bots by using command and control (C\&C) channels.
+These channels are used by the botmaster to distribute his commands to his bots.
+These channels can use multiple communication mechanisms like P2P or Internet Relay Chat (IRC).
+A vast majority are using IRC.\cite{AbuRajab06}
+
+\subsubsection{Malware}
 Malware stands for malicious software and describes any software that is designed to damage or exploit the infected machine.
 In our case, the malware is the code installed on the vulnerable machine, that turns it into a bot and allows the botmaster to take control.
 Malware spreads using multiple techniques and one specific malware can use more than one of these.
@@ -98,7 +142,7 @@ The name Trojan horse or Trojan describes any malware, that hide their true and 
 This can be a seemingly useful program, an unsuspicious e-mail attachment or an interesting advertisement.
 
 
-		\subsubsection{Revenue Models}
+\subsubsection{Revenue Models}
 In today's botnet economy, the attacker using a botnet is rarely the creator and botmaster of the used botnet.
 Botnets are traded and rented, to generate revenue without performing attacks~\cite{Li09}.
 There already exist services for development, distribution and hosting of botnets.
@@ -113,7 +157,7 @@ They are used to host fake websites (phishing websites) to steal personal and va
 Click fraud is the exploitation of pay-per-click online advertising by imitating a real user and clicking on the advertiser's link.
 The advertiser has to pay the publisher and the advertising network, therefore creating a potential conflict of interest.
 
-		\subsubsection{Command and Control}
+\subsubsection{Command and Control}
 Command and control channels (C\&Cs) are used to communicate with the bots in a botnet.
 Those channels are based on basic internet communication protocols.
 The majority of known botnets are using C\&Cs based on the IRC (Internet Relay Chat) protocol.
@@ -122,7 +166,7 @@ The communication is in real-time and is highly successful.
 There are known botnets using the HTTP protocol for their C\&C. This approach is still centralized but the botmaster cannot directly interact with his bots.
 The bots have to contact the C\&C server to get their commands.~\cite{Gu08}
 
-		\subsubsection{Architecture}
+\subsubsection{Architecture}
 The architecture refers to the model of communication between the botmaster and his bots.
 We divide these models into three categories: centralized, decentralized, hybrid and unstructured.
 
@@ -171,7 +215,7 @@ An unstructured communication model is based on the principle, that if a bot rec
 In this case the rest of the botnet will not be affected if a bot gets discovered.
 The drawbacks are an extremely high latency, the noticeable scanning and that it cannot be guaranteed, that every bot in the botnet receives the command.\cite{Cooke05}
 
-		\subsubsection{Underground Markets}
+\subsubsection{Underground Markets}
 As Thomas et al. (2006) state in their article, that there are entire IRC networks dedicated to cybercrime.
 Those IRC servers are not hidden, but easy to find and easily accessible.
 The participants in these underground networks often use encryption to hide their identity.
@@ -179,7 +223,7 @@ Most of these networks have channels for helping new members and reporting fraud
 Members known to have committed fraud are recorded and shared on the network as a form of self-policing.
 There are also other such underground networks using HTTP, Instant Massaging, Peer-to-Peer (P2P) and other forms of communication.\cite{Thomas06}
 
-		\subsubsection{Distributed Denial-of-Service Attacks (DDoS)}
+\subsubsection{Distributed Denial-of-Service Attacks (DDoS)}
 A Denial-of-Service (DoS) attack attempts to prevent the legitimate use of a service by either overwhelming the service with a huge amount of traffic or exploiting an application or protocol by sending malformed packages and causing the service to freeze or reboot.
 A Denial-of-Service (DoS) attack becomes a Distributed Denial-of-Service (DDoS) attack, if the source of the attack are multiple distributed entities or rather bots in a botnet (Figure~\ref{fig:ddos}).\cite{Mirkovic04}
 
@@ -196,24 +240,24 @@ This amplification resulted in a peak of 1.35Tbps via 126.9 million packets per 
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/github} \end{center}
-\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge.~\cite{Kottler18}}
+\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge.\cite{Kottler18}}
 \label{fig:github}
 \end{figure}
 
-	\subsection{DDoS Defense Systems}
-		\subsubsection{Technical Solutions}
+\subsection{DDoS Defense Systems}
+\subsubsection{Technical Solutions}
 \textbf{\textit{a. Aggregate-based congestion control (ACC)}}
 
 Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms.
-The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these.~\cite{Mahajan02}
+The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these.\cite{Mahajan02}
 
 The identification of the offending aggregates is very difficult.
 The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes.
-The traffic might cluster in multiple dimensions (e.g.\ a particular server or network link) and the attacker may change their target to avoid detection.~\cite{Mahajan02}
+The traffic might cluster in multiple dimensions (e.g.\ a particular server or network link) and the attacker may change their target to avoid detection.\cite{Mahajan02}
 
 The next challenge is to determine how much an aggregate should get throttled.
 The goal is to keep the service running during an attack, that implies they cannot block those aggregates completely.
-The rate limit is chosen so that the remaining traffic can at least maintain some level of service.~\cite{Mahajan02}
+The rate limit is chosen so that the remaining traffic can at least maintain some level of service.\cite{Mahajan02}
 
 The second ACC mechanism is the pushback mechanism.
 The congested router pushes the aggregate throttling upstream to the adjacent routers sending him a significant fraction of the congesting traffic.
@@ -223,39 +267,39 @@ The pushback will not be effective against a DDoS attack, if the traffic is dist
 This can be possible, if the attacker uses an amplification (or reflector) attack with sufficiently distributed reflectors.
 Pushback can also overcompensate by throttling aggregates upstream that would not have been a problem downstream.
 Or if the pushback algorithm is not able to differentiate between malicious and legitimate traffic coming from the same edge network, that does not support the pushback mechanism.
-This fact could even be abused by blocking legitimate incoming traffic from a particular source by launching the attack from a host that is close to this source.~\cite{Mahajan02}
+This fact could even be abused by blocking legitimate incoming traffic from a particular source by launching the attack from a host that is close to this source.\cite{Mahajan02}
 
 \textbf{\textit{b. Max-Min Fair Server-Centric Router Throttles}}
 
 Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic.
 This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router.
-The throttles depend on the current demand and have to be negotiated dynamically between server and network.~\cite{Yau05}
+The throttles depend on the current demand and have to be negotiated dynamically between server and network.\cite{Yau05}
 
 If a server load crosses the load limits, the server installs the throttle at some of its upstream routers.
-There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again.~\cite{Yau05}
+There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again.\cite{Yau05}
 
 The fair throttle algorithm tries to minimize the throttling on well behaving routers, by not just decreasing the allowed traffic from every router, but by multicasting a uniform leaky bucket rate (i.e.\ the throttle rate) to all targeted routers.
-This way, busier routers drop much more packets then calm ones, which may not have to drop any.~\cite{Yau05}
+This way, busier routers drop much more packets then calm ones, which may not have to drop any.\cite{Yau05}
 
 \textbf{\textit{c. Probabilistic Packet Marking}}
 
 Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM).
 The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).
 In DPM, each router inscribes its local path information onto the passing packet.
-Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop.~\cite{Park01}
+Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop.\cite{Park01}
 
 In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1.
 This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback.~\cite{Park01}
 
 In the case of DDoS attacks with a high number of attacking sources, this technique gets rendered more and more useless.
-The uncertainty grows more and more while the probability to find the sources becomes smaller and smaller.~\cite{Park01}
+The uncertainty grows more and more while the probability to find the sources becomes smaller and smaller.\cite{Park01}
 
 \textbf{\textit{d. Hash-Based IP Traceback}}
 
 Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet.
 They developed the Source Path Isolation Engine (SPIE).
 The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time.
-The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network.~\cite{Snoeren01}
+The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network.\cite{Snoeren01}
 
 To achieve those goals, SPIE produces a 32-bit packet digest using a hash function.
 As hash input, it uses the invariant portion of the IP header and the first 8 bytes of the payload.
@@ -263,7 +307,7 @@ Because it is not possible to store the digest of every packet forwarded on the 
 This filter computes k distinct digests using k distinct hash functions.
 The hash function have to be uniform.
 The n-bit results get indexed to a bit array of the size 2n.
-If the copy of the file to trace back gets indexed to only 1-bits, with high possibility, the packet got forwarded by this router.~\cite{Snoeren01}
+If the copy of the file to trace back gets indexed to only 1-bits, with high possibility, the packet got forwarded by this router.\cite{Snoeren01}
 
 \textbf{\textit{e. Packet Filtering using Traffic Quota}}
 
@@ -271,7 +315,7 @@ The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall 
 The Server and Client do not need to be changed and the firewall issues the filtering operation.
 The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP\@.
 Those so-called perimeter routers should distinguish between DDoS and legitimate traffic.
-They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used.~\cite{Xu03}
+They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used.\cite{Xu03}
 
 In the first case, if the first packet of a client arrives, the client gets redirected to a pseudo-IP address and port number pair.
 This new destination IP address contains a Massage Authentication Code (MAC) that's encrypted with a symmetric key shared between the firewall and the perimeter routers.
@@ -295,7 +339,7 @@ The only information needed is contained in the package header, assuming that in
 The hop-count can be inferred from the TTL field of the incoming packets.
 To avoid dropping packets of legitimate clients because the hop-count information is not correct, the filtering only takes place if an attack gets detected.\cite{Jin03}
 
-		\subsubsection{Economic DDoS Defense (Honeypots)}
+\subsubsection{Economic DDoS Defense (Honeypots)}
 Defending against DDoS attacks with technical solutions results in an arms race between attacker and defender.
 It has become more common to not only look at technical solutions against direct DDoS attacks, but to target the economic aspects of botnets.
 
@@ -311,10 +355,10 @@ The honeypots do not participate in DDoS attacks, for this reason the required n
 According to their model the profits of attackers and botmasters can decrease dramatically.\cite{Li09}
 
 \section{Economics}
-	\subsection{Introduction}
-	As a subset of the cybercrime economy, the botnet economy plays out on underground black markets.
-	Over time there has been a shift in incentives, where the attackers are no longer motivated by self-fulfillment and proof of skill, but rather the financial gain attributed to such attacks.
-	As part of this shift towards economic incentives, cybercriminals have developed business models that shall guarantee the profitability of their botnets.\cite{Li09}
+\subsection{Introduction}
+As a subset of the cybercrime economy, the botnet economy plays out on underground black markets.
+Over time there has been a shift in incentives, where the attackers are no longer motivated by self-fulfillment and proof of skill, but rather the financial gain attributed to such attacks.
+As part of this shift towards economic incentives, cybercriminals have developed business models that shall guarantee the profitability of their botnets.\cite{Li09}
 
 The many victims affected by botnets are faced with a serious economic threat.
 Successful DDoS attacks on companies may lead to both direct economic costs, as well as indirect losses which are much harder to quantify.
@@ -324,50 +368,50 @@ The value destroyed by these attacks also inflict costs on society at large.
 The damages, although difficult to quantify, are estimated to be in the tens of billions of dollars every year.\cite{Asghari15}
 This chapter shall give an overview of the different stakeholders involved, the business models used to operate successful botnets, as well as an attempt to model the different types of economic damage a botnet attack can inflict. 
 
-	\subsection{Stakeholders}
-			In order to gain a better perspective on incentives and the botnet economy as a whole, we first have to define the relevant partners effected by botnets.
-			We will analyze both the parties involved on the attacker and the victim sides.
-			
-		\subsubsection{Attackers}
+\subsection{Stakeholders}
+In order to gain a better perspective on incentives and the botnet economy as a whole, we first have to define the relevant partners effected by botnets.
+We will analyze both the parties involved on the attacker and the victim sides.
 
-			The following is a list of key partners involved on the side of the attacker.
-			We based this list on papers written by C.G.J.\ Putman et al.: "Business Model of a Botnet" and G. Bottazzi et al.: "The Botnet Revenue Model"~\cite{Putman,Bottazzi14}.
+\subsubsection{Attackers}
 
-			\textbf{\textit{a. Malware Developers}}
-			
-			Malware Developers are mainly IT professionals involved in the research and development stage of the botnet life cycle.
-			They identify vulnerabilities in software, develop new malicious software to exploit these vulnerabilities, and maintain existing software.
-			No illegal activities take place in this step of R\&D. Only the use of the software is considered illegal.~\cite{Putman,Bottazzi14}
+The following is a list of key partners involved on the side of the attacker.
+We based this list on papers written by C.G.J.\ Putman et al.: "Business Model of a Botnet" and G. Bottazzi et al.: "The Botnet Revenue Model"~\cite{Putman,Bottazzi14}.
 
-			\textbf{\textit{b. Money Handlers}}
-			
-			The goal of money handlers is to offer payment services with a high degree of anonymity.
-			They allow people buying malicious software to remain anonymous.
-			The malware developers from the first stage also have an interest in remaining unidentifiable, as to not be charged as an accessory to any crimes committed by the buyer.
-			The supply of anonymous payment services is also not considered illegal and can be achieved through the use of cryptocurrencies.\cite{Putman,Bottazzi14}
+\textbf{\textit{a. Malware Developers}}
 
-			\textbf{\textit{c. Command and Control Bulletproof Hosting Providers}}
-			
-			Bulletproof Hosting allows the botnet end-user to store any stolen information such as passwords, banking accounts, or other credentials.
-			The control center for the botnet, which can also be provided through the hosting service, consists of one or multiple computers.\cite{Putman,Bottazzi14}
+Malware Developers are mainly IT professionals involved in the research and development stage of the botnet life cycle.
+They identify vulnerabilities in software, develop new malicious software to exploit these vulnerabilities, and maintain existing software.
+No illegal activities take place in this step of R\&D. Only the use of the software is considered illegal.~\cite{Putman,Bottazzi14}
 
-			\textbf{\textit{d. PPI (Pay Per Install) Distributors}}
-			
-			The distribution and multiplication of malicious software is constantly evolving, and many developers lack the necessary resources to spread their malware effectively.
-			For this purpose, developers use a PPI model, which essentially allows them to spread their software by commissioning third parties with the infection and paying them a certain fee per infected device.
-			According to research by Brian Krebs proposed in his paper "Most Malware Tied to Pay-Per-Install Market", PPI costs are estimated to vary from \$7 to \$180 per 1000 installations.\cite{Putman,Bottazzi14}
+\textbf{\textit{b. Money Handlers}}
 
-			\textbf{\textit{e. Botnet Owners}}
-			
-	Botnet owners, also known as botmasters, are the ones who actually perform the attacks~\cite{Putman,Bottazzi14}.
-	They either perform these malicious activities for their own personal benefit, or on the behalf of third-party users for financial gain.
-	The latter is the becoming increasingly important.\cite{Li09}
+The goal of money handlers is to offer payment services with a high degree of anonymity.
+They allow people buying malicious software to remain anonymous.
+The malware developers from the first stage also have an interest in remaining unidentifiable, as to not be charged as an accessory to any crimes committed by the buyer.
+The supply of anonymous payment services is also not considered illegal and can be achieved through the use of cryptocurrencies.\cite{Putman,Bottazzi14}
 
-			\textbf{\textit{f. Botnet Users}}
-			
-			Botnet users are the final piece in the botnet supply chain.
-			They are customers willing to pay money to make use of the botnet and perform attacks.
-			Users are mainly charged by the pay-per-use model.\cite{Putman,Bottazzi14}
+\textbf{\textit{c. Command and Control Bulletproof Hosting Providers}}
+
+Bulletproof Hosting allows the botnet end-user to store any stolen information such as passwords, banking accounts, or other credentials.
+The control center for the botnet, which can also be provided through the hosting service, consists of one or multiple computers.\cite{Putman,Bottazzi14}
+
+\textbf{\textit{d. PPI (Pay Per Install) Distributors}}
+
+The distribution and multiplication of malicious software is constantly evolving, and many developers lack the necessary resources to spread their malware effectively.
+For this purpose, developers use a PPI model, which essentially allows them to spread their software by commissioning third parties with the infection and paying them a certain fee per infected device.
+According to research by Brian Krebs proposed in his paper "Most Malware Tied to Pay-Per-Install Market", PPI costs are estimated to vary from \$7 to \$180 per 1000 installations.\cite{Putman,Bottazzi14}
+
+\textbf{\textit{e. Botnet Owners}}
+
+Botnet owners, also known as botmasters, are the ones who actually perform the attacks~\cite{Putman,Bottazzi14}.
+They either perform these malicious activities for their own personal benefit, or on the behalf of third-party users for financial gain.
+The latter is the becoming increasingly important.\cite{Li09}
+
+\textbf{\textit{f. Botnet Users}}
+
+Botnet users are the final piece in the botnet supply chain.
+They are customers willing to pay money to make use of the botnet and perform attacks.
+Users are mainly charged by the pay-per-use model.\cite{Putman,Bottazzi14}
 
 Figure 2.7 provides an overview of different stages of the botnet life cycle and the parties involved. 
 
@@ -378,26 +422,26 @@ Figure 2.7 provides an overview of different stages of the botnet life cycle and
 \label{RevenueModel}
 \end{figure}
 
-		\subsubsection{Victims and Defenders}
-	The following is a list of victims affected by botnet attacks and third parties involved in defensive measures, as well as their incentives to protect themselves from these attacks.
+\subsubsection{Victims and Defenders}
+The following is a list of victims affected by botnet attacks and third parties involved in defensive measures, as well as their incentives to protect themselves from these attacks.
 
-			\textbf{\textit{a. Victims of DDoS and Spamming}}
-			
-			The first and probably most obvious victims are the ones that suffer from DDos attacks and spamming carried out by botnets.
-			The victims of such attacks suffer far-reaching financial consequences from such attacks.
-			Oftentimes, the targets are businesses who suffer direct losses in the form of lost revenue due to the unavailability of their online services.
-			But they also suffer indirect impacts, such as a loss of customer trust and market value.
-			These damages are usually far more severe~\cite{Anderson13} and harder to quantify due to the difficulty of attributing these losses directly to botnet attacks.
-			As a result, businesses with a certain exposure to malicious attacks and a strong reliance on online presence, have very strong incentives to protect themselves from botnet attacks.
-			Additionally, the loss of customer trust and market shares that these attacks entail, lead companies to try and keep information about suffered attacks out of the public eye.
+\textbf{\textit{a. Victims of DDoS and Spamming}}
 
-			\textbf{\textit{b. End-users of Infected Devices}}
-			
-			Another obvious direct victim are the end-users of the infected devices.
-			In the case of DDos and spamming attacks, the users of infected devices are not directly affected by any negative consequences, as they are simply used as a means to an end.
-			Therefore, they may lack certain incentives to protect themselves adequately from malware and not become part of a larger botnet~\cite{Asghari15}.
-			Why should a device owner pay for security measures, when he does not suffer any direct economic consequences from being infected?
-			Another explanation might be that many end-users are simply not aware of the danger malware entails and therefore lack the knowledge required to adequately protect themselves from such attacks.
+The first and probably most obvious victims are the ones that suffer from DDos attacks and spamming carried out by botnets.
+The victims of such attacks suffer far-reaching financial consequences from such attacks.
+Oftentimes, the targets are businesses who suffer direct losses in the form of lost revenue due to the unavailability of their online services.
+But they also suffer indirect impacts, such as a loss of customer trust and market value.
+These damages are usually far more severe~\cite{Anderson13} and harder to quantify due to the difficulty of attributing these losses directly to botnet attacks.
+As a result, businesses with a certain exposure to malicious attacks and a strong reliance on online presence, have very strong incentives to protect themselves from botnet attacks.
+Additionally, the loss of customer trust and market shares that these attacks entail, lead companies to try and keep information about suffered attacks out of the public eye.
+
+\textbf{\textit{b. End-users of Infected Devices}}
+
+Another obvious direct victim are the end-users of the infected devices.
+In the case of DDos and spamming attacks, the users of infected devices are not directly affected by any negative consequences, as they are simply used as a means to an end.
+Therefore, they may lack certain incentives to protect themselves adequately from malware and not become part of a larger botnet~\cite{Asghari15}.
+Why should a device owner pay for security measures, when he does not suffer any direct economic consequences from being infected?
+Another explanation might be that many end-users are simply not aware of the danger malware entails and therefore lack the knowledge required to adequately protect themselves from such attacks.
 
 Other forms of botnet attacks, such as identity and information theft, bank fraud, and phishing, do however pose a direct threat to owners of infected devices.
 According to an estimation by Anderson et al. (2013), consumers globally suffer losses in the range of \$70 million due to online banking fraud~\cite{Anderson13}.
@@ -405,19 +449,19 @@ For business, that number rises to around \$300 million.
 Furthermore, Anderson et al. (2013) estimate that global expenditure on antivirus protection reached \$3.4 billion in 2012~\cite{Anderson13}.
 While the indirect cost for users for the clean-up of malware in the same year is estimated to be around \$10 billion globally and \$500 million in the UK alone.
 
-			\textbf{\textit{c. Antivirus Software Vendors}}
-			
-		As mentioned in the section above, security vendors have very strong financial incentives to provide protection from malicious software, as the global expenditure is estimated to be around \$3.4 billion any a large majority of consumers have some sort of antivirus software.
-		Additionally, global expenditure on clean-up is estimated at \$10 billion and therefore provides even more financial motivation for security vendors.\cite{Anderson13}
+\textbf{\textit{c. Antivirus Software Vendors}}
+
+As mentioned in the section above, security vendors have very strong financial incentives to provide protection from malicious software, as the global expenditure is estimated to be around \$3.4 billion any a large majority of consumers have some sort of antivirus software.
+Additionally, global expenditure on clean-up is estimated at \$10 billion and therefore provides even more financial motivation for security vendors.\cite{Anderson13}
 
 At this point however, it has to be state that this includes cost for protection against malware in general and not only related to botnet attacks.
 Vendors of such software are also faced with large development and maintenance costs, as cybercriminals constantly try to find new ways of circumventing existing protection measures.
 
-			\textbf{\textit{d. Internet Service Providers}}
-			
-		Internet Sevice Providers (ISPs) play a large role in botnet mitigation, as they are able to perform measures on a very large scale and therefore more economically that single end-users.
-		They do however lack accountability, as they are not the cause of botnets, and economic motivators, as such counter measure can be very costly, and ISPs do not suffer any direct consequences by users being affected by cybercrime.
-		Advanced detection and follow up actions can also cause privacy concerns of customer data.\cite{Pijpker16}
+\textbf{\textit{d. Internet Service Providers}}
+
+Internet Sevice Providers (ISPs) play a large role in botnet mitigation, as they are able to perform measures on a very large scale and therefore more economically that single end-users.
+They do however lack accountability, as they are not the cause of botnets, and economic motivators, as such counter measure can be very costly, and ISPs do not suffer any direct consequences by users being affected by cybercrime.
+Advanced detection and follow up actions can also cause privacy concerns of customer data.\cite{Pijpker16}
 
 Still internet service providers do play a role in botnet mitigation due to organizational and institutional incentives.
 "Relevant organizational factors for ISPs to address botnet mitigation include the size of their customer base, the internal organization of their abuse desk, and the cost spend on various security measures." (Pijpker et al. (2016))
@@ -426,19 +470,18 @@ They include for example the regulatory context and market settings.\cite{Pijpke
 
 Research shows that ISPs currently focus more on prevention and notification of customers and that there is still quite a lot of room for improvement due to a lock of incentives for botnet detection, remediation, and recovery on the behalf of internet service providers.\cite{Pijpker16}
 
-			\textbf{\textit{e. Law Enforcement}}
-			
-		As costs for cybercrime mitigation can be very high, additional investments in law enforcement can be an effective counter measure.
-		The cost for law enforcement is generated by the time required to find and prosecute cyber criminals~\cite{Anderson13}.
-		Anderson et al.\cite{Anderson13} estimate that the global expenditure on law enforcement for cyber crime defense is around \$400 million, while that of the UK is about \$15 million in 2010~\cite{Anderson13}.
-		When compared to the cost of cybercriminal infrastructure of private corporations, this modest number may be one reason for the low success rate in finding and punishing cyber criminals.
-		
-	\subsection{Revenue Streams and Incentives for Botnet Owners}
-		Even though botmasters are not always solely financially motivated, there are several potential revenue streams for botnet owners.
-		The following chapter shall provide a non-extensive list of possible revenue streams for botnet owners with some estimations on the revenue they generate.
-		The following figure provides an overview of all the different revenue streams mentioned in this chapter.
-		
-		
+\textbf{\textit{e. Law Enforcement}}
+
+As costs for cybercrime mitigation can be very high, additional investments in law enforcement can be an effective counter measure.
+The cost for law enforcement is generated by the time required to find and prosecute cyber criminals~\cite{Anderson13}.
+Anderson et al.\cite{Anderson13} estimate that the global expenditure on law enforcement for cyber crime defense is around \$400 million, while that of the UK is about \$15 million in 2010~\cite{Anderson13}.
+When compared to the cost of cybercriminal infrastructure of private corporations, this modest number may be one reason for the low success rate in finding and punishing cyber criminals.
+
+\subsection{Revenue Streams and Incentives for Botnet Owners}
+Even though botmasters are not always solely financially motivated, there are several potential revenue streams for botnet owners.
+The following chapter shall provide a non-extensive list of possible revenue streams for botnet owners with some estimations on the revenue they generate.
+The following figure provides an overview of all the different revenue streams mentioned in this chapter.
+
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.6]{Talk11/RevenueStreams}
@@ -446,11 +489,11 @@ Research shows that ISPs currently focus more on prevention and notification of 
 \caption{Botnet Revenue Streams~\cite{Namestnikov09}}
 \label{RevenueStreams}
 \end{figure}
-		
-		\subsubsection{DDoS Attacks}
-		DDoS attacks are one of the most common malicious activities performed with the use of botnets that can be highly lucrative.
-		The goal of a DDoS attack is to force a computer system into denial of service for legitimate customers by sending enough requests to the computer of a victim that it can no longer process all of them~\cite{Namestnikov09}.
-		Two possible revenue streams can be implemented for DDoS attacks.
+
+\subsubsection{DDoS Attacks}
+DDoS attacks are one of the most common malicious activities performed with the use of botnets that can be highly lucrative.
+The goal of a DDoS attack is to force a computer system into denial of service for legitimate customers by sending enough requests to the computer of a victim that it can no longer process all of them~\cite{Namestnikov09}.
+Two possible revenue streams can be implemented for DDoS attacks.
 
 The first of which is extortion~\cite{Bailey09}.
 Owners of botnets can generate profits with simply threatening to perform a cyber-attack.
@@ -466,66 +509,66 @@ Prices for these subscriptions vary from just \$5 up to \$300 dollars and allow 
 One example of such a booter service is VDoS. VDoS generated revenue in the region of \$25,985 per month over the course of two years of operation, with their lowest performing month at \$9,956 and their best performing moth at \$42,924~\cite{Bailey09}.
 As they are almost impossible to quantify, there is no information on profits generated from extortion~\cite{Namestnikov09}.
 
-		\subsubsection{Information Theft}
-		Another source of revenue for botnet owners is the sale and misuse of personal information such as bank accounts and credit card information, online credentials, or identity information.
-		This type of data is directly extracted from the infected bots~\cite{Bottazzi14}.
-		Cybercriminals can decide whether they want to use the gathered information for their own use or sell them to third parties.
-		The price for a bank account can range between \$1 and \$1,500.
-		The low value of this information can be attributed to strong competition from other vendors.
-		In order to generate a lucrative and sustainable revenue stream, botmasters constantly need an inflow of new data and a large botnet~\cite{Namestnikov09}.
+\subsubsection{Information Theft}
+Another source of revenue for botnet owners is the sale and misuse of personal information such as bank accounts and credit card information, online credentials, or identity information.
+This type of data is directly extracted from the infected bots~\cite{Bottazzi14}.
+Cybercriminals can decide whether they want to use the gathered information for their own use or sell them to third parties.
+The price for a bank account can range between \$1 and \$1,500.
+The low value of this information can be attributed to strong competition from other vendors.
+In order to generate a lucrative and sustainable revenue stream, botmasters constantly need an inflow of new data and a large botnet~\cite{Namestnikov09}.
 
 One example that shows how lucrative bank account theft can be is the case of Eurograbber.
 In an attack on European online banking customers through a Zeus based mobile trojan, the perpetrators were able to illicitly transfer funds over 36 million Euros from more than 30,000 bank customers.\cite{Kalige12}
 
-		\subsubsection{Phishing}
-		In order to protect phishing sites from being shut down and extend their lifetime, cybercriminals are offering an implementation of fast flux technology, which allows phishers to change their website's IP address every few minutes without altering the domain name.
-		This technique of using infected home computers as web servers with phishing content also makes them harder to track down.\cite{Namestnikov09}
+\subsubsection{Phishing}
+In order to protect phishing sites from being shut down and extend their lifetime, cybercriminals are offering an implementation of fast flux technology, which allows phishers to change their website's IP address every few minutes without altering the domain name.
+This technique of using infected home computers as web servers with phishing content also makes them harder to track down.\cite{Namestnikov09}
 
 In order to acquire a ready-made botnet for their fast flux solution, phishers pay botnet owners \$1,000 to \$2,000 per month.
 The average income and damage to consumers is in the millions of dollars per year and comparable to that from theft of personal information.\cite{Namestnikov09}
 
-		\subsubsection{Spam}
-		One of the most important applications for botnets is sending spam.
-		Spammers use different business models, some make profits by luring users to infected websites where they might download malware while others are part of phishing campaigns designed to steal user credentials for reasons mentioned above.
-		Botnets provide the required infrastructure necessary for carrying out spamming services.\cite{Bailey09}
+\subsubsection{Spam}
+One of the most important applications for botnets is sending spam.
+Spammers use different business models, some make profits by luring users to infected websites where they might download malware while others are part of phishing campaigns designed to steal user credentials for reasons mentioned above.
+Botnets provide the required infrastructure necessary for carrying out spamming services.\cite{Bailey09}
 
 Prices for spamming services depend on the size of the target audience and can range from just \$70 for a few thousand addresses up to \$1,000 for tens of millions of addresses~\cite{Namestnikov09}.
 In their paper " The Economics of Spam " Justin Rao and David Riley~\cite{Rao12} estimate that American firms and consumers experience costs of about \$20 billion per year due to spam messages.
 Furthermore, they estimate that spammers and spam-advertised merchants make revenues of about \$200 million worldwide annually.
 This means that the externalities caused by spam messages has a ration of 100:1~\cite{Rao12}.
 
-		\subsubsection{Spamdexing}
-		Spamdexing, also known as search engine spam, are a form of deliberate manipulation of search engine indexes to improve a website's position in search engine results.
-		The idea behind this is that websites with a higher position generate more clicks and therefore revenue.
+\subsubsection{Spamdexing}
+Spamdexing, also known as search engine spam, are a form of deliberate manipulation of search engine indexes to improve a website's position in search engine results.
+The idea behind this is that websites with a higher position generate more clicks and therefore revenue.
 
 There are several criteria search engines use to judge the relevance of a website for a given search input.
 The number of links to that particular website on other websites is one of the main factors in determining which result is displayed at the top.
 Botnets are used to create many posts and comments containing the link to websites being promoted and related keywords.
 The price for such services averages at about \$300 per month.\cite{Namestnikov09}
 
-		\subsubsection{Adware and Malware Installation}
-		An additional revenue stream for botnet owners can be the installation of adware on infected computers.
-		Adware is software that generates revenue for its creator by automatically and unwantedly displays advertisements in the user's interface, most often a web browser~\cite{Malwarebytes19}.
-		Companies that offer such adware often pay between 30 cents and \$1.50 for the installation.
-		With thousands of computers at their fingertips the installation of adware and other forms of malware can be a lucrative and simple way to generate additional profits for botnet owners.
-		A famous example is John Kenneth Schiefer, a hacker convicted in 2007 that used a botnet to distribute adware and managed to generate profits of around \$14'000 in one month.\cite{Namestnikov09}
+\subsubsection{Adware and Malware Installation}
+An additional revenue stream for botnet owners can be the installation of adware on infected computers.
+Adware is software that generates revenue for its creator by automatically and unwantedly displays advertisements in the user's interface, most often a web browser~\cite{Malwarebytes19}.
+Companies that offer such adware often pay between 30 cents and \$1.50 for the installation.
+With thousands of computers at their fingertips the installation of adware and other forms of malware can be a lucrative and simple way to generate additional profits for botnet owners.
+A famous example is John Kenneth Schiefer, a hacker convicted in 2007 that used a botnet to distribute adware and managed to generate profits of around \$14'000 in one month.\cite{Namestnikov09}
 
 The pay-per-install business model is also used by cybercriminals when distributing malware.
 The average price for an installation varies depending on the geographical location of the computer, as an infected computer in developed countries are capable of generating a lot more profit because the information is oftentimes more valuable.
 The price for 1,000 installs in the United States for example can reach up to \$120, while the same number of installs on Chinese computers of generates about \$3 in profits.\cite{Namestnikov09}
 
-		\subsubsection{Cyber Fraud}
-		Cyber fraud has many different forms.
-		One very common form is click fraud, where websites and botnet owners generate profits from clicks on advertisements.
-		This type of click fraud relies on pay-per-click advertising where companies that place advertisements on other websites, through Google AdSense for example, pay for these ads based on the number of clicks that they receive.
-		A clickbot helps an attacker commit click fraud by generating fake clicks on ads.
-		This technology can be used in a few different ways.
-		For example, a company can generate a lot of clicks on the ad of a competitor in order to diminish their budget and create more costs.
-		Alternatively, websites that publish the advertisements can also use clickbots to click on the ads placed on their own websites, as they receive a share of the profit from ad clicks~\cite{Daswani07}.
-		Botnets allow attackers to generate thousands of clicks per day, all from different computers as to not raise any suspicions~\cite{Namestnikov09}.
-		By analyzing Clickbot.A, N. Dawasi and M. Stoppelman estimated that Google can lose around \$50,000 with botnet of 100,000 bots.
-		A share of this profit generated by advertisers then goes to the botnet owners~\cite{Daswani07}.
-		Another click fraud botnet, ZeroAccess, has generated ad losses up to \$900,000 daily with 140 million clicks a day~\cite{Bottazzi14}.
+\subsubsection{Cyber Fraud}
+Cyber fraud has many different forms.
+One very common form is click fraud, where websites and botnet owners generate profits from clicks on advertisements.
+This type of click fraud relies on pay-per-click advertising where companies that place advertisements on other websites, through Google AdSense for example, pay for these ads based on the number of clicks that they receive.
+A clickbot helps an attacker commit click fraud by generating fake clicks on ads.
+This technology can be used in a few different ways.
+For example, a company can generate a lot of clicks on the ad of a competitor in order to diminish their budget and create more costs.
+Alternatively, websites that publish the advertisements can also use clickbots to click on the ads placed on their own websites, as they receive a share of the profit from ad clicks~\cite{Daswani07}.
+Botnets allow attackers to generate thousands of clicks per day, all from different computers as to not raise any suspicions~\cite{Namestnikov09}.
+By analyzing Clickbot.A, N. Dawasi and M. Stoppelman estimated that Google can lose around \$50,000 with botnet of 100,000 bots.
+A share of this profit generated by advertisers then goes to the botnet owners~\cite{Daswani07}.
+Another click fraud botnet, ZeroAccess, has generated ad losses up to \$900,000 daily with 140 million clicks a day~\cite{Bottazzi14}.
 
 Another way to commit cyber fraud is by creating fake user ratings and customer reviews on websites or with the rising importance of cryptocurrencies, botnet owners can abuse the computing power of their botnets to mine cryptocurrencies~\cite{Putman}.
 
@@ -554,11 +597,10 @@ For example securing the compormised bank account after the withdraw form the fi
 \item[Indirect costs] are generally speaking the oportunity costs of the cybercriminal activiy.
 They can generally not be attributed to individual victims or perpetrators.
 Examples for those losses would be the loss of trust in a service after it has been hacked which leads to the loss in income generated by this service or the loss of appontiments after a booking platform is taken down via a Distributed denial of service attack.\cite{Anderson19}
- 
+
 \item[Defence costs] are the costs that occour in prevention efforts.
 Examples here would be the purchase of security products that aim to prevent cybercrim such as anti virus software of spamfilters, the costs of law enforcement trying to defend against cybercrime or the opportunity costs of missed appointments by marking them falsely as spam.\cite{Anderson19}
 \end{description}
-
 
 To get the overall costs cybercrime the four types of costs must be added together to build an approximation of the crime.
 This leads to the following formula to asses the cost of cybercrime.
@@ -575,7 +617,6 @@ This leads to the following equation for the cost per hour of downtime:
 \text{cost/hour} = \text{Empl. cost/hour} * \frac{\text{Empl affected}}{\text{All empl}} + \text{Rev./hour} * \frac{\text{Rev. affected}}{\text{All Rev.}}
 \end{equation}
 
-
 According to Gartner~\cite{Lerner14} this cost of downtime can be set to aproximately \$ 5600 per minute.
 This number comes from a survey they did in the year 2014.
 This adds up to over \$ 300000 per hour.
@@ -588,29 +629,29 @@ A more recent study by the Ponemon instutute has a even higher estimate.
 They claim that the cost per minute of the downtime of an enterprises IT network would be as high as \$ 9000 per minute~\cite{Ponemon16}.
 
 \section{Case Study: Mirai}
-	\subsection{The Botnet}
-	\subsubsection{Attacks Timeline}
-	Mirai is Japanese and stands for "the future".
-	The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots.
-	The following is a timeline of the beginning of Mirai~\cite{Kolias17,Antonakakis17}.
-	
-	At the end of August 2016, Mirai was identified by MalwareMustDie.
-	"MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet."\cite{MalwareMustDie}
-	
-	Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai.
-	Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com.
-	The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites.\cite{Krebs16_2}
-	
-	Around the same time, an even bigger attack launched on to the French webhost and cloud service provider OVH. This attack peaked at 1.1 Tbps.
-	
-	At the end of September 2016, the creator of Mirai released its source code to the public, he calls himself "Anna-Senpai".
-	Thereafter Mirai botnets with as many as 400'000 connected devices got offered on the underground market by members of the hacker community.
-	
-	At the end of October 2016 several high traffic websites went offline for multiple hours resulting an attack on the service provider Dyn.
-	
-	On the 31 of October the Liberian telecom Lonestar Cell got attacked.
-	
-	The Mirai author got identified in an article of Brian Krebs in early 2017.\cite{Krebs17}
+\subsection{The Botnet}
+\subsubsection{Attacks Timeline}
+Mirai is Japanese and stands for "the future".
+The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots.
+The following is a timeline of the beginning of Mirai~\cite{Kolias17,Antonakakis17}.
+
+At the end of August 2016, Mirai was identified by MalwareMustDie.
+"MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet."\cite{MalwareMustDie}
+
+Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai.
+Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com.
+The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites.\cite{Krebs16_2}
+
+Around the same time, an even bigger attack launched on to the French webhost and cloud service provider OVH. This attack peaked at 1.1 Tbps.
+
+At the end of September 2016, the creator of Mirai released its source code to the public, he calls himself "Anna-Senpai".
+Thereafter Mirai botnets with as many as 400'000 connected devices got offered on the underground market by members of the hacker community.
+
+At the end of October 2016 several high traffic websites went offline for multiple hours resulting an attack on the service provider Dyn.
+
+On the 31 of October the Liberian telecom Lonestar Cell got attacked.
+
+The Mirai author got identified in an article of Brian Krebs in early 2017.\cite{Krebs17}
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.35]{Talk11/mirai-timeline} \end{center}
@@ -619,10 +660,10 @@ They claim that the cost per minute of the downtime of an enterprises IT network
 \end{figure}
 
 \subsubsection{Operation}
-		Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devices running on ARC processors, such as IP cameras and home routers.
-		In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist~\cite{Kolias17}.
+Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devices running on ARC processors, such as IP cameras and home routers.
+In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist~\cite{Kolias17}.
 On recognizing a potential victim, Mirai then tries to log into the device with a brute force attack using 10 randomly selected username and password combinations out of a list of 62 common factory default usernames and passwords (e. g.\ 'admin' \& 'password').\cite{Antonakakis17}
-		
+
 After a successful login various characteristic are sent to a report server through a different port.
 These reports are used by a C\&C server to continually determine new prospective victims.
 This server also communicates with the report server to get the current status.\cite{Kolias17}
@@ -640,10 +681,10 @@ Under UDP there are UPD, UDPPLAIN (UDP flood with less options and optimized for
 GRE IP and GREETH flood attacks abuse the Generic Routing Encapsulation (GRE) protocol.
 On the other hand APP only contains the very effective HTTP attack.\cite{Winward}
 
-	\subsubsection{Background}
-	In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University.
-	Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30.
-	In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him.\cite{Krebs17}
+\subsubsection{Background}
+In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University.
+Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30.
+In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him.\cite{Krebs17}
 
 Following investigation and questioning by the FBI Paras Jha as well as co-authors Josiah White and Dalton Norman entered a guilty plea in December 2017~\cite{USDepartment17}.
 Jha was fined \$8.6 million and sentenced to 2'500 hours of community service for using Mirai to attack the computer system of his university~\cite{Krebs18}.
@@ -652,10 +693,10 @@ Jha admitted to investigators that he launched his attacks on the computer syste
 The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam.
 Other attacks on the computer system were launched for his personal amusement to see outrage.\cite{Krebs18}
 
-	\subsubsection{Costs}
-	In the Mirai case study of MalwareTech (2016), it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets.
-	Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks.\cite{MalwareTech16}
-	
+\subsubsection{Costs}
+In the Mirai case study of MalwareTech (2016), it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets.
+Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks.\cite{MalwareTech16}
+
 The maintenance of a botnet consisting of IoT devices is more lucrative, which Mirai takes advantage of.
 Although rebooting would remove the malware, only changing the password or more drastic measures would remove the risk of reinfection.
 Furthermore, users generally have little control over IoT devices, which makes them only more attractive of a target.
@@ -671,10 +712,10 @@ Following the conclusion of another study Putman et al.
 stated that the initial investment such as acquiring and spreading the malware and the recurring costs are nearly insignificant compared to the revenue it makes.
 Out of three of four case studies, the set-up costs for a botnet accounted to a maximum of 1,1\% of the found monthly revenue.\cite{Putman}
 
-	\subsubsection{Revenue}
-	Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little to no money.
-	Jha stated that him and the other two co-creators profited from the attack on Krebs on Security where they rented out tens of thousands of infected devices to a customer.\cite{Krebs20}
-	
+\subsubsection{Revenue}
+Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little to no money.
+Jha stated that him and the other two co-creators profited from the attack on Krebs on Security where they rented out tens of thousands of infected devices to a customer.\cite{Krebs20}
+
 The 30-year old hacker Daniel Kaye, known under the names Bestbuy and Popopret gave an example of the cost of renting out a modern variation of the Mirai botnet.
 A botnet attack of 50'000 bots with an attack duration of 1 hour and a 5--10 minute cooldown goes for roughly 3--4k per two weeks~\cite{Paganini16}.
 Kaye stated that his botnet with the codename Mirai \#14 supposedly infected over 1,5 million devices by 2019~\cite{Cimpanu17}.
@@ -698,18 +739,18 @@ Subtracting the estimated costs of \$6000, such as money handler fees, web hosti
 IBM X-Force researchers found out that some modern variations of the Mirai botnet were also using the computation power of infected devices to mine cryptocurrency.
 Although this kind of usage is more noticeable in the IoT devices as it could damage by overheating the devices little central processing and graphical processing unit resources.\cite{DeBeck19}
 
-	\subsection{The Dyn attack}
-	On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients.
-	Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter.
-	During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours.\cite{Moss16}
-		
-		\subsubsection{Timeline}
-		According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses.
-		The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services.
-		At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored.\cite{Dyn16}
-		
+\subsection{The Dyn attack}
+On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients.
+Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter.
+During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours.\cite{Moss16}
+
+\subsubsection{Timeline}
+According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses.
+The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services.
+At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored.\cite{Dyn16}
+
 Followed by that a more globally distributed set of attacks started at 15:50 UTC. Since this second set of attack used the same protocol as the first attack, Dyn could mitigate the attack for the most part by 17:00 UTC.\cite{Dyn16}
- 
+
 In addition to the attacks on Dyn, there were simultaneous attacks on Xbox Live, Microsoft DNS infrastructure, Playstation, Nuclear Fallout game hosting servers and Valve Steam servers.
 At 22:17 UTC, the final 10-hour long attack was issued on a set of Dyn and Playstation infrastructure.\cite{Antonakakis17}
 This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage.
@@ -722,17 +763,17 @@ In the following days numerous smaller TCP attack occurred, which were mitigated
 Antonakakis et al. (2017) noted that there was a 71\% intersection between the 107k IP addresses spotted that attacked Dyn and the Mirai scanning in their network telescope.
 They stated that while Mirai was clearly involved in the attack, there may have been other hosts involved as well.\cite{Antonakakis17}
 
-		\subsubsection{Motivation}
+\subsubsection{Motivation}
 Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it's unknown who the perpetrators behind the cyberattack on Dyn were.
 A group called "New World Hackers" claimed responsibility shortly after the attack.
 Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed.\cite{Lewis17}
 
 The facts that the targeted services were associated with gaming and Mirai's past with targetting video game services suggests that there was no personal financial gain as a motive behind the Dyn attack, but served as an act of internet vandalism.
 
-	\subsubsection{Economic Impact}
-	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident.
-	Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight.\cite{Varghese17}
-	
+\subsubsection{Economic Impact}
+In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident.
+Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight.\cite{Varghese17}
+
 The biggest loss was spotted in websites, which used Dyn and another DNS provider.
 About 8'000 domains were lost, 24\% of this category of websites.
 Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites.
@@ -746,31 +787,30 @@ With other internet giants being affected, the damage dealt in the Dyn attack is
 The Dyn attack also served as a wake-up call for many manufacturers, highlighting the vulnerabilities of IoT devices.
 Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks.
 Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned.\cite{Melendez17}
-	
-	\subsection{Other major incidents}
-		\subsubsection{Krebs on Security}
-		On September 20, 2016 a record DDoS attack (measured 620 Gbps) was launched against the popular security blog Krebs on Security ran by American journalist Brian Krebs.
-		According to Akamai the attack was almost bigger than twice than of previous publicly reported attacks back in 2016~\cite{Akamai16}.
-		The attacks were coming from 12'874 IPs, which had an intersection of 96\% of observed ips from the Mirai study of Antonakis et al. (2017)~\cite{Antonakakis17}.
-	
+
+\subsection{Other major incidents}
+\subsubsection{Krebs on Security}
+On September 20, 2016 a record DDoS attack (measured 620 Gbps) was launched against the popular security blog Krebs on Security ran by American journalist Brian Krebs.
+According to Akamai the attack was almost bigger than twice than of previous publicly reported attacks back in 2016~\cite{Akamai16}.
+The attacks were coming from 12'874 IPs, which had an intersection of 96\% of observed ips from the Mirai study of Antonakis et al. (2017)~\cite{Antonakakis17}.
+
 The initial attack was successfully defended by Akamai but due to its size, the blog was taken off their network as they were hosting Krebs on Security for free were bearing the costs~\cite{Osborne16}.
 Krebs stated in a later article that his blog was knocked offline for almost four days.\cite{Krebs19}
 
 Belonging to the methods used in the incident were SYN, ACK, GET and POST (HTTP) floods as well as most of the attack being generic routing encapsulation traffic (GRE) data packets.\cite{Antonakakis17}
 
-	
-		\subsubsection{Lonestar Cell}
-		During the timeframe of October 2016 and Februar 2017 Liberia's market leader in providing internet and telecommunication services Lonestar was continually the victim of attacks by the Mirai botnet.
-		Reports stated that the internet quality of the entire country deteriorated due to these attacks~\cite{Antonakakis17}.
-		In a blogpost of Krebs, security architect Kevin Beaumont stated that the attack reached 500 Gbps targeting Liberia's lone underseas large-transit cable, which served as a single point of failure.\cite{Krebs16}
-	
+\subsubsection{Lonestar Cell}
+During the timeframe of October 2016 and Februar 2017 Liberia's market leader in providing internet and telecommunication services Lonestar was continually the victim of attacks by the Mirai botnet.
+Reports stated that the internet quality of the entire country deteriorated due to these attacks~\cite{Antonakakis17}.
+In a blogpost of Krebs, security architect Kevin Beaumont stated that the attack reached 500 Gbps targeting Liberia's lone underseas large-transit cable, which served as a single point of failure.\cite{Krebs16}
+
 The attack vectors in the incident were ACK floods and SYN floods, which made up 87\% of the attacks.\cite{Antonakakis17}
 
 According to the UK National Crime Agency the attack by Kaye on Lonestar was very costly.
 Revenue loss of tens of millions of US dollars were reported as customers jumped ship after the incident.
 They also stated that the costs of the remedial measures taken to defend against the attack were approximately \$600'000.\cite{Cimpanu19}
-	
-	\subsection{Future}
+
+\subsection{Future}
 Since Jha released the source code of Mirai back in 2017 there have been many copycats using modern variations of the Mirai botnet even to this day, increasing the number of C\&C servers by a large amount.
 Due to this fact, it has been more difficult to track down the origins of attacks of mirai-like botnets nowadays.
 
@@ -815,7 +855,6 @@ Further research on this topic could focus on the age of infected devices, howev
 
 These mitigation techniques drive up costs for botnet owners as it becomes more difficult to infect devices and the botnets require a higher rate of reinfection.
 Higher costs in turn means that botmasters have lower incentives to pursue illegal activities.
-
 
 \section{Evaluation and Discussion}
 Text
@@ -977,6 +1016,4 @@ Text
 \bibitem{Zeidanloo09} H. R. Zeidanloo, A. A. Manaf: \emph{Botnet Command and Control Mechanisms}; 2009 Second International Conference on Computer and Electrical Engineering, 2009, vol. 1, pp. 564--568.
 
 \end{thebibliography}
-
-
 
