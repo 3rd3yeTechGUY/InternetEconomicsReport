@@ -102,7 +102,7 @@ In the centralized model (Figure \ref{fig:centralized}), there is one (or few) c
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-centralized} \end{center}
-\caption{Command and control architecture of a Centralized model. \textit{Quelle: Zeidanloo and Manaf (2009)}}
+\caption{Command and control architecture of a Centralized model. \cite{Zeidanloo09}}
 \label{fig:centralized}
 \end{figure}
 
@@ -110,7 +110,7 @@ The decentralized model (Figure \ref{fig:decentralized}) is a way to eliminate t
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-P2P} \end{center}
-\caption{Example of Peer-to-peer Botnet Architecture. \textit{Quelle: Zeidanloo and Manaf (2009)}}
+\caption{Example of Peer-to-peer Botnet Architecture. \cite{Zeidanloo09}}
 \label{fig:decentralized}
 \end{figure}
 
@@ -118,7 +118,7 @@ Wang et al. (2010) proposed a hybrid model (Figure \ref{fig:hybrid}) that uses t
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-hybrid} \end{center}
-\caption{C\&C architecture of the proposed hybrid P2P botnet. \textit{Quelle: Wang et al. (2010)}}
+\caption{C\&C architecture of the proposed hybrid P2P botnet. \cite{Wang10}}
 \label{fig:hybrid}
 \end{figure}
 
@@ -134,7 +134,7 @@ A Denial-of-Service (DoS) attack attempts to prevent the legitimate use of a ser
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.4]{Talk11/DDoS-attack} \end{center}
-\caption{A scenario of botnet attacks launched by robot computers (bots) controlled by the botnet master and attacker. \textit{Quelle: Li et al. (2009)}}
+\caption{A scenario of botnet attacks launched by robot computers (bots) controlled by the botnet master and attacker. \cite{Li09}}
 \label{fig:ddos}
 \end{figure}
 
@@ -142,7 +142,7 @@ An increasingly popular form of DDoS attacks are DDoS amplification attacks, lik
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/github} \end{center}
-\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge. \textit{Quelle: https://github.blog/2018-03-01-ddos-incident-report/}}
+\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge. \cite{Kottler18}}
 \label{fig:github}
 \end{figure}
 
@@ -150,46 +150,46 @@ An increasingly popular form of DDoS attacks are DDoS amplification attacks, lik
 		\subsubsection{Technical Solutions}
 \textbf{\textit{a. Aggregate-based congestion control (ACC)}}
 
-Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms. The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these.
+Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms. The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these. \cite{Mahajan02}
 
-The identification of the offending aggregates is very difficult. The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes. The traffic might cluster in multiple dimensions (e.g. a particular server or network link) and the attacker may change their target to avoid detection.
+The identification of the offending aggregates is very difficult. The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes. The traffic might cluster in multiple dimensions (e.g. a particular server or network link) and the attacker may change their target to avoid detection. \cite{Mahajan02}
 
-The next challenge is to determine how much an aggregate should get throttled. The goal is to keep the service running during an attack, that implies they cannot block those aggregates completely. The rate limit is chosen so that the remaining traffic can at least maintain some level of service.
+The next challenge is to determine how much an aggregate should get throttled. The goal is to keep the service running during an attack, that implies they cannot block those aggregates completely. The rate limit is chosen so that the remaining traffic can at least maintain some level of service. \cite{Mahajan02}
 
-The second ACC mechanism is the pushback mechanism. The congested router pushes the aggregate throttling upstream to the adjacent routers sending him a significant fraction of the congesting traffic. This pushback propagates upstream to save bandwidth by dropping packets early and to focus on the routes or routers responsible for the congestion and still letting legitimate traffic through.
+The second ACC mechanism is the pushback mechanism. The congested router pushes the aggregate throttling upstream to the adjacent routers sending him a significant fraction of the congesting traffic. This pushback propagates upstream to save bandwidth by dropping packets early and to focus on the routes or routers responsible for the congestion and still letting legitimate traffic through. \cite{Mahajan02}
 
 The pushback will not be effective against a DDoS attack, if the traffic is distributed evenly across the inbound connections. This can be possible, if the attacker uses an amplification (or reflector) attack with sufficiently distributed reflectors. Pushback can also overcompensate by throttling aggregates upstream that would not have been a problem downstream. Or if the pushback algorithm is not able to differentiate between malicious and legitimate traffic coming from the same edge network, that does not support the pushback mechanism. This fact could even be abused by blocking legitimate incoming traffic from a particular source by launching the attack from a host that is close to this source. \cite{Mahajan02}
 
 \textbf{\textit{b. Max-Min Fair Server-Centric Router Throttles}}
 
-Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic. This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router. The throttles depend on the current demand and have to be negotiated dynamically between server and network.
+Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic. This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router. The throttles depend on the current demand and have to be negotiated dynamically between server and network. \cite{Yau05}
 
-If a server load crosses the load limits, the server installs the throttle at some of its upstream routers. There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again.
+If a server load crosses the load limits, the server installs the throttle at some of its upstream routers. There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again. \cite{Yau05}
 
 The fair throttle algorithm tries to minimize the throttling on well behaving routers, by not just decreasing the allowed traffic from every router, but by multicasting a uniform leaky bucket rate (i.e. the throttle rate) to all targeted routers. This way, busier routers drop much more packets then calm ones, which may not have to drop any. \cite{Yau05}
 
 \textbf{\textit{c. Probabilistic Packet Marking}}
 
-Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM). The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).In DPM, each router inscribes its local path information onto the passing packet. Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop.
+Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM). The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).In DPM, each router inscribes its local path information onto the passing packet. Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop. \cite{Park01}
 
-In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1. This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback.
+In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1. This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback. \cite{Park01}
 
 In the case of DDoS attacks with a high number of attacking sources, this technique gets rendered more and more useless. The uncertainty grows more and more while the probability to find the sources becomes smaller and smaller. \cite{Park01}
 
 \textbf{\textit{d. Hash-Based IP Traceback}}
 
-Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet. They developed the Source Path Isolation Engine (SPIE). The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time. The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network.
+Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet. They developed the Source Path Isolation Engine (SPIE). The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time. The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network. \cite{Snoeren01}
 
 To achieve those goals, SPIE produces a 32-bit packet digest using a hash function. As hash input, it uses the invariant portion of the IP header and the first 8 bytes of the payload. Because it is not possible to store the digest of every packet forwarded on the router, SPIE uses a Bloom filter. This filter computes k distinct digests using k distinct hash functions. The hash function have to be uniform. The n-bit results get indexed to a bit array of the size 2n. If the copy of the file to trace back gets indexed to only 1-bits, with high possibility, the packet got forwarded by this router. \cite{Snoeren01}
 
 \textbf{\textit{e. Packet Filtering using Traffic Quota}}
 
-The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall is the bottleneck during a DDoS attack. The Server and Client do not need to be changed and the firewall issues the filtering operation. The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP. Those so-called perimeter routers should distinguish between DDoS and legitimate traffic. They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used.
+The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall is the bottleneck during a DDoS attack. The Server and Client do not need to be changed and the firewall issues the filtering operation. The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP. Those so-called perimeter routers should distinguish between DDoS and legitimate traffic. They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used. \cite{Xu03}
 
 In the first case, if the first packet of a client arrives, the client gets redirected to a pseudo-IP address and port number pair. This new destination IP address contains a Massage Authentication Code (MAC) that's encrypted with a symmetric key shared between the firewall and the perimeter routers. If the senders IP address is spoofed, the HTTP redirect message will never reach him.
-To avoid the collecting of valid MAC's from legitimate clients, the Key changes over time and gets a small timestamp or version number.
+To avoid the collecting of valid MAC's from legitimate clients, the Key changes over time and gets a small timestamp or version number. \cite{Xu03}
 
-in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a "no loitering" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction.
+in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a "no loitering" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction. \cite{Xu03}
 
 The main problems are, that a IP spoofed DDoS attack can make it hard for legitimate clients to get their first package through to get redirected and if all attackers use their fair share using genuine IP address, the service can suffer a response time too big for real customers to deal with. \cite{Xu03}
 
@@ -379,11 +379,11 @@ A more recent sturdy by the Ponemon instutute has a even higher estimate. They c
 \section{Case Study: Mirai}
 	\subsection{The Botnet}
 	\subsubsection{Attacks Timeline}
-	Mirai is Japanese and stands for "the future". The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots.
+	Mirai is Japanese and stands for "the future". The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots. The following is a timeline of the beginning of Mirai. \cite{Kolias17}, \cite{Antonakakis17}
 	
-	At the end of August 2016, Mirai was identified by MalwareMustDie. "MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet." [https://www.malwaremustdie.org] 
+	At the end of August 2016, Mirai was identified by MalwareMustDie. "MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet." \cite{MalwareMustDie}
 	
-	Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai. Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com. The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites [https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/].
+	Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai. Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com. The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites. \cite{Krebs16_2}
 	
 	Around the same time, an even bigger attack launched on to the French webhost and cloud service provider OVH. This attack peaked at 1.1 Tbps.
 	
@@ -393,17 +393,11 @@ A more recent sturdy by the Ponemon instutute has a even higher estimate. They c
 	
 	On the 31. of October the Liberian telecom Lonestar Cell got attacked.
 	
-	The Mirai author got identified in an article of Brian Krebs in early 2017 [https://krebsonsecurity.com/2017/01/who-is-anna-senpai-the-mirai-worm-author/]
-	
-	[C. Kolias, G. Kambourakis, A. Stavrou, and J. Voas, "DDoS in the IoT: Mirai and Other Botnets," Computer, vol. 50, no. 7, pp. 80-84, 2017.]
-	
-	[1M. Antonakakis et al., "Understanding the Mirai Botnet," presented at the 26th {USENIX} Security Symposium ({USENIX} Security 17), 2017, pp. 1093-1110.]
+	The Mirai author got identified in an article of Brian Krebs in early 2017. \cite{Krebs17}
 
-
-	
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.35]{Talk11/mirai-timeline} \end{center}
-\caption{Mirai Timeline -- Major attacks (red), exploits (yellow), and events (black) related to the Mirai botnet. \textit{Quelle: Antonakakis et al. (2017)}}
+\caption{Mirai Timeline -- Major attacks (red), exploits (yellow), and events (black) related to the Mirai botnet. \cite{Antonakakis17}}
 \label{fig:timeline}
 \end{figure}
 
@@ -583,7 +577,11 @@ Text
 
 \bibitem{Kottler18} February 28th DDoS Incident Report; \url{https://github.blog/2018-03-01-ddos-incident-report/}, November, 2019.
 
+https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/
+
 \bibitem{Krebs16} B. Krebs: \emph{Did the Mirai Botnet Really Take Liberia Offline?}; \url{https://krebsonsecurity.com/2016/11/did-the-mirai-botnet-really-take-liberia-offline/}, November, 2016.
+
+\bibitem{Krebs16_2} B. Krebs: \emph{KrebsOnSecurity Hit With Record DDoS}; \url{https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/}, September, 2016.
 
 \bibitem{Krebs20} B. Krebs: \emph{Mirai Botnet Authors Avoid Jailtime}; \url{https://krebsonsecurity.com/2018/09/mirai-botnet-authors-avoid-jail-time/}, September, 2018.
 
@@ -610,6 +608,8 @@ Text
 \bibitem{Lovelace16} B. Lovelace Jr. and A. José Vielma: \emph{Friday's third cyberattack on Dyn 'has been resolved,' company says}; October, 2016, \url{https://www.cnbc.com/2016/10/21/major-websites-across-east-coast-knocked-out-in-apparent-ddos-attack.html}.
 
 \bibitem{Macrotrends} Macrotrends: \emph{Amazon Revenue 2006-2019 | AMZN} \url{https://www.macrotrends.net/stocks/charts/AMZN/amazon/revenue} [Accessed: 01-Nov-2019].
+
+\bibitem{MalwareMustDie} MalwareMustDie: \url{https://www.malwaremustdie.org}, November, 2019.
 
 \bibitem{MalwareTech16} MalwareTech: \emph{Mapping Mirai: A Botnet Case Study}, \url{https://www.malwaretech.com/2016/10/mapping-mirai-a-botnet-case-study.html}, October, 2016.
 
