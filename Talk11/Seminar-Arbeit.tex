@@ -4,9 +4,9 @@
 
 \Kurzfassung{
 Botnets are large networks of infected machines used for malicious purposes and have caused tremendous economic damage since they came into existence.
-They've been covered more and more in media with attacks shutting down often visited websites or even impacting the Internet of an entire country.
-By analyzing the Mirai botnet in our case study we illustrate the dangers botnets impose using new technologies with missing incentives to secure them.
-In the first part of the paper we give an overview of the several technical aspects, such as definitions of botnet related terms, the different kind of botnet models and possible solutions against DDoS attacks.
+They've been covered more and more in media with attacks shutting down popular websites or even impacting the Internet of an entire country.
+By analyzing the Mirai botnet in our case study we illustrate the dangers botnets pose using new technologies with missing incentives to secure them.
+In the first part of the paper we give an overview of the several technical aspects, such as definitions of botnet related terms, the different types of botnet models and possible solutions against DDoS attacks.
 Following this part is an economic analysis of the botnet underground market and it's economic impact on different stakeholders.
 Highlighting the different revenue streams and incentives of botnet owners and attackers.
 In the last part of this paper we take a closer look at Mirai, a recent botnet, which took the Internet by storm in 2016 with various attacks on high-profile targets.
@@ -32,7 +32,7 @@ It is estimated that the global revenue from cybercrime is at least \$1.5 trilli
 In context, that would be roughly equivalent to the GDP of Australia in the year 2018~\cite{Worldbank19}.
 The damage done by cybercrime is estimated to have risen about 12\% from 2017 to 2018~\cite{Accenture17} and in total numbers estimated to be \$600 billion~\cite{McAfee18}.
 
-Some of the currently big threats in the cyber security landscape are coupled to botnets, a network of computers controlled by attackers~\cite{Putman}.
+Currently, some of the largest threats in the cyber security landscape are coupled to botnets, a network of computers controlled by attackers~\cite{Putman}.
 Botnets can be used for various malicious intents and actions such as Distributed Denial of Service (DDoS) attacks, generation of spam, information theft and data exfiltration.
 
 There is an increasing number of devices connected to the internet every day.
@@ -368,12 +368,12 @@ According to their model the profits of attackers and botmasters can decrease dr
 
 As a subset of the cybercrime economy, the botnet economy plays out on underground black markets.
 Over time there has been a shift in incentives, where the attackers are no longer motivated by self-fulfillment and proof of skill, but rather the financial gain attributed to such attacks.
-As part of this shift towards economic incentives, cybercriminals have developed business models that shall guarantee the profitability of their botnets.\cite{Li09}
+As part of this shift towards purely economic incentives, cybercriminals have developed business models that shall guarantee the profitability of their botnets.\cite{Li09}
 
 The many victims affected by botnets are faced with a serious economic threat.
 Successful DDoS attacks on companies may lead to both direct economic costs, as well as indirect losses which are much harder to quantify.
 Direct costs occur due lost revenue during the server's downtime.
-Indirect losses measure the long-term effect loss of customers trust and market share have on revenue.
+Indirect losses measure the long-term effect loss of customer's trust and market share have on revenue.
 The value destroyed by these attacks also inflict costs on society at large.
 The damages, although difficult to quantify, are estimated to be in the tens of billions of dollars every year.\cite{Asghari15}
 This chapter shall give an overview of the different stakeholders involved, the business models used to operate successful botnets, as well as an attempt to model the different types of economic damage a botnet attack can inflict. 
@@ -642,7 +642,7 @@ They claim that the cost per minute of the downtime of an enterprises IT network
 \subsection{The Botnet}
 \subsubsection{Attacks Timeline}
 Mirai is Japanese and stands for "the future".
-The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots.
+The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT devices as bots.
 The following is a timeline of the beginning of Mirai~\cite{Kolias17,Antonakakis17}.
 
 At the end of August 2016, Mirai was identified by MalwareMustDie.
@@ -674,7 +674,7 @@ Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devic
 In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist~\cite{Kolias17}.
 On recognizing a potential victim, Mirai then tries to log into the device with a brute force attack using 10 randomly selected username and password combinations out of a list of 62 common factory default usernames and passwords (e. g.\ 'admin' \& 'password').\cite{Antonakakis17}
 
-After a successful login various characteristic are sent to a report server through a different port.
+After a successful login various characteristics are sent to a report server through a different port.
 These reports are used by a C\&C server to continually determine new prospective victims.
 This server also communicates with the report server to get the current status.\cite{Kolias17}
 
