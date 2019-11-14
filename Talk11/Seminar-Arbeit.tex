@@ -50,7 +50,7 @@ The full distribution of the targeted categories is shown in figure \ref{fig:Kas
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.5]{Talk11/kasperskyAttacks} \end{center}
-\caption{Kaspersky Attacks}
+\caption{Categories of Attacks by Target \cite{Eremin19}}
 \label{fig:KasperskyAttacks}
 \end{figure}
 
@@ -72,7 +72,6 @@ To infect its bots, mirai scans for IoT devices and tries a dictoionary of defau
  
 \subsection{Organisation / Outline}
 In the following paper, we want to show the importance of further research about Botnets and the importance of botnets itself. By giving a brief overview about the topic of Botnets and their possible usage we want to add to the awareness of the reader about the dangers of botnets and the importance of the influence of botnets on the economy. This is underlined by applying the stated analysis and facts onto a botnet in the case study. 
-
 
 		
 \section{Background}
@@ -109,7 +108,7 @@ In the centralized model (Figure \ref{fig:centralized}), there is one (or few) c
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-centralized} \end{center}
-\caption{Command and control architecture of a Centralized model. \textit{Quelle: Zeidanloo and Manaf (2009)}}
+\caption{Command and control architecture of a Centralized model. \cite{Zeidanloo09}}
 \label{fig:centralized}
 \end{figure}
 
@@ -117,7 +116,7 @@ The decentralized model (Figure \ref{fig:decentralized}) is a way to eliminate t
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-P2P} \end{center}
-\caption{Example of Peer-to-peer Botnet Architecture. \textit{Quelle: Zeidanloo and Manaf (2009)}}
+\caption{Example of Peer-to-peer Botnet Architecture. \cite{Zeidanloo09}}
 \label{fig:decentralized}
 \end{figure}
 
@@ -125,7 +124,7 @@ Wang et al. (2010) proposed a hybrid model (Figure \ref{fig:hybrid}) that uses t
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/CC-hybrid} \end{center}
-\caption{C\&C architecture of the proposed hybrid P2P botnet. \textit{Quelle: Wang et al. (2010)}}
+\caption{C\&C architecture of the proposed hybrid P2P botnet. \cite{Wang10}}
 \label{fig:hybrid}
 \end{figure}
 
@@ -141,7 +140,7 @@ A Denial-of-Service (DoS) attack attempts to prevent the legitimate use of a ser
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.4]{Talk11/DDoS-attack} \end{center}
-\caption{A scenario of botnet attacks launched by robot computers (bots) controlled by the botnet master and attacker. \textit{Quelle: Li et al. (2009)}}
+\caption{A scenario of botnet attacks launched by robot computers (bots) controlled by the botnet master and attacker. \cite{Li09}}
 \label{fig:ddos}
 \end{figure}
 
@@ -149,7 +148,7 @@ An increasingly popular form of DDoS attacks are DDoS amplification attacks, lik
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.3]{Talk11/github} \end{center}
-\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge. \textit{Quelle: https://github.blog/2018-03-01-ddos-incident-report/}}
+\caption{This graph provided by Akamai shows inbound traffic in bits per second that reached their edge. \cite{Kottler18}}
 \label{fig:github}
 \end{figure}
 
@@ -157,46 +156,46 @@ An increasingly popular form of DDoS attacks are DDoS amplification attacks, lik
 		\subsubsection{Technical Solutions}
 \textbf{\textit{a. Aggregate-based congestion control (ACC)}}
 
-Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms. The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these.
+Mahajan et al. (2002) introduced two aggregate-based congestion control (ACC) mechanisms. The job of the first, local ACC is to identify the aggregates responsible for the congestion of a service and to throttle the throughput of these. \cite{Mahajan02}
 
-The identification of the offending aggregates is very difficult. The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes. The traffic might cluster in multiple dimensions (e.g. a particular server or network link) and the attacker may change their target to avoid detection.
+The identification of the offending aggregates is very difficult. The overload may be chronic due to an under-engineered network or unavoidable because the load shifted due to routing changes. The traffic might cluster in multiple dimensions (e.g. a particular server or network link) and the attacker may change their target to avoid detection. \cite{Mahajan02}
 
-The next challenge is to determine how much an aggregate should get throttled. The goal is to keep the service running during an attack, that implies they cannot block those aggregates completely. The rate limit is chosen so that the remaining traffic can at least maintain some level of service.
+The next challenge is to determine how much an aggregate should get throttled. The goal is to keep the service running during an attack, that implies they cannot block those aggregates completely. The rate limit is chosen so that the remaining traffic can at least maintain some level of service. \cite{Mahajan02}
 
-The second ACC mechanism is the pushback mechanism. The congested router pushes the aggregate throttling upstream to the adjacent routers sending him a significant fraction of the congesting traffic. This pushback propagates upstream to save bandwidth by dropping packets early and to focus on the routes or routers responsible for the congestion and still letting legitimate traffic through.
+The second ACC mechanism is the pushback mechanism. The congested router pushes the aggregate throttling upstream to the adjacent routers sending him a significant fraction of the congesting traffic. This pushback propagates upstream to save bandwidth by dropping packets early and to focus on the routes or routers responsible for the congestion and still letting legitimate traffic through. \cite{Mahajan02}
 
 The pushback will not be effective against a DDoS attack, if the traffic is distributed evenly across the inbound connections. This can be possible, if the attacker uses an amplification (or reflector) attack with sufficiently distributed reflectors. Pushback can also overcompensate by throttling aggregates upstream that would not have been a problem downstream. Or if the pushback algorithm is not able to differentiate between malicious and legitimate traffic coming from the same edge network, that does not support the pushback mechanism. This fact could even be abused by blocking legitimate incoming traffic from a particular source by launching the attack from a host that is close to this source. \cite{Mahajan02}
 
 \textbf{\textit{b. Max-Min Fair Server-Centric Router Throttles}}
 
-Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic. This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router. The throttles depend on the current demand and have to be negotiated dynamically between server and network.
+Yau et al. (2005) proposed and tested a router throttle mechanism that aims to increase the precision in blocking malicious and protecting legitimate traffic. This is a server-initiated proactive approach, where the server protects itself by installing a router throttle at an upstream router. The throttles depend on the current demand and have to be negotiated dynamically between server and network. \cite{Yau05}
 
-If a server load crosses the load limits, the server installs the throttle at some of its upstream routers. There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again.
+If a server load crosses the load limits, the server installs the throttle at some of its upstream routers. There is a defined upper and lower limit and if reached, the throttle rate is reduced further or increased again. \cite{Yau05}
 
 The fair throttle algorithm tries to minimize the throttling on well behaving routers, by not just decreasing the allowed traffic from every router, but by multicasting a uniform leaky bucket rate (i.e. the throttle rate) to all targeted routers. This way, busier routers drop much more packets then calm ones, which may not have to drop any. \cite{Yau05}
 
 \textbf{\textit{c. Probabilistic Packet Marking}}
 
-Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM). The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).In DPM, each router inscribes its local path information onto the passing packet. Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop.
+Park and Lee (2001) discussed the effectiveness of IP traceback mechanisms based on probabilistic packet marking (PPM). The aim of probabilistic packet marking is to reduce the overhead produced by deterministic packet marking (DPM).In DPM, each router inscribes its local path information onto the passing packet. Those markings allow the destination node to trace back the traversed path of a packet but increases the packet header size linearly with every hop. \cite{Park01}
 
-In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1. This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback.
+In PPM, the packet header provides a constant space for traceback information and after every hop, the router overwrites this information with a probability p < 1. This allows the destination node to trace back the whole path of the incoming packets, if the attack volume is high enough but also leaves the possibility open, that some packets still contain the original markings of the attacker, who can try to confuse the traceback. \cite{Park01}
 
 In the case of DDoS attacks with a high number of attacking sources, this technique gets rendered more and more useless. The uncertainty grows more and more while the probability to find the sources becomes smaller and smaller. \cite{Park01}
 
 \textbf{\textit{d. Hash-Based IP Traceback}}
 
-Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet. They developed the Source Path Isolation Engine (SPIE). The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time. The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network.
+Snoeren et al. (2001) present a hash-based IP traceback technique, that allows to trace back the origin of a single IP packet. They developed the Source Path Isolation Engine (SPIE). The engine enables to trace back a packet with a copy of the packet, its destination and an approximate reception time. The main goals of this technique is to reduce memory requirements and to not increase the vulnerability to eavesdropping of a network. \cite{Snoeren01}
 
 To achieve those goals, SPIE produces a 32-bit packet digest using a hash function. As hash input, it uses the invariant portion of the IP header and the first 8 bytes of the payload. Because it is not possible to store the digest of every packet forwarded on the router, SPIE uses a Bloom filter. This filter computes k distinct digests using k distinct hash functions. The hash function have to be uniform. The n-bit results get indexed to a bit array of the size 2n. If the copy of the file to trace back gets indexed to only 1-bits, with high possibility, the packet got forwarded by this router. \cite{Snoeren01}
 
 \textbf{\textit{e. Packet Filtering using Traffic Quota}}
 
-The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall is the bottleneck during a DDoS attack. The Server and Client do not need to be changed and the firewall issues the filtering operation. The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP. Those so-called perimeter routers should distinguish between DDoS and legitimate traffic. They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used.
+The DDoS Defense System proposed by Xu and Lee (2003) assumes that the firewall is the bottleneck during a DDoS attack. The Server and Client do not need to be changed and the firewall issues the filtering operation. The goal is to produce a line of defense in the local network with a set of routers, typically belonging to a local ISP. Those so-called perimeter routers should distinguish between DDoS and legitimate traffic. They distinguish two types of DDoS attacks, the first where the attacker uses IP spoofing and the second where the legitimate IP addresses are used. \cite{Xu03}
 
 In the first case, if the first packet of a client arrives, the client gets redirected to a pseudo-IP address and port number pair. This new destination IP address contains a Massage Authentication Code (MAC) that's encrypted with a symmetric key shared between the firewall and the perimeter routers. If the senders IP address is spoofed, the HTTP redirect message will never reach him.
-To avoid the collecting of valid MAC's from legitimate clients, the Key changes over time and gets a small timestamp or version number.
+To avoid the collecting of valid MAC's from legitimate clients, the Key changes over time and gets a small timestamp or version number. \cite{Xu03}
 
-in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a "no loitering" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction.
+in the second case, where the attacker uses the real IP addresses, they cannot be distinguished from legitimate customers. The firewall has the job to allocate the available bandwidth fairly between all clients. Using a Deficit Round Robin algorithm, every client gets a traffic quota and all excess packets are dropped. The firewall tracks the amount of dropped packets and blacklists clients overreaching a particular threshold. To defend against a continuous attack that stays in the traffic quota, a "no loitering" law is enforced. If the total amount of packets sent by a client is bigger than a given quota, its traffic quota gets reduced to a fraction. \cite{Xu03}
 
 The main problems are, that a IP spoofed DDoS attack can make it hard for legitimate clients to get their first package through to get redirected and if all attackers use their fair share using genuine IP address, the service can suffer a response time too big for real customers to deal with. \cite{Xu03}
 
@@ -347,7 +346,7 @@ Costs of cybercrime are hard to model. There are many aspects of the costs to an
 \begin{center}
 \includegraphics[scale=0.25]{Talk11/CostsCybercrime}
 \end{center}
-\caption{Costs of Cybercrime}
+\caption{Costs of Cybercrime \cite{Anderson19}}
 \label{CostsCybercrime}
 \end{figure}
 
@@ -382,15 +381,14 @@ Although the \$ 5600 estimated by gardner are high, this estimate is based on 5 
 
 A more recent study by the Ponemon instutute has a even higher estimate. They claim that the cost per minute of the downtime of an enterprises IT network would be as high as \$ 9000 per minute \cite{Ponemon16}.
 
-		
 \section{Case Study: Mirai}
 	\subsection{The Botnet}
 	\subsubsection{Attacks Timeline}
-	Mirai is Japanese and stands for "the future". The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots.
+	Mirai is Japanese and stands for "the future". The Mirai Botnet is one of the most prominent botnets today and it's main characteristic is the abuse of poorly secured IoT-Devices as bots. The following is a timeline of the beginning of Mirai. \cite{Kolias17}, \cite{Antonakakis17}
 	
-	At the end of August 2016, Mirai was identified by MalwareMustDie. "MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet." [https://www.malwaremustdie.org] 
+	At the end of August 2016, Mirai was identified by MalwareMustDie. "MalwareMustDie, as a white-hat security research workgroup, launched in August 2012, is a Non Profit Organization media for security professionals and researchers gathered to form the work-flow to reduce malware infection in internet." \cite{MalwareMustDie}
 	
-	Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai. Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com. The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites [https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/].
+	Mid-September of 2016 the website of Brian Krebs got attacked as the first prominent target of Mirai. Krebs' is a computer security consultant and journalist, writing articles on his website krebsonsecurity.com. The website was hit with 620 Gbps of traffic, which is much more than would be needed to knock down most websites. \cite{Krebs16_2}
 	
 	Around the same time, an even bigger attack launched on to the French webhost and cloud service provider OVH. This attack peaked at 1.1 Tbps.
 	
@@ -400,54 +398,47 @@ A more recent study by the Ponemon instutute has a even higher estimate. They cl
 	
 	On the 31. of October the Liberian telecom Lonestar Cell got attacked.
 	
-	The Mirai author got identified in an article of Brian Krebs in early 2017 [https://krebsonsecurity.com/2017/01/who-is-anna-senpai-the-mirai-worm-author/]
-	
-	[C. Kolias, G. Kambourakis, A. Stavrou, and J. Voas, "DDoS in the IoT: Mirai and Other Botnets," Computer, vol. 50, no. 7, pp. 80-84, 2017.]
-	
-	[1M. Antonakakis et al., "Understanding the Mirai Botnet," presented at the 26th {USENIX} Security Symposium ({USENIX} Security 17), 2017, pp. 1093-1110.]
+	The Mirai author got identified in an article of Brian Krebs in early 2017. \cite{Krebs17}
 
-
-	
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.35]{Talk11/mirai-timeline} \end{center}
-\caption{Mirai Timeline -- Major attacks (red), exploits (yellow), and events (black) related to the Mirai botnet. \textit{Quelle: Antonakakis et al. (2017)}}
+\caption{Mirai Timeline -- Major attacks (red), exploits (yellow), and events (black) related to the Mirai botnet. \cite{Antonakakis17}}
 \label{fig:timeline}
 \end{figure}
 
 \subsubsection{Operation}
-		Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devices running on ARC processors, such as IP cameras and home routers. In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist. On recognizing a potential victim, Mirai then tries to log into the device with a brute force attack using 10 randomly selected username and password combinations out of a list of 62 common factory default usernames and passwords (e. g. 'admin' \& password).
+		Unlike many other botnets Mirai primarily targets Internet-of-Things (IoT) devices running on ARC processors, such as IP cameras and home routers. In a first step Mirai enters a rapid scanning stage where it aimlessly sends out TCP SYN probes to to pseudo-random IPv4 addresses on Telnet TCP ports 23 and 2323, excluding those in addresses in a hard-coded blacklist. \cite{Kolias17} On recognizing a potential victim, Mirai then tries to log into the device with a brute force attack using 10 randomly selected username and password combinations out of a list of 62 common factory default usernames and passwords (e. g. 'admin' \& 'password'). \cite{Antonakakis17}
 		
-After a successful login various characteristic are sent to a report server through a different port. These reports are used by a C\&C server to continually determine new prospective victims. This server also communicates with the report server to get the current status.
+After a successful login various characteristic are sent to a report server through a different port. These reports are used by a C\&C server to continually determine new prospective victims. This server also communicates with the report server to get the current status. \cite{Kolias17}
 
-The botmaster then sends an infect command in a separate loader program with the necessary details, such as IP address, system environment and hardware architecture. A separate loader program then logs into the target device and gets it to download the corresponding binary, usually via GNU Wget or using FTP (File Transfer Protocol). 
+The botmaster then sends an infect command in a separate loader program with the necessary details, such as IP address, system environment and hardware architecture. A separate loader program then logs into the target device and gets it to download the corresponding binary, usually via GNU Wget or using FTP (File Transfer Protocol). \cite{Kolias17}
 
-The loader then executes the corresponding binary version of the malware on the device. If the execution of the malware was successful it is stored in the RAM of the device. Due to this fact, a reboot of the device will remove the malware. At this point Mirai is ready for further instructions from the botmaster while continually scanning the environment for prospective targets.
+The loader then executes the corresponding binary version of the malware on the device. If the execution of the malware was successful it is stored in the RAM of the device. Due to this fact, a reboot of the device will remove the malware. At this point Mirai is ready for further instructions from the botmaster while continually scanning the environment for prospective targets. \cite{Kolias17}
 
-Additionally, Mirai attempts to conceal its presence by removing the downloaded binary and change its process name to a pseudorandom alphanumeric string. Furthermore, access points such as telnet or SSH services are shut down to protect itself from other Malware. In another step Mirai attempts to conceal its presence by removing the downloaded binary and changeing its process name to a pseudorandom alphanumeric string.
+Additionally, Mirai attempts to conceal its presence by removing the downloaded binary and change its process name to a pseudorandom alphanumeric string. Furthermore, access points such as telnet or SSH services are shut down to protect itself from other Malware. In another step Mirai attempts to conceal its presence by removing the downloaded binary and changeing its process name to a pseudorandom alphanumeric string. \cite{Kolias17}
 
-Besides this point Mirai does not care about the footprint it leaves behind, relying on the fact that IoT devices have very loose security in comparison to the likes of personal computers. Every stage of infection is recognizable by signatures such as sequentially testing specific credentials in specific port during the brute force access phase or sending reports with distinctive pattern to the report server.
+During a DDoS attack the infected devices receive an attack command by a C\&C server and only must resolve a hardcoded domain name in the executable of the malware. This leads to a lower need for communication as the botmaster can choose another target IP address without changing the binary and additional communication.\cite{Kolias17}
 
-During a DDoS attack the infected devices receive an attack command by a C\&C server and only must resolve a hardcoded domain name in the executable of the malware. This leads to a lower need for communication as the botmaster can choose another target IP address without changing the binary and additional communication.
 Mirai makes use of 10 different attack methods, which can be distinguished within four categories: ...
 
 	\subsubsection{Costs}
-	In a case study in 2016 regarding the Mirai Botnet it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets. Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks.
+	In the Mirai case study of MalwareTech (2016), it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets. Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks. \cite{MalwareTech16}
 	
-The maintenance of a botnet consisting of IoT devices is more lucrative, which Mirai takes advantage of. Although rebooting would remove the malware, only changing the password or more drastic measures would remove the risk of reinfection. Furthermore, users generally have little control over IoT devices, which makes them only more attractive of a target. These factors lead to reinfection being very likely to succeed for the maintainer of a botnet.
+The maintenance of a botnet consisting of IoT devices is more lucrative, which Mirai takes advantage of. Although rebooting would remove the malware, only changing the password or more drastic measures would remove the risk of reinfection. Furthermore, users generally have little control over IoT devices, which makes them only more attractive of a target. These factors lead to reinfection being very likely to succeed for the maintainer of a botnet. \cite{MalwareTech16}
 
 A person controlling the botnet only must keep a list of the IP addresses, which have been infected in the past, and scan if they're still connected to the botnet. The cost for reinfection has been estimated to be at \$0.0935 per device. In addition to that there are additional costs, such as keeping the software updated in the arms race between hackers and defenders.
 Also, the costs are estimated to be around \$7 to \$180 per 1'000 installations (\$0.007 to \$0.18 per device). Furthermore, the cost for spreading is estimated to be at around \$0,016 per device.
 
 According to a case study of Charlie Miller, a level 1 malware develop earns around \$125k a year. Based on this estimation and under the assumption that the developer works 8 hours a day and 22 days in a month, the cost of maintaining a botnet can be estimated to be \$59 per hour.
+
 From the conclusion of another study they concluded that the initial investment such as acquiring and spreading the malware and the recurring costs are nearly insignificant compared to the revenue it makes. Furthermore, there was noted that out of three of four case studies, the set-up costs for a botnet accounted to a maximum of 1,1\% of the found monthly revenue.
 
-\subsubsection{Authors}
-		Two days after the attack the New York Times stated that investigators suggested that the attack was either conducted by a criminal group that wanted to extort the company or were motivated by hacktivism. They also mentioned the possibility of a foreign power, which wanted to remind the United States of its vulnerability.
-In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the supposed name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30. 
+	\subsubsection{Background}
+	In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30. In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him. \cite{Krebs17}
 
-Following investigation and questioning by the FBI Paras Jha, Josiah White and Dalton Norman entered a guilty plea in December 2017. Jha was fined \$8.6 million and sentenced to 2'500 hours of community service for using Mirai to attack the computer system of his university.
+Following investigation and questioning by the FBI Paras Jha, Josiah White and Dalton Norman entered a guilty plea in December 2017. \cite{USDepartment17} Jha was fined \$8.6 million and sentenced to 2'500 hours of community service for using Mirai to attack the computer system of his university. \cite{Krebs18}
 
-Paras Jha admitted to investigators that he launched his attacks on the computer system of Rutgers University not out of financial gain, but for other personal motivations. The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam. Other attacks on the computer system were launched for his personal amusement to see outrage.
+Paras Jha admitted to investigators that he launched his attacks on the computer system of Rutgers University not out of financial gain, but for other personal motivations. The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam. Other attacks on the computer system were launched for his personal amusement to see outrage. \cite{Krebs18}
 
 	\subsubsection{Revenue}
 	Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little to no money. Jha stated that him and the other two co-creators profited from the attack on Krebs on Security where they rented out tens of thousands of infected devices to a customer. [20]
@@ -464,44 +455,43 @@ The Mirai botnet was also used by the creators Jha and Norman to commit advertis
 
 Putman et al. concluded about Mirai that the average monthly revenue of a botmaster with regards to four case studies was around \$26'000. Subtracting the estimated costs of \$6000, such as money handler fees, web hosting and advertising results in a monthly profit of about \$20'000. [16]
 
-IBM X-Force researchers found out that some modern variations of the Mirai botnet were also using the computation power of infected devices to mine cryptocurrency. Although this kind of usage is more noticeable in the IoT devices as it could damage by overheating the devices little central processing and graphical processing unit resources.
+IBM X-Force researchers found out that some modern variations of the Mirai botnet were also using the computation power of infected devices to mine cryptocurrency. Although this kind of usage is more noticeable in the IoT devices as it could damage by overheating the devices little central processing and graphical processing unit resources. \cite{DeBeck19}
 
 	\subsection{The Dyn attack}
-	On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients. Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter. During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours. The attack was believed to be caused by Mirai, a botnet exploiting security weaknesses in IoT devices.
+	On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients. Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter. During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours.\cite{Moss16}
 	
 	(Websites Auflistung)
 	
 		\subsubsection{Timeline}
-		According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses. The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services. At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored.
+		According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses. The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services. At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored. \cite{Dyn16}
 		
-Followed by that a more globally distributed set of attacks started at 15:50 UTC. Since this second set of attack used the same protocol as the first attack, Dyn could mitigate the attack for the most part by 17:00 UTC.
+Followed by that a more globally distributed set of attacks started at 15:50 UTC. Since this second set of attack used the same protocol as the first attack, Dyn could mitigate the attack for the most part by 17:00 UTC. \cite{Dyn16}
  
-In addition to the attacks on Dyn, there were simultaneous attacks on Xbox Live, Microsoft DNS infrastructure, Playstation, Nuclear Fallout game hosting servers and Valve Steam servers. At 22:17 UTC, the final 10-hour long attack was issued on a set of Dyn and Playstation infrastructure. This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage. Cloudflare also came to this conclusion, as the other targets attacked DYN variant were all related to providing services for videogames.
+In addition to the attacks on Dyn, there were simultaneous attacks on Xbox Live, Microsoft DNS infrastructure, Playstation, Nuclear Fallout game hosting servers and Valve Steam servers. At 22:17 UTC, the final 10-hour long attack was issued on a set of Dyn and Playstation infrastructure. \cite{Antonakakis17}
+This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage. Cloudflare also came to this conclusion, as the other targets attacked DYN variant were all related to providing services for video games. \cite{Cloudflare17}
 
-In the following days numerous smaller TCP attack occurred, which were mitigated by the efforts of Dyn and left their customers with no signs of disturbance.
-"There was a 71\% intersection noted in a study between the 107K IP addresses spotted that attacked Dyn and the Mirai scanning in their network telescope. They concluded that while Mirai was clearly involved in the attack, there may have been other hosts involved as well."
+Most of the attacks used were SYN floods on the DNS port 53 with few GRE IP attacks. Additionally, the attacks on the gaming services, mostly Playstation Networks infrastructure were carried out via ACK and GRE IP floods with VSE targeting the Valve Steam Servers. \cite{Antonakakis17}
+
+In the following days numerous smaller TCP attack occurred, which were mitigated by the efforts of Dyn and left their customers with no signs of disturbance. \cite{Dyn16} Antonakakis et al. (2017) noted that there was a 71\% intersection between the 107k IP addresses spotted that attacked Dyn and the Mirai scanning in their network telescope. They stated that while Mirai was clearly involved in the attack, there may have been other hosts involved as well. \cite{Antonakakis17}
 
 		\subsubsection{Motivation}
-Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it's unknown who the perpetrators behind the cyberattack on Dyn were. A group called "New World Hackers" claimed responsibility shortly after the attack. Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed.
+Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it's unknown who the perpetrators behind the cyberattack on Dyn were. A group called "New World Hackers" claimed responsibility shortly after the attack. Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed. \cite{Lewis17}
 
 The facts that the targeted services were associated with gaming and Jha's personal use of the botnet suggests that there was no personal financial gain as a motive behind the Dyn attack, but it served as an act of internet vandalism.
 
-	\subsubsection{Business Model}
-In the attack on Dyn most of the attacks used were SYN floods on the DNS port 53 with few GRE IP attacks. Additionally, the attacks on the gaming services, mostly Playstation Networks infrastructure were carried out via ACK and GRE IP floods with VSE suggesting that another target were the Valve Steam Servers.
-
 	\subsubsection{Economic Impact}
-	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident. Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight. 
-The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8'000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites. Bitsight stated though that there is no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites.
-Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. 
+	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident. Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight. \cite{Varghese17}
+	
+The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8'000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites. Bitsight stated though that there is no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites. \cite{Varghese17}
 
-Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 would be around \$260'000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other affected internet giants, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
+Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 \cite{Macrotrends} would be around \$260'000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other affected internet giants, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
 
 	\subsubsection{Aftermath}
-	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned.
+	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned. \cite{Melendez17}
 	
 	\subsection{Other major incidents}
-	\subsubsection{Lonestar Cell}
-	\subsubsection{Brian Krebs}
+		\subsubsection{Krebs on Security}
+		On September 20, 2016 a record DDoS attack (measured 620 Gbps) was launched against the popular security blog Krebs on Security ran by American journalist Brian Krebs. According to Akamai the attack was almost bigger than twice than of previous publicly reported attacks back in 2016. \cite{Akamai16} The attacks were coming from 12'874 IPs, which had an intersection of 96\% of observed ips from the Mirai study of Antonakis et al. \cite{Antonakakis17}
 	
 The initial attack was successfully defended by Akamai but due to its size, the blog was taken off their network as they were hosting Krebs on Security for free were bearing the costs. \cite{Osborne16} Krebs stated in a later article that his blog was knocked offline for almost four days. \cite{Krebs19}
 
@@ -554,9 +544,13 @@ Text
 
 \bibitem {AbuRajab06} M. Abu Rajab, J. Zarfoss, F. Monrose, A. Terzis: \emph{A multifaceted approach to understanding the botnet phenomenon}; Proceedings of the 6th ACM SIGCOMM on Internet measurement  - IMC '06, Rio de Janeiro, Brazil, 2006, p. 41.
 
+\bibitem{Akamai16} Akamai: \emph{620+ Gbps Attack - Post Mortem}, \url{https://blogs.akamai.com/2016/10/620-gbps-attack-post-mortem.html}, October, 2016.
+
 \bibitem{Anderson13} R. Anderson, C. Barton, R. Böhme, R. Clayton, M. JG Van Eeten, M. Levi, T. Moore, and S. Savage: \emph{Measuring the cost of cybercrime}; In The economics of information security and privacy, Springer, Berlin, Heidelberg, Deutschland, October, 2013, pages 265-300, ISBN: 978-3-642-39498-0, DOI: 10.1007/978- 3-642-39498-0 12.
 
 \bibitem{Anderson19} R. Anderson, C. Barton, R. Böhme, R.Clayton, C.Gana, T. Grasso, M.Levi, T. Moore, M. Vasek: \emph{Measuring the Changing Cost of Cybercrime}; Paper, 2019, \url{https://weis2019.econinfosec.org/wp-content/uploads/sites/6/2019/05/WEIS_2019_paper_25.pdf}.
+
+\bibitem{Antonakakis17} M. Antonakakis, T. April, M. Bailey, M. Bernhard, E. Bursztein, J. Cochran, Z. Durumeric, J. A. Halderman, L. Invernizzi, M. Kallitsis, D. Kumar, C. Lever, Z. Ma, J. Mason, D. Menscher, C. Seaman, N. Sullivan, K. Thomas and Y. Zhou; \emph{Understanding the Mirai Botnet}; In 26th {USENIX} Security Symposium ({USENIX} Security 17) 2017 (pp. 1093-1110).
 
 \bibitem{Asghari15} H. Asghari, M. JG van Eeten, and J. M. Bauer: \emph{Economics of fighting botnets: Lessons from a decade of mitigation}; IEEE Security \& Privacy, 13(5):16-23, September, 2015.
 
@@ -566,11 +560,25 @@ Text
 
 \bibitem{CenturyLink19}  CenturyLink: \emph{CentruyLink 2019 Threat Report}; Report, 2019, \url{https://www.centurylink.com/asset/business/enterprise/report/2019-threat-research-report.pdf}.
 
+\bibitem{Cloudflare17} CloudFlare: \emph{Inside the infamous Mirai IoT Botnet: A Retrospective Analysis}; Blog post, 2017, \url{https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/}.
+
+\bibitem{Cimpanu17} C. Cimpanu: \emph{After Dodging Prison in Germany, Mirai Hacker "BestBuy" Charged in the UK}; August, 2017, \url{https://www.bleepingcomputer.com/news/security/after-dodging-prison-in-germany-mirai-hacker-bestbuy-charged-in-the-uk/}.
+
+\bibitem{Cimpanu19} C. Cimpanu: \emph{Liberian ISP sues rival for hiring hacker to attack its network}; January, 2019, \url{https://www.zdnet.com/article/liberian-isp-sues-rival-for-hiring-hacker-to-attack-its-network/}.
+
+\bibitem{Collison17} P. Collinson: \emph{Alleged mastermind behind bank cyberattacks extradited to UK}; August, 2017, \url{https://www.theguardian.com/uk-news/2017/aug/30/alleged-mastermind-daniel-kaye-lloyds-bank-cyber-attacks-extradited-uk}.
+
 \bibitem{Cooke05} E. Cooke, F. Jahanian, D. McPherson: \emph{The Zombie Roundup: Understanding, Detecting, and Disrupting Botnets}; Jul-2005, \url{https://www.usenix.org/legacy/event/sruti05/tech/full_papers/cooke/cooke_html/} [Accessed: 30-Oct-2019].
 
 \bibitem{Daswani07} N. Daswani and M. Stoppelman: \emph{The anatomy of a clickbot}; In Proceedings of the first conference on First Workshop on Hot Topics in Understanding Botnets, HotBot'07, page 11, Cambridge, MA, USA, April, 2007, URL: \url{https://www.usenix.org/legacy/event/hotbots07/tech/full_ papers/daswani/daswani.pdf}.
 
-\bibitem{Eremin19}  A. Eremin: Bots and botnets in 2018; \url{https://securelist.com/bots-and-botnets-in-2018/90091/}, March, 2019.
+\bibitem{DeBeck19} C. DeBeck, J. Chung and D. McMillen: \emph{I Can't Believe Mirais: Tracking the Infamous IoT Malware}; July, 2019, \url{https://securityintelligence.com/posts/i-cant-believe-mirais-tracking-the-infamous-iot-malware-2/}.
+
+\bibitem{Dyn16} Dyn: \emph{Dyn Analysis Summary Of Friday October 21 Attack}; October, 2016, \url{https://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/}.
+
+\bibitem{Eremin19}  A. Eremin: Bots and botnets in 2018; March, 2018, \url{https://securelist.com/bots-and-botnets-in-2018/90091/}.
+
+\bibitem{Ericsson} Ericsson: \emph{Internet of Things forecast}; \url{https://www.ericsson.com/en/mobility-report/internet-of-things-forecast}[Accessed: 05-Nov-2019].
 
 \bibitem{Ford07} R. Ford, S. Gordon: \emph{Cent, Five Cent, Ten Cent, Dollar: Hitting Botnets Where It Really Hurts}; Proceedings of the 2006 Workshop on New Security Paradigms, New York, NY, USA, 2007, pp. 3--10.
 
@@ -580,13 +588,43 @@ Text
 
 \bibitem{Kalige12} E. Kalige, D. Burkey: \emph{A case study of eurograbber: How 36 million euros was stolen via malware}; Versafe (White paper) 35, December, 2012, URL: \url{https://www.checkpoint.com/downloads/product-related/whitepapers/eurograbber-malware-bank-customers-millions-stolen.pdf}.
 
+\bibitem{Kolias17} C. Kolias, G. Kambourakis, A. Stavrou and J. Voas, \emph{"DDoS in the IoT: Mirai and Other Botnets"}; in Computer, vol. 50, no. 7, pp. 80-84, 2017, DOI: 10.1109/MC.2017.201.
+
 \bibitem{Kottler18} February 28th DDoS Incident Report; \url{https://github.blog/2018-03-01-ddos-incident-report/}, November, 2019.
+
+\bibitem{Krebs16} B. Krebs: \emph{Did the Mirai Botnet Really Take Liberia Offline?}; \url{https://krebsonsecurity.com/2016/11/did-the-mirai-botnet-really-take-liberia-offline/}, November, 2016.
+
+\bibitem{Krebs16_2} B. Krebs: \emph{KrebsOnSecurity Hit With Record DDoS}; \url{https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/}, September, 2016.
+
+\bibitem{Krebs20} B. Krebs: \emph{Mirai Botnet Authors Avoid Jailtime}; \url{https://krebsonsecurity.com/2018/09/mirai-botnet-authors-avoid-jail-time/}, September, 2018.
+
+\bibitem{Krebs18} B. Krebs: \emph{Mirai Co-Author Gets 6 Months Confinement, \$8.6M in Fines for Rutgers Attacks}; \url{https://krebsonsecurity.com/2018/10/mirai-co-author-gets-6-months-confinement-8-6m-in-fines-for-rutgers-attacks/}, October, 2018.
+
+\bibitem{Krebs17_2} B. Krebs: \emph{Mirai IoT Botnet Co-Authors Plead Guilty}; \url{https://krebsonsecurity.com/2017/12/mirai-iot-botnet-co-authors-plead-guilty/}, December, 2017.
 
 \bibitem{Krebs11} B. Krebs: \emph{Most Malware Tied to 'Pay-Per-Install' Market}; In MIT Technology Review, June, 2011, URL: \url{https://www.technologyreview.com/s/424241/most-malware-tied-to-pay-per-install-market/}.
 
+\bibitem{Krebs19} B. Krebs: \emph{'Satori' IoT Botnet Operator Pleads Guilty}; \url{https://krebsonsecurity.com/2019/09/satori-iot-botnet-operator-pleads-guilty/}, November, 2019.
+
+\bibitem{Krebs17} B. Krebs: \emph{Who is Anna-Senpai, the Mirai Worm Author?}; \url{https://krebsonsecurity.com/2017/01/who-is-anna-senpai-the-mirai-worm-author/}, January, 2017.
+
+\bibitem{Kupreev} O. Kupreev, E. Badovskaya and A. Gutnikov: \emph{DDoS attacks in Q4 2018}; February, 2019, \url{https://securelist.com/ddos-attacks-in-q4-2018/89565/}.
+
+\bibitem{Lemos19} R. Lemos: \emph{Mirai Groups Target Business IoT Devices}; July, 2019, \url{https://www.darkreading.com/mirai-groups-target-business-iot-devices/d/d-id/1335308}.
+
 \bibitem{Lerner14} A. Lerner: The Cost of Downtime; \url{https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/}, July, 2016.
 
+\bibitem{Lewis17} D. Lewis: \emph{The DDoS Attack Against Dyn One Year Later}; \url{https://www.forbes.com/sites/davelewis/2017/10/23/the-ddos-attack-against-dyn-one-year-later/}, October, 2017.
+
 \bibitem {Li09} Z. Li, Q. Liao, A. Striegel:  \emph{Botnet Economics: Uncertainty Matters}; Managing Information Risk and the Economics of Security, M. E. Johnson, Ed. Boston, MA: Springer US, 2009, pp. 245--267.
+
+\bibitem{Lovelace16} B. Lovelace Jr. and A. José Vielma: \emph{Friday's third cyberattack on Dyn 'has been resolved,' company says}; October, 2016, \url{https://www.cnbc.com/2016/10/21/major-websites-across-east-coast-knocked-out-in-apparent-ddos-attack.html}.
+
+\bibitem{Macrotrends} Macrotrends: \emph{Amazon Revenue 2006-2019 | AMZN} \url{https://www.macrotrends.net/stocks/charts/AMZN/amazon/revenue} [Accessed: 01-Nov-2019].
+
+\bibitem{MalwareMustDie} MalwareMustDie: \url{https://www.malwaremustdie.org}, November, 2019.
+
+\bibitem{MalwareTech16} MalwareTech: \emph{Mapping Mirai: A Botnet Case Study}, \url{https://www.malwaretech.com/2016/10/mapping-mirai-a-botnet-case-study.html}, October, 2016.
 
 \bibitem{McAfee18} McAfee: \emph{Economic Impact of Cybercrime - No Slowing Down}; Report, February, 2018, \url{https://www.mcafee.com/enterprise/en-us/assets/reports/restricted/rp-economic-impact-cybercrime.pdf}.
 
@@ -596,12 +634,21 @@ Text
 
 \bibitem{McGuire18} M. McGuire: \emph{Into the Web of Profit - Understanding the Growth of the Cybercrime Economy}; April, 2018, \url{https://www.bromium.com/wp-content/uploads/2018/05/Into-the-Web-of-Profit_Bromium.pdf}.
 
+\bibitem{McMillen17} D. McMillen: \emph{Mirai IoT Botnet: Mining for Bitcoins?}; April, 2017, \url{https://securityintelligence.com/mirai-iot-botnet-mining-for-bitcoins/}.
+
+\bibitem{Melendez17} S. Melendez \emph{Cloudflare Shores Up Defenses For Internet Of (Easily Hackable) Things}; April, 2017, \url{https://www.fastcompany.com/40412529/internet-of-things-security-cloudflare}.
+
 \bibitem{Mirkovic04} J. Mirkovic, P. Reiher,: \emph{A taxonomy of DDoS attack and DDoS defense mechanisms}; SIGCOMM Comput. Commun. Rev., vol. 34, no. 2, p. 39, Apr. 2004.
+
+\bibitem{Moss16} S. Moss: \emph{Major DDoS attack on Dyn disrupts AWS, Twitter, Spotify and more}; \url{https://www.datacenterdynamics.com/news/major-ddos-attack-on-dyn-disrupts-aws-twitter-spotify-and-more/}, October, 2016.
 
 \bibitem{Namestnikov09} Y. Namestnikov: \emph{The economics of botnets}; Analysis on Viruslist.com, Kapersky Lab, July, 2009, URL: \url{https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2009/07/01121538/ynam_botnets_0907_en.pdf}.
 
-\bibitem{Netscout19}Netscout: \emph{Netscout threat intelligence report: powered by Atlas, Findings from 1H 2019; Report, 2019}, \url{https://www.netscout.com/threatreport}.
+\bibitem{Netscout19} Netscout: \emph{Netscout threat intelligence report: powered by Atlas, Findings from 1H 2019; Report, 2019}, \url{https://www.netscout.com/threatreport}.
 
+\bibitem{Osborne16} C. Osborne: \emph{Krebs on Security booted off Akamai network after DDoS attack proves pricey}, September, 2016, \url{https://www.zdnet.com/article/krebs-on-security-booted-off-akamai-network-after-ddos-attack-proves-pricey/}.
+
+\bibitem{Paganini16} P. Paganini: \emph{Hackers offer a huge Mirai botnet as a DDoS-for-hire-service}; November, 2016, \url{https://securityaffairs.co/wordpress/53824/cyber-crime/mirai-botnet-ddos-for-hire.html}.
 
 \bibitem{Park01} Kihong Park, Heejo Lee: \emph{On the effectiveness of probabilistic packet marking for IP traceback under denial of service attack}; Proceedings IEEE INFOCOM 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the IEEE Computer and Communications Society (Cat. No.01CH37213), 2001, vol. 1, pp. 338--347 vol.1.
 
@@ -612,7 +659,6 @@ Text
 \bibitem{Ponemon16} Ponemon Institute: \emph{Cost of Data Center Outages}; Report, January, 2016, \url{https://www.vertiv.com/globalassets/documents/reports/2016-cost-of-data-center-outages-11-11_51190_1.pdf}.
 
 \bibitem{Putman} C.G.J. Putman: \emph{Business model of botnets}; 27th Twente Student Conference on IT, July, 2017. URL: \url{http://referaat.cs.utwente.nl/conference/27/paper/7637/ business-model-of-botnets.pdf}.
-
 
 \bibitem{Rao12} J. H. Rao, D. H. Reiley: \emph{The Economis of Spam}; Journal of Economic Perspectives, 26(3), pages 87-110, September, 2012
 
@@ -625,6 +671,10 @@ Text
 \bibitem{Symantec19} Symantec: \emph{Internet Security Threat Report}; Report, Volume 24, February, 2019, \url{https://www.symantec.com/content/dam/symantec/docs/reports/istr-24-2019-en.pdf}.
 
 \bibitem{Thomas06} Rob Thomas, Jerry Martin. : \emph{The Underground Economy: Priceless}; USENIX ;login, 31(6), 2006, pp. 7--16.
+
+\bibitem{USDepartment17} United States. Department of Justice: \emph{Justice Department Announces Charges And Guilty Pleas In Three Computer Crime Cases Involving Significant Cyber Attacks}; \url{https://www.justice.gov/usao-nj/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases}, December, 2017.
+
+\bibitem{Varghese17} S. Varghese: \emph{DDoS Attack on Dyn costly for company claim}; February, 2017, \url{https://www.itwire.com/security/76717-ddos-attack-on-dyn-costly-for-company-claim.html}.
 
 \bibitem{vanEeten08} M. J. G. van Eeten, J. M. Bauer: \emph{Economics of Malware: Security Decisions, Incentives and Externalities}; OECD Science, Technology and Industry Working Papers 2008/01, May 2008.
 
