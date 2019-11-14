@@ -13,6 +13,8 @@
 talt.tex
 *.toc
 *.sty
+*.bbl
+*.blg
 Example
 Talk1
 Talk2
