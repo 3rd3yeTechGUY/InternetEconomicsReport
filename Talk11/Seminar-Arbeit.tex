@@ -490,8 +490,20 @@ Estimating the loss for Amazon would be with their reported profit of almost 136
 	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned.
 	
 	\subsection{Other major incidents}
+	\subsubsection{Krebs on Security}
+	On September 20, 2016 a record DDoS attack (measured 620 Gbps) was launched against the popular security blog Krebs on Security ran by American journalist Brian Krebs. According to Akamai the attack was almost bigger than twice than of previous publicly reported attacks back in 2016. [10] The attacks were coming from 12’874 IPs, which had an intersection of 96\% of observed ips from the Mirai study of Antonakis et al. [3]
+	
+The initial attack was successfully defended by Akamai but due to its size, the blog was taken off their network as they were hosting Krebs on Security for free were bearing the costs. [9] Krebs stated in a later article that his blog was knocked offline for almost four days. [6]
+
+Belonging to the methods used in the incident were SYN, ACK, GET and POST (HTTP) floods as well as most of the attack being generic routing encapsulation traffic (GRE) data packets. [3]
+
+	
 	\subsubsection{Lonestar Cell}
-	\subsubsection{Brian Krebs}
+	During the timeframe of October 2016 and Februar 2017 Liberia’s market leader in providing internet and telecommunication services Lonestar was continually the victim of attacks by the Mirai botnet. Reports stated that the internet quality of the entire country deteriorated due to these attacks. [3] In a blogpost of Krebs, security architect Kevin Beaumont stated that the attack ranged 500 Gbps targeting Liberia’s lone underseas large-transit cable, which served as a single point of failure. [7]
+	
+The attack vectors in the incident were ACK floods and SYN floods, which made up 87\% of the attacks. [3]
+
+	
 	
 	\subsection{Future (Gian)}
 Since Jha releasing the source code of Mirai back in 2017 there have been many copycats using modern variations of the Mirai botnet even to this day, increasing the number of C\&C servers by a large amount. Due to this fact, it has been more difficult to track down the origins of attacks of mirai-like botnets nowadays.
@@ -510,9 +522,13 @@ Text
 
 \bibitem {AbuRajab06} M. Abu Rajab, J. Zarfoss, F. Monrose, A. Terzis: \emph{A multifaceted approach to understanding the botnet phenomenon}; Proceedings of the 6th ACM SIGCOMM on Internet measurement  - IMC '06, Rio de Janeiro, Brazil, 2006, p. 41.
 
+\bibitem{Akamai16} Akamai: \emph{620+ Gbps Attack - Post Mortem}, \url{https://blogs.akamai.com/2016/10/620-gbps-attack-post-mortem.html}, October, 2016.
+
 \bibitem{Anderson13} R. Anderson, C. Barton, R. Böhme, R. Clayton, M. JG Van Eeten, M. Levi, T. Moore, and S. Savage: \emph{Measuring the cost of cybercrime}; In The economics of information security and privacy, Springer, Berlin, Heidelberg, Deutschland, October, 2013, pages 265-300, ISBN: 978-3-642-39498-0, DOI: 10.1007/978- 3-642-39498-0 12.
 
 \bibitem{Anderson19} R. Anderson, C. Barton, R. Böhme, R.Clayton, C.Gana, T. Grasso, M.Levi, T. Moore, M. Vasek: \emph{Measuring the Changin Cost of Cybercrime}; Paper, 2019, \url{https://weis2019.econinfosec.org/wp-content/uploads/sites/6/2019/05/WEIS_2019_paper_25.pdf}.
+
+\bibitem{Antonakakis17} M. Antonakakis, T. April, M. Bailey, M. Bernhard, E. Bursztein, J. Cochran, Z. Durumeric, J. A. Halderman, L. Invernizzi, M. Kallitsis, D. Kumar, C. Lever, Z. Ma, J. Mason, D. Menscher, C. Seaman, N. Sullivan, K. Thomas and Y. Zhou; \emph{Understanding the Mirai Botnet}; In 26th {USENIX} Security Symposium ({USENIX} Security 17) 2017 (pp. 1093-1110).
 
 \bibitem{Asghari15} H. Asghari, M. JG van Eeten, and J. M. Bauer: \emph{Economics of fighting botnets: Lessons from a decade of mitigation}; IEEE Security \& Privacy, 13(5):16-23, September, 2015.
 
@@ -522,11 +538,27 @@ Text
 
 \bibitem{CenturyLink19}  CenturyLink: \emph{CentruyLink 2019 Threat Report}; Report, 2019, \url{https://www.centurylink.com/asset/business/enterprise/report/2019-threat-research-report.pdf}.
 
+\bibitem{Cloudflare19} CloudFlare: \emph{Inside the infamous Mirai IoT Botnet: A Retrospective Analysis}; Blog post, 2017, \url{https://blog.cloudflare.com/inside-mirai-the-infamous-iot-botnet-a-retrospective-analysis/}.
+
+\bibitem{Cimpanu17} C. Cimpanu: \emph{After Dodging Prison in Germany, Mirai Hacker "BestBuy" Charged in the UK}; August, 2017, \url{https://www.bleepingcomputer.com/news/security/after-dodging-prison-in-germany-mirai-hacker-bestbuy-charged-in-the-uk/}.
+
+\bibitem{Cimpanu19} C. Cimpanu: \emph{Liberian ISP sues rival for hiring hacker to attack its network}; January, 2019, \url{https://www.zdnet.com/article/liberian-isp-sues-rival-for-hiring-hacker-to-attack-its-network/}.
+
+\bibitem{Collison17} P. Collinson: \emph{Alleged mastermind behind bank cyberattacks extradited to UK}; August, 2017, \url{https://www.theguardian.com/uk-news/2017/aug/30/alleged-mastermind-daniel-kaye-lloyds-bank-cyber-attacks-extradited-uk}.
+
 \bibitem{Cooke05} E. Cooke, F. Jahanian, D. McPherson: \emph{The Zombie Roundup: Understanding, Detecting, and Disrupting Botnets}; Jul-2005, \url{https://www.usenix.org/legacy/event/sruti05/tech/full_papers/cooke/cooke_html/} [Accessed: 30-Oct-2019].
 
 \bibitem{Daswani07} N. Daswani and M. Stoppelman: \emph{The anatomy of a clickbot}; In Proceedings of the first conference on First Workshop on Hot Topics in Understanding Botnets, HotBot'07, page 11, Cambridge, MA, USA, April, 2007, URL: \url{https://www.usenix.org/legacy/event/hotbots07/tech/full_ papers/daswani/daswani.pdf}.
 
+\bibitem{DatacenterDynamics16} DatacenterDynamics: \emph{Major DDoS attack on Dyn disrupts AWS, Twitter, Spotify and more}; \url{https://www.datacenterdynamics.com/news/major-ddos-attack-on-dyn-disrupts-aws-twitter-spotify-and-more/}, October, 2016.
+
+\bibitem{DeBeck19} C. DeBeck, J. Chung and D. McMillen: \emph{I Can't Believe Mirais: Tracking the Infamous IoT Malware}; July, 2019, \url{https://securityintelligence.com/posts/i-cant-believe-mirais-tracking-the-infamous-iot-malware-2/}.
+
+\bibitem{Dyn16} Dyn: \emph{Dyn Analysis Summary Of Friday October 21 Attack}; \url{https://dyn.com/blog/dyn-analysis-summary-of-friday-october-21-attack/}, October, 2019
+
 \bibitem{Eremin19}  A. Eremin: Bots and botnets in 2018; \url{https://securelist.com/bots-and-botnets-in-2018/90091/}, March, 2019.
+
+\bibitem{Ericsson} Ericsson: \emph{Internet of Things forecast}; \url{https://www.ericsson.com/en/mobility-report/internet-of-things-forecast}[Accessed: 05-Nov-2019].
 
 \bibitem{Ford07} R. Ford, S. Gordon: \emph{Cent, Five Cent, Ten Cent, Dollar: Hitting Botnets Where It Really Hurts}; Proceedings of the 2006 Workshop on New Security Paradigms, New York, NY, USA, 2007, pp. 3--10.
 
@@ -536,13 +568,37 @@ Text
 
 \bibitem{Kalige12} E. Kalige, D. Burkey: \emph{A case study of eurograbber: How 36 million euros was stolen via malware}; Versafe (White paper) 35, December, 2012, URL: \url{https://www.checkpoint.com/downloads/product-related/whitepapers/eurograbber-malware-bank-customers-millions-stolen.pdf}.
 
+\bibitem{Kolias17} C. Kolias, G. Kambourakis, A. Stavrou and J. Voas, \emph{"DDoS in the IoT: Mirai and Other Botnets"}; in Computer, vol. 50, no. 7, pp. 80-84, 2017, DOI: 10.1109/MC.2017.201.
+
 \bibitem{Kottler18} February 28th DDoS Incident Report; \url{https://github.blog/2018-03-01-ddos-incident-report/}, November, 2019.
+
+\bibitem{Krebs16} B. Krebs \emph{Did the Mirai Botnet Really Take Liberia Offline?}; \url{https://krebsonsecurity.com/2016/11/did-the-mirai-botnet-really-take-liberia-offline/}, November, 2016.
+
+\bibitem(Krebs20} B. Krebs \emph{Mirai Botnet Authors Avoid Jailtime}; \url{https://krebsonsecurity.com/2018/09/mirai-botnet-authors-avoid-jail-time/}, September, 2018.
+
+\bibitem{Krebs18} B. Krebs \emph{Mirai Co-Author Gets 6 Months Confinement, \$8.6M in Fines for Rutgers Attacks}; \url{https://krebsonsecurity.com/2018/10/mirai-co-author-gets-6-months-confinement-8-6m-in-fines-for-rutgers-attacks/}, October, 2018.
+
+\bibitem{Krebs17_2} B. Krebs: \emph{Mirai IoT Botnet Co-Authors Plead Guilty}; \url{https://krebsonsecurity.com/2017/12/mirai-iot-botnet-co-authors-plead-guilty/}, December, 2017.
 
 \bibitem{Krebs11} B. Krebs: \emph{Most Malware Tied to 'Pay-Per-Install' Market}; In MIT Technology Review, June, 2011, URL: \url{https://www.technologyreview.com/s/424241/most-malware-tied-to-pay-per-install-market/}.
 
+\bibitem{Krebs19} B. Krebs: \emph{‘Satori’ IoT Botnet Operator Pleads Guilty}; \url{https://krebsonsecurity.com/2019/09/satori-iot-botnet-operator-pleads-guilty/}, November, 2019.
+
+\bibitem{Krebs17} B. Krebs: \emph{Who is Anna-Senpai, the Mirai Worm Author?}; \url{https://krebsonsecurity.com/2017/01/who-is-anna-senpai-the-mirai-worm-author/}, January, 2017.
+
+\bibitem{Kupreev} O. Kupreev, E. Badovskaya and A. Gutnikov: \emph{DDoS attacks in Q4 2018}; February, 2019, \url{https://securelist.com/ddos-attacks-in-q4-2018/89565/}.
+
 \bibitem{Lerner14} A. Lerner: The Cost of Downtime; \url{https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/}, July, 2016.
 
+\bibitem{Lewis17} D. Lewis: \emph{The DDoS Attack Against Dyn One Year Later}; \url{https://www.forbes.com/sites/davelewis/2017/10/23/the-ddos-attack-against-dyn-one-year-later/}, October, 2017.
+
 \bibitem {Li09} Z. Li, Q. Liao, A. Striegel:  \emph{Botnet Economics: Uncertainty Matters}; Managing Information Risk and the Economics of Security, M. E. Johnson, Ed. Boston, MA: Springer US, 2009, pp. 245--267.
+
+\bibitem{Lovelace16} B. Lovelace Jr. and A. José Vielma: \emph{Friday’s third cyberattack on Dyn ‘has been resolved,’ company says}; October, 2016, \url{https://www.cnbc.com/2016/10/21/major-websites-across-east-coast-knocked-out-in-apparent-ddos-attack.html}.
+
+\bibitem{Macrotrends} Macrotrends: \emph{Amazon Revenue 2006-2019 | AMZN} \url{https://www.macrotrends.net/stocks/charts/AMZN/amazon/revenue} [Accessed: 01-Nov-2019].
+
+\bibitem{MalwareTech16} MalwareTech: \emph{Mapping Mirai: A Botnet Case Study}, \url{https://www.malwaretech.com/2016/10/mapping-mirai-a-botnet-case-study.html}, October, 2016.
 
 \bibitem{McAfee18} McAfee: \emph{Economic Impact of Cybercrime - No Slowing Down}; Report, February, 2018, \url{https://www.mcafee.com/enterprise/en-us/assets/reports/restricted/rp-economic-impact-cybercrime.pdf}.
 
@@ -552,12 +608,19 @@ Text
 
 \bibitem{McGuire18} M. McGuire: \emph{Into the Web of Profit - Understanding the Growth of the Cybercrime Economy}; April, 2018, \url{https://www.bromium.com/wp-content/uploads/2018/05/Into-the-Web-of-Profit_Bromium.pdf}.
 
+\bibitem{McMillen17} D. McMillen: \emph{Mirai IoT Botnet: Mining for Bitcoins?}; April, 2017, \url{https://securityintelligence.com/mirai-iot-botnet-mining-for-bitcoins/}.
+
+\bibitem{Melendez17} S. Melendez \emph{Cloudflare Shores Up Defenses For Internet Of (Easily Hackable) Things}; April, 2017, \url{https://www.fastcompany.com/40412529/internet-of-things-security-cloudflare}.
+
 \bibitem{Mirkovic04} J. Mirkovic, P. Reiher,: \emph{A taxonomy of DDoS attack and DDoS defense mechanisms}; SIGCOMM Comput. Commun. Rev., vol. 34, no. 2, p. 39, Apr. 2004.
 
 \bibitem{Namestnikov09} Y. Namestnikov: \emph{The economics of botnets}; Analysis on Viruslist.com, Kapersky Lab, July, 2009, URL: \url{https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2009/07/01121538/ynam_botnets_0907_en.pdf}.
 
-\bibitem{Netscout19}Netscout: \emph{Netscout threat intelligence report: powered by Atlas, Findings from 1H 2019; Report, 2019}, \url{https://www.netscout.com/threatreport}.
+\bibitem{Netscout19} Netscout: \emph{Netscout threat intelligence report: powered by Atlas, Findings from 1H 2019; Report, 2019}, \url{https://www.netscout.com/threatreport}.
 
+\bibitem{Osborne16} C. Osborne: \emph{Krebs on Security booted off Akamai network after DDoS attack proves pricey}, September, 2016, \url{https://www.zdnet.com/article/krebs-on-security-booted-off-akamai-network-after-ddos-attack-proves-pricey/}.
+
+\bibitem{Paganini16} P. Paganini: \emph{Hackers offer a huge Mirai botnet as a DDoS-for-hire-service}; November, 2016, \url{https://securityaffairs.co/wordpress/53824/cyber-crime/mirai-botnet-ddos-for-hire.html}.
 
 \bibitem{Park01} Kihong Park, Heejo Lee: \emph{On the effectiveness of probabilistic packet marking for IP traceback under denial of service attack}; Proceedings IEEE INFOCOM 2001. Conference on Computer Communications. Twentieth Annual Joint Conference of the IEEE Computer and Communications Society (Cat. No.01CH37213), 2001, vol. 1, pp. 338--347 vol.1.
 
@@ -566,7 +629,6 @@ Text
 \bibitem{Ponemon16} Ponemon Institute: \emph{Cost of Data Center Outages}; Report, January, 2016, \url{https://www.vertiv.com/globalassets/documents/reports/2016-cost-of-data-center-outages-11-11_51190_1.pdf}.
 
 \bibitem{Putman} C.G.J. Putman: \emph{Business model of botnets}; 27th Twente Student Conference on IT, July, 2017. URL: \url{http://referaat.cs.utwente.nl/conference/27/paper/7637/ business-model-of-botnets.pdf}.
-
 
 \bibitem{Rao12} J. H. Rao, D. H. Reiley: \emph{The Economis of Spam}; Journal of Economic Perspectives, 26(3), pages 87-110, September, 2012
 
@@ -577,6 +639,10 @@ Text
 \bibitem{Symantec19} Symantec: \emph{Internet Security Threat Report}; Report, Volume 24, February, 2019, \url{https://www.symantec.com/content/dam/symantec/docs/reports/istr-24-2019-en.pdf}.
 
 \bibitem{Thomas06} Rob Thomas, Jerry Martin. : \emph{The Underground Economy: Priceless}; USENIX ;login, 31(6), 2006, pp. 7--16.
+
+\bibitem{USDepartment17} United States. Department of Justice: \emph{Justice Department Announces Charges And Guilty Pleas In Three Computer Crime Cases Involving Significant Cyber Attacks}; \url{https://www.justice.gov/usao-nj/pr/justice-department-announces-charges-and-guilty-pleas-three-computer-crime-cases}, December, 2017.
+
+\bibitem{Varghese17} S. Varghese: \emph{DDoS Attack on Dyn costly for company claim}; February, 2017, \url{https://www.itwire.com/security/76717-ddos-attack-on-dyn-costly-for-company-claim.html}.
 
 \bibitem{vanEeten08} M. J. G. van Eeten, J. M. Bauer: \emph{Economics of Malware: Security Decisions, Incentives and Externalities}; OECD Science, Technology and Industry Working Papers 2008/01, May 2008.
 
