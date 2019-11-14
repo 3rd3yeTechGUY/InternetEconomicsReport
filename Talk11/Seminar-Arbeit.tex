@@ -15,62 +15,38 @@ It fits pretty much on one page and is definitely not longer.}
 \section{Introduction}
 
 \subsection{Motivation}
-Online Crime has shifted in the last 20 years.
-Where earlier attacks and malicious actions were performed by individual hackers, trying to break things mostly for fun there are now organised groups build like companies that act as malicious actors in the cyber space.
-Cybercrime is a field of high revenue.
-It is estimate that the global revenue from cybercrime is at least \$ 1.5 Trillion~\cite{McGuire18}.
-In context, that would be roughly equivalent to the GDP of Australia in the year 2018~\cite{Worldbank19}.
-The Damage done by cybercrime is estimated to have risen about 12\% from 2017 to 2018~\cite{Accenture17} and in total numbers estimated to be \$ 600 Billion~\cite{McAfee18}.
+Online crime has shifted in the last 20 years. Where earlier attacks and malicious actions were performed by individual hackers, trying to break things mostly for fun, there are now organised groups build like companies that act as malicious actors in the cyber space.
+Cybercrime is a field of high revenue. It is estimated that the global revenue from cybercrime is at least \$ 1.5 trillion \cite{McGuire18}. In context, that would be roughly equivalent to the GDP of Australia in the year 2018 \cite{Worldbank19}.
+The damage done by cybercrime is estimated to have risen about 12\% from 2017 to 2018 \cite{Accenture17} and in total numbers estimated to be \$ 600 billion \cite{McAfee18}.
 
-Some of the currently big threats in the cyber security landscape are coupled to Botnets, a network of computers controlled by attackers~\cite{Putman}.
-Botnets can be used for various malicious intents and actions such as Distributed Denial of Services Attacks, Spam Generation, Information Theft and data exfiltration.
+Some of the currently big threats in the cyber security landscape are coupled to botnets, a network of computers controlled by attackers \cite{Putman}. Botnets can be used for various malicious intents and actions such as Distributed Denial of Service (DDoS) attacks, generation of spam, information theft and data exfiltration.
 
-There is an increasing number of devices connected to the internet every day.
-Furthermore, there are predictions that there will be 75 Billion IoT devices in the world by the year of 2025~\cite{Statista}.
-And many of them are poorly secured, if at all.
-This leads to a serious incentive for Botnet providers to target not only personal computers and smartphones, but also IoT devices such as security cameras, washing machines or doorbells.
-Devastating examples of the abuse of vulnerabilities in IoT devices, such as default or hard coded credential can be found in mass.
-Huge botnets like Linux.Aidra, Mirai or Bashlite infect tens of thousands of devices and use them for malicious purposes.
+There is an increasing number of devices connected to the internet every day. Furthermore, there are predictions that there will be 75 billion IoT devices in the world by the year 2025 \cite{Statista}.
+And many of them are poorly secured, if at all. This leads to a serious incentive for botnet providers to target not only personal computers and smartphones, but also IoT devices such as security cameras, washing machines or doorbells. Devastating examples of the abuse of vulnerabilities in IoT devices, such as default or hard coded credentials can be found in mass. Huge botnets like Linux.Aidra, Mirai or Bashlite infect tens of thousands of devices and use them for malicious purposes.
 
-The high number of Devices connected to the internet, paired with the trend for more bandwidth and manifacturing devices with more CPU power and better Network cards to output higher bandwidths gives malicious actors more possibilities to abuse foreign infrastructure and devices.
-Additionally there is a lack of incentives for Device Owners to secure their devices, since there is no direct, perceptible impact from an insecure device onto them, or so they think.
+The high number of devices connected to the internet, paired with the trend for more bandwidth and manufacturing devices with more CPU power and better network cards to output higher bandwidths, gives malicious actors more possibilities to abuse foreign infrastructure and devices.
+Additionally there is a lack of incentives for device owners to secure their devices, since there is no direct, perceptible impact from an insecure device onto them, or so they think.
 
 \subsection{Malware in numbers}
-As the revenue from cybercrime is growing, the development of malware is too.
-Researchers estimate, that there are 300'000 to 1'000'000 new Viruses developed every day~\cite{McAfee18} Currently, the fastest growing malware thread is ransomware~\cite{McAfee18}.
-The FBI estimates that there are more than 4000 ransomware attacks preformed every day, with \$ 209 Million Ransom payed in the first quarter of 2016.
-This is a rapid growth compared to the \$ 24 Million in ransom payment in the whole year 2015.
-The deployment of Malware onto personal Computers is also changing and growing.
-The Symantec Threat report states that the primary delivery of Malware has changed in recent years, from malicious URLs to Malicious attachments.
-From the Malicious attachments seen by Symantec, 48 \% are Office Files with Macros used to download Malware.
-A interesting rise in the cyber crime landscape is the mobile ransomware.
-These malware target mobile devices, and lock them down.~\cite{Symantec19}
+As the revenue from cybercrime is growing, the development of malware is too. Researchers estimate, that there are 300'000 to 1'000'000 new viruses developed every day. \cite{McAfee18} Currently, the fastest growing malware thread is ransomware \cite{McAfee18}. The FBI estimates that there are more than 4'000 ransomware attacks preformed every day, with \$ 209 million in ransom payed in the first quarter of 2016. This is a rapid growth compared to the \$ 24 million total in ransom payment throughout the year 2015.
+The deployment of malware onto personal computers is also changing and growing. The Symantec Threat Report states that the primary delivery of malware has changed in recent years, from malicious URLs to malicious attachments. From the malicious attachments seen by Symantec, 48 \% are Office files with macros used to download malware.
+A interesting rise in the cyber crime landscape is the mobile ransomware. These malware target mobile devices and lock them down. \cite{Symantec19}
 
-Furthermore the threats concerning IoT devices are equally rising.
-Symantec has seen an increase in internet of things attacks in the year 2017 and the attack numbers stabilising in the year 2018~\cite{Symantec19}.
-The most attacked devices in their IoT honeypots were routers and security cameras.
-Together they accounted for 90\% of the IoT attacks, with routers having 75\% and security cameras at 15\%~\cite{Symantec19}.
-In terms of protocols was Telnet the mostly used one with 90\% of attempted attacks being done using it in 2018.
-This is up from 50\% in the year 2017~\cite{Symantec19}.
+Furthermore the threats concerning IoT devices are equally rising. Symantec has seen an increase in IoT attacks in the year 2017 and the attack numbers are stabilising in the year 2018 \cite{Symantec19}. The most attacked devices in their IoT honeypots were routers and security cameras. Together they accounted for 90\% of the IoT attacks, with routers having 75\% and security cameras at 15\% \cite{Symantec19}. Telnet was the most used protocol with 90\% of attempted attacks using it in 2018. This is up from 50\% usage in the year 2017 \cite{Symantec19}.
 
-In terms of threads, the top three accounted for over 75\% of the attacks on the IoT honeypots.
-Namely they were Linux.Lightaidra, Linux.Kaiten and Linux.Mirai.
-Thus the Mirai Botnet still is an active thread with 15\% of attacks originating in it.\cite{Symantec19}
+In terms of threads, the top three accounted for over 75\% of the attacks on the IoT honeypots. Namely they were Linux.Lightaidra, Linux.Kaiten and Linux.Mirai. Thus the Mirai botnet still is an active thread with 15\% of attacks originating in it. \cite{Symantec19}
 
-Overall one can state, that Phishing is still the most popular and easiest way to commit a cybercrime.
-Due to the low costs of Phishing and the perceived low risk of getting caught phishing remains an attractive attack vector.\cite{McAfee18}
+Overall one can state, that phishing is still the most popular and easiest way to commit a cybercrime. Due to the low costs of phishing and the perceived low risk of getting caught phishing remains an attractive attack vector. \cite{McAfee18}
 
 \subsection{Botnet Landscape}
 
-Due to the high publicity distributed denial of service attacks get, the public opinion is, that most botnets are used for DDOS attacks.
-But there are many other usages of Botnets such as Web injection, URL spoofing, DNS spoofing and data collection.\cite{Eremin19}
+Due to the high publicity distributed denial-of-service attacks get, the public opinion is, that most botnets are being used for only DDoS attacks. But there are many other usages of botnets such as web injection, URL spoofing, DNS spoofing and data collection. \cite{Eremin19}
 
-We will asses, what criminals target with their botnets followed by a short description of a few big botnets.
+We will assess, what criminals target with their botnets followed by a short description of a few big botnets.
 
- As observed by Kaspersky Lab, the largest part of the attacks performed were targeted at financial service providers such as banks, online stores and other resources for financial transactions. This category made for 77.5 \% of the attacks observed by Kaspersky. The second largest category is the Global Portals and Social Networks category. This includes Email providers, search engines and social network platforms.\cite{Eremin19}
-As the third largest category with 5.08 \% is the providers of various products.
-Part of this category are Hosting providers, telecom providers and providers of other services.
-The full distribution of the targeted categories is shown in figure~\ref{fig:KasperskyAttacks}.
+ As observed by Kaspersky Lab, the largest part of the attacks performed were targeted at financial service providers such as banks, online stores and other resources for financial transactions. This category made for 77.5 \% of the attacks observed by Kaspersky. The second largest category is the Global Portals and Social Networks category. This includes email providers, search engines and social network platforms.\cite{Eremin19}
+The third largest category with 5.08 \% are the providers of various products. Part of this category are hosting providers, telecom providers and providers of other services.
+The full distribution of the targeted categories is shown in figure \ref{fig:KasperskyAttacks}.
 
 \begin{figure}[ht]
 \begin{center} \includegraphics[scale=0.5]{Talk11/kasperskyAttacks} \end{center}
@@ -78,27 +54,16 @@ The full distribution of the targeted categories is shown in figure~\ref{fig:Kas
 \label{fig:KasperskyAttacks}
 \end{figure}
 
-In terms of the Botnet landscape there are many big botnets~\cite{CenturyLink19}.
-We chose to describe three of them.
+In terms of the botnet landscape there are many big botnets \cite{CenturyLink19}. We chose to describe three of them.
 
 \begin{description}
 
-\item[Emotet] is a banking Trojan that has emerged into a spam and malware as a service botnet which is globally distributed. It is distributed via corrupted attachments or links in emails sent from an already compormised device. According to Proofprint, the Emotet botnet was responsible for half of the spam emails generated in the first quarter of 2019, all containing malicious attachments or links. Emotet's comand and control server structure is very complex. The Emotet actors maintain over 100 comand and control servers which are update frequently. This makes Emotets C2 (command and control) structure highliy resistant to sinlge interruptions of a C2 server.\cite{CenturyLink19}
+\item[Emotet] is a banking Trojan that has emerged into a spam and malware as a service botnet which is globally distributed. It is distributed via corrupted attachments or links in emails sent from an already compromised device. According to Proofprint, the Emotet botnet was responsible for half of the spam emails generated in the first quarter of 2019, all containing malicious attachments or links. Emotet's command and control server structure is very complex. The Emotet actors maintain over 100 command and control servers which are updated frequently. This makes Emotets C2 (command and control) structure highly resistant to single interruptions of a C2 server.\cite{CenturyLink19}
 
-\item[Mirai] is a botnet targeting internet of things devices.
-Due to its simple usage for scaling the botnets up it has become a popular platform for distributed denial of service attacks.
-The initial Mirai code has been published and is beeing evolved into different variations.
-In the first quarter of 2019 Netscout saw over 20'000 unique samples of the Mirai code~\cite{Netscout19}.
-To infect its bots, mirai scans for IoT devices and tries a dictoionary of default passwords and usernames.
-Mirai's comand and control structure is quite simple.
-For a given botnet, there is only one comand and control server.~\cite{CenturyLink19}
+\item[Mirai] is a botnet targeting IoT devices. Due to its simple usage for scaling the botnets up, it has become a popular platform for distributed denial-of-service attacks. The initial Mirai code has been published and is evolving into different variations. In the first quarter of 2019 Netscout saw over 20'000 unique samples of the Mirai code \cite{Netscout19}.
+To infect its bots, mirai scans for IoT devices and tries a dictoionary of default passwords and usernames. Mirai's command and control structure is quite simple. For a given botnet, there is only one command and control server. \cite{CenturyLink19}
 
-\item[Necurs] is a botnet initaily used for spam and malware distribution, such as bank trojans and ransomware.
-Over time, it evolved into a tool capable of more malicious activities such as crypot mining, DDOS attacks and more.
-Similar to Emotet, Necurs is distributed mainly through phishing emails.
-Known phishing attempts are Russion dating scams and pum-and-dump stock scams.
-Necurs tragets mostly unpatched or pirated versions of windows.
-Thus its main targets are in developing nations.~\cite{CenturyLink19}
+\item[Necurs] is a botnet initaily used for spam and malware distribution, such as bank trojans and ransomware. Over time, it evolved into a tool capable of more malicious activities such as crypot mining, DDoS attacks and more. Similar to Emotet, Necurs is distributed mainly through phishing emails. Known phishing attempts are Russian dating scams and pump-and-dump stock scams. Necurs tragets mostly unpatched or pirated versions of windows. Thus its main targets are in developing nations. \cite{CenturyLink19}
 
 \end{description}
  
@@ -106,9 +71,7 @@ Thus its main targets are in developing nations.~\cite{CenturyLink19}
 
  
 \subsection{Organisation / Outline}
-In the following paper, we want to show the importance of further research about Botnets and the importance of botnets itself.
-By giving a brief overview about the topic of Botnets and their possible usage we want to add to the awareness of the reader about the dangers of botnets and the importance of the influence of botnets on the economy.
-This is underlined by applying the stated analysis and facts onto a botnet in the case study.
+In the following paper, we want to show the importance of further research about botnets and the importance of botnets itself. By giving a brief overview about the topic of botnets and their possible usage we want to add to the awareness of the reader about their dangers and highlight their influence on the economy. This is underlined by applying the stated analysis and facts onto a botnet in the case study.
 
 		
 \section{Background}
