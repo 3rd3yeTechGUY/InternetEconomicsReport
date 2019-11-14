@@ -421,11 +421,7 @@ The botmaster then sends an infect command in a separate loader program with the
 
 The loader then executes the corresponding binary version of the malware on the device. If the execution of the malware was successful it is stored in the RAM of the device. Due to this fact, a reboot of the device will remove the malware. At this point Mirai is ready for further instructions from the botmaster while continually scanning the environment for prospective targets. \cite{Kolias17}
 
-Additionally, Mirai attempts to conceal its presence by removing the downloaded binary and change its process name to a pseudorandom alphanumeric string. Furthermore, access points such as telnet or SSH services are shut down to protect itself from other Malware. In another step Mirai attempts to conceal its presence by removing the downloaded binary and changeing its process name to a pseudorandom alphanumeric string. \cite{Kolias17}
-
-During a DDoS attack the infected devices receive an attack command by a C\&C server and only must resolve a hardcoded domain name in the executable of the malware. This leads to a lower need for communication as the botmaster can choose another target IP address without changing the binary and additional communication.\cite{Kolias17}
-
-Mirai makes use of 10 different attack methods, which can be distinguished within four categories: ...
+Mirai makes use of 10 different attack methods, which were distinguished in the original source code within four categories TCP, UDP, GRE, APP. The TCP category includes methods such as SYN, ACK and STOMP flood attacks. Under UDP there are UPD, UDPPLAIN (UDP flood with less options and optimized for higher packets per second (pps), VSE (Valve Source Engine specific) and DNS resolver flood attacks. GRE IP and GREETH flood attacks abuse the Generic Routing Encapsulation (GRE) protocol. On the other hand APP only contains the very effective HTTP attack. \cite{Winward}
 
 	\subsubsection{Background}
 	In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30. In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him. \cite{Krebs17}
@@ -452,11 +448,11 @@ The 30-year old hacker Daniel Kaye, known under the names Bestbuy and Popopret g
 
 Kaye was also responsible for the high-profile attack on Lonestar in 2016, Liberia's market leader in providing Internet and telephone services. According to his testimony he was compensated with \$10'000 monthly by an unidentified senior official working for Cellcom, a rival internet provider. \cite{Krebs21}
 
-In January 2017 over the span of two days Kaye attacked the several well-known banks in the United Kingdom including Lloyds Bank, Bank of Scotland and Halifax with the intention to extort them. The Guardian reported that Lloyds was requested to pay approximately £75'000 in bitcoins for the attacks to halt, to which they declined. \cite{Collison17}
+In January 2017 over the span of two days Kaye attacked the several well-known banks in the United Kingdom including Lloyds Bank, Bank of Scotland and Halifax with the intention to extort them. The Guardian reported that Lloyds was requested to pay approximately \pounds 75'000 in bitcoins for the attacks to halt, to which they declined. \cite{Collison17}
 
-Furthermore botnets similar to Mirai or early prototypes were already in use as early as 2014 by a group of hackers going by the name of "lelddos", which targeted Web servers hosting Minecraft, a very popular sandbox video game, where you can build your own world with other players in a blocky realm. The Minecraft server hosting market is very competitive, and a very successful server owner can make over \$50'000 per month from renting space for players to build their world. Lelddos has targeted these lucrative Minecraft servers for years with their attacks and extortion attempts. \cite{Krebs17}
+Botnets similar to Mirai or early prototypes were already in use as early as 2014 by a group of hackers going by the name of "lelddos", which targeted web servers hosting Minecraft, a very popular sandbox video game. The Minecraft server hosting market is very competitive, and a very successful server owner can make over \$50'000 per month from renting space for players to build their world. Lelddos has targeted these lucrative Minecraft servers for years with their attacks and extortion attempts. \cite{Krebs17}
 
-The Mirai botnet was also used by the creators Jha and Norman to commit advertising fraud, including click fraud as a less noticeable way to generate passive income by abusing pay-per-click online advertising systems with the infected devices. In January 2017 Jha admitted that his group made a profit of approximately 200 bitcoins from these activities, which had a value of over \$180'000 at this time. \cite{Krebs17_2}
+Mirai was also used by the creators Jha and Norman to commit advertising fraud, including click fraud as a less noticeable way to generate passive income by abusing pay-per-click online advertising systems with the infected devices. In January 2017 Jha admitted that his group made a profit of approximately 200 bitcoins from these activities, which had a value of over \$180'000 at this time. \cite{Krebs17_2}
 
 Putman et al. (2017) concluded about Mirai that the average monthly revenue of a botmaster with regards to four case studies was around \$26'000. Subtracting the estimated costs of \$6000, such as money handler fees, web hosting and advertising results in a monthly profit of about \$20'000. \cite{Putman}
 
@@ -480,17 +476,16 @@ In the following days numerous smaller TCP attack occurred, which were mitigated
 		\subsubsection{Motivation}
 Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it's unknown who the perpetrators behind the cyberattack on Dyn were. A group called "New World Hackers" claimed responsibility shortly after the attack. Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed. \cite{Lewis17}
 
-The facts that the targeted services were associated with gaming and Mirai's history with video games suggests that there was no personal financial gain as a motive behind the Dyn attack, but it served as an act of internet vandalism.
+The facts that the targeted services were associated with gaming and Mirai's past with targetting video game services suggests that there was no personal financial gain as a motive behind the Dyn attack, but served as an act of internet vandalism.
 
 	\subsubsection{Economic Impact}
 	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident. Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight. \cite{Varghese17}
 	
-The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8'000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites. Bitsight stated though that there is no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites. \cite{Varghese17}
+The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8'000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites. Bitsight stated though that there is no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites right after the attack. \cite{Varghese17}
 
-Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 \cite{Macrotrends} would be around \$260'000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other internet giants being affected, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
+The experienced inaccessibility caused a lot of damage for the involved websites. Estimating the loss for Amazon with their reported profit of almost 136 billion USD in 2016 \cite{Macrotrends} would be around \$260'000 per minute. Assuming the downtime lasted 3 hours, the estimated damage adds up to 46 million during this timeframe. With other internet giants being affected, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
 
-	\subsubsection{Aftermath}
-	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned. \cite{Melendez17}
+The Dyn attack also served as a wake-up call for many manufacturers, highlighting the vulnerabilities of IoT devices. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned. \cite{Melendez17}
 	
 	\subsection{Other major incidents}
 		\subsubsection{Krebs on Security}
@@ -506,8 +501,7 @@ Belonging to the methods used in the incident were SYN, ACK, GET and POST (HTTP)
 	
 The attack vectors in the incident were ACK floods and SYN floods, which made up 87\% of the attacks. \cite{Antonakakis17}
 
-According to the UK National Crime Agency the attack by Kaye on Lonestar was very costly. Revenue loss of tens of millions of US dollars were reported as customers jumped ship after the incident. They also stated that the costs of the remedial measures taken to defend against the attack were approximately \$600'000. [23]
-
+According to the UK National Crime Agency the attack by Kaye on Lonestar was very costly. Revenue loss of tens of millions of US dollars were reported as customers jumped ship after the incident. They also stated that the costs of the remedial measures taken to defend against the attack were approximately \$600'000. \cite{Cimpanu19}
 	
 	\subsection{Future (Gian)}
 Since Jha releasing the source code of Mirai back in 2017 there have been many copycats using modern variations of the Mirai botnet even to this day, increasing the number of C\&C servers by a large amount. Due to this fact, it has been more difficult to track down the origins of attacks of mirai-like botnets nowadays.
@@ -656,6 +650,8 @@ Text
 \bibitem{vanEeten08} M. J. G. van Eeten, J. M. Bauer: \emph{Economics of Malware: Security Decisions, Incentives and Externalities}; OECD Science, Technology and Industry Working Papers 2008/01, May 2008.
 
 \bibitem{Wang10} P. Wang, S. Sparks, C. C. Zou: \emph{An Advanced Hybrid Peer-to-Peer Botnet}; IEEE Transactions on Dependable and Secure Computing, vol. 7, no. 2, pp. 113--127, Apr. 2010.
+
+\bibitem{Winward} R. Winward: \emph{IoT Attack Handbook: A Field Guide To Understanding IoT Attacks from the Mirai Botnet to its Modern Variants}, \url{https://www.datacom.cz/userfiles/miraihandbookebook_final.pdf} [Accessed: 10-Nov-2019].
 
 \bibitem{Worldbank19} GDP; \url{https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=US&most_recent_value_desc=false} , October, 2019.
 
