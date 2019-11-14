@@ -427,54 +427,51 @@ During a DDoS attack the infected devices receive an attack command by a C\&C se
 
 Mirai makes use of 10 different attack methods, which can be distinguished within four categories: ...
 
+	\subsubsection{Background}
+	In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30. In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him. \cite{Krebs17}
+
+Following investigation and questioning by the FBI Paras Jha as well as co-authors Josiah White and Dalton Norman entered a guilty plea in December 2017. \cite{USDepartment17} Jha was fined \$8.6 million and sentenced to 2'500 hours of community service for using Mirai to attack the computer system of his university. \cite{Krebs18}
+
+Jha admitted to investigators that he launched his attacks on the computer system of Rutgers University not out of financial gain, but for other personal motivations. The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam. Other attacks on the computer system were launched for his personal amusement to see outrage. \cite{Krebs18}
+
 	\subsubsection{Costs}
 	In the Mirai case study of MalwareTech (2016), it was mentioned that the costs of maintaining desktop botnets exceeds the revenue from DDoS attacks for most botnets. Due to the technological advance in anti-DDoS services, DDoS protection are more affordable than they used to be, which leads to the decline of ransom-driven DDoS attacks. \cite{MalwareTech16}
 	
 The maintenance of a botnet consisting of IoT devices is more lucrative, which Mirai takes advantage of. Although rebooting would remove the malware, only changing the password or more drastic measures would remove the risk of reinfection. Furthermore, users generally have little control over IoT devices, which makes them only more attractive of a target. These factors lead to reinfection being very likely to succeed for the maintainer of a botnet. \cite{MalwareTech16}
 
-A person controlling the botnet only must keep a list of the IP addresses, which have been infected in the past, and scan if they're still connected to the botnet. The cost for reinfection has been estimated to be at \$0.0935 per device. In addition to that there are additional costs, such as keeping the software updated in the arms race between hackers and defenders.
-Also, the costs are estimated to be around \$7 to \$180 per 1'000 installations (\$0.007 to \$0.18 per device). Furthermore, the cost for spreading is estimated to be at around \$0,016 per device.
+A person controlling the botnet only must maintain a list of the IP addresses, which have been infected in the past, and scan if they're still connected to the botnet. 
 
-According to a case study of Charlie Miller, a level 1 malware develop earns around \$125k a year. Based on this estimation and under the assumption that the developer works 8 hours a day and 22 days in a month, the cost of maintaining a botnet can be estimated to be \$59 per hour.
+Putman et al. (2017) estimated the cost for reinfection to be at \$0.0935 per device and the cost for spreading to be at around \$0,016 per device. In addition they noted that the cost for infection is around \$7 to \$180 per 1'000 installations (\$0.007 to \$0.18 per device). They further estimated the cost of maintaining a botnet to be \$59 per hour based on an estimate of the average salary of a malware developer. \cite{Putman}
 
-From the conclusion of another study they concluded that the initial investment such as acquiring and spreading the malware and the recurring costs are nearly insignificant compared to the revenue it makes. Furthermore, there was noted that out of three of four case studies, the set-up costs for a botnet accounted to a maximum of 1,1\% of the found monthly revenue.
-
-	\subsubsection{Background}
-	In January 2017 a post was released on the internet security blog Krebs on Security by, which disclosed the name of the author of the Mirai Botnet Paras Jha, a 22-year-old student of Rutgers University. Jha publicly released the source code of the Mirai botnet on an infamous public internet forum "HackForums" under the name "Anna-Senpai" on September 30. In the post he stated that he already made his money in the DDoS industry and that releasing the source code was a nice gesture of him. \cite{Krebs17}
-
-Following investigation and questioning by the FBI Paras Jha, Josiah White and Dalton Norman entered a guilty plea in December 2017. \cite{USDepartment17} Jha was fined \$8.6 million and sentenced to 2'500 hours of community service for using Mirai to attack the computer system of his university. \cite{Krebs18}
-
-Paras Jha admitted to investigators that he launched his attacks on the computer system of Rutgers University not out of financial gain, but for other personal motivations. The first attack he launched, was for delaying registration upper-class men registration to an advanced computer science attack he wanted to take, whereas the second attack was to delay an exam. Other attacks on the computer system were launched for his personal amusement to see outrage. \cite{Krebs18}
+Following the conclusion of another study Putman et al. stated that the initial investment such as acquiring and spreading the malware and the recurring costs are nearly insignificant compared to the revenue it makes. Out of three of four case studies, the set-up costs for a botnet accounted to a maximum of 1,1\% of the found monthly revenue. \cite{Putman}
 
 	\subsubsection{Revenue}
-	Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little to no money. Jha stated that him and the other two co-creators profited from the attack on Krebs on Security where they rented out tens of thousands of infected devices to a customer. [20]
+	Although the \$59 per hour stated in the last section might seem costly, advertising and renting out a botnet costs little to no money. Jha stated that him and the other two co-creators profited from the attack on Krebs on Security where they rented out tens of thousands of infected devices to a customer. \cite{Krebs20}
 	
-The 30-year old hacker Daniel Kaye, known under the names Bestbuy and Popopret gave an example of the cost of renting out a modern variation of the Mirai botnet. A botnet attack of 50'000 bots with an attack duration of 1 hour and a 5-10-minute cooldown goes for roughly 3-4k per two weeks. [22] Kaye stated that his botnet with the codename Mirai \#14 supposedly infected over 1,5 million devices by 2019. [24]
+The 30-year old hacker Daniel Kaye, known under the names Bestbuy and Popopret gave an example of the cost of renting out a modern variation of the Mirai botnet. A botnet attack of 50'000 bots with an attack duration of 1 hour and a 5-10-minute cooldown goes for roughly 3-4k per two weeks. \cite{Paganini16} Kaye stated that his botnet with the codename Mirai \#14 supposedly infected over 1,5 million devices by 2019. \cite{Cimpanu17}
 
-Kaye was also responsible for the high-profile attack on Lonestar in 2016, Liberia's market leader in providing Internet and telephone services. According to his testimony he was compensated with \$10'000 monthly by an unidentified senior official working for Cellcom, a rival internet provider. [21]
+Kaye was also responsible for the high-profile attack on Lonestar in 2016, Liberia's market leader in providing Internet and telephone services. According to his testimony he was compensated with \$10'000 monthly by an unidentified senior official working for Cellcom, a rival internet provider. \cite{Krebs21}
 
-In January 2017 over the span of two days Kaye attacked the several well-known banks in the United Kingdom including Lloyds Bank, Bank of Scotland and Halifax with the intention to extort them. The Guardian reported that Lloyds was requested to pay approximately £75'000 in bitcoins for the attacks to halt, to which they declined. [21]
+In January 2017 over the span of two days Kaye attacked the several well-known banks in the United Kingdom including Lloyds Bank, Bank of Scotland and Halifax with the intention to extort them. The Guardian reported that Lloyds was requested to pay approximately £75'000 in bitcoins for the attacks to halt, to which they declined. \cite{Collison17}
 
-Furthermore botnets similar to Mirai or early prototypes were already in use as early as 2014 by a group of hackers going by the name of "lelddos", which targeted Web servers hosting Minecraft, a very popular sandbox video game, where you can build your own world with other players in a blocky realm. The Minecraft server hosting market is very competitive, and a very successful server owner can make over \$50'000 per month from renting space for players to build their world. Lelddos has targeted these lucrative Minecraft servers for years with their attacks and extortion attempts. [11]
+Furthermore botnets similar to Mirai or early prototypes were already in use as early as 2014 by a group of hackers going by the name of "lelddos", which targeted Web servers hosting Minecraft, a very popular sandbox video game, where you can build your own world with other players in a blocky realm. The Minecraft server hosting market is very competitive, and a very successful server owner can make over \$50'000 per month from renting space for players to build their world. Lelddos has targeted these lucrative Minecraft servers for years with their attacks and extortion attempts. \cite{Krebs17}
 
-The Mirai botnet was also used by the creators Jha and Norman to commit advertising fraud, including click fraud as a less noticeable way to generate passive income by abusing pay-per-click online advertising systems with the infected devices. In January 2017 Jha admitted that his group made a profit of approximately 200 bitcoins from these activities, which had a value of over \$180'000 USD at this time. [25]
+The Mirai botnet was also used by the creators Jha and Norman to commit advertising fraud, including click fraud as a less noticeable way to generate passive income by abusing pay-per-click online advertising systems with the infected devices. In January 2017 Jha admitted that his group made a profit of approximately 200 bitcoins from these activities, which had a value of over \$180'000 at this time. \cite{Krebs17_2}
 
-Putman et al. concluded about Mirai that the average monthly revenue of a botmaster with regards to four case studies was around \$26'000. Subtracting the estimated costs of \$6000, such as money handler fees, web hosting and advertising results in a monthly profit of about \$20'000. [16]
+Putman et al. (2017) concluded about Mirai that the average monthly revenue of a botmaster with regards to four case studies was around \$26'000. Subtracting the estimated costs of \$6000, such as money handler fees, web hosting and advertising results in a monthly profit of about \$20'000. \cite{Putman}
 
 IBM X-Force researchers found out that some modern variations of the Mirai botnet were also using the computation power of infected devices to mine cryptocurrency. Although this kind of usage is more noticeable in the IoT devices as it could damage by overheating the devices little central processing and graphical processing unit resources. \cite{DeBeck19}
 
 	\subsection{The Dyn attack}
 	On October 21, 2016 there was a series of DDoS attack, which exceeded traffic of 1.3 terabytes per second on the popular Domain Service Provider (DNS) Dyn, which disrupted the name resolution for their clients. Services affected by the attack were high traffic sites, such as Amazon, Reddit, Spotify, Tumblr and Twitter. During the time of the attack internet users reported, that they had troubles accessing the affected websites for several hours.\cite{Moss16}
-	
-	(Websites Auflistung)
-	
+		
 		\subsubsection{Timeline}
 		According to the post-mortem report of Dyn, the first set of attacks started at 11:10 UTC. It was carried out with high-volume floods of TCP and UDP packets, both with destination port 53 from a very large number of source IP addresses. The Engineering and Network Operations teams of Dyn deployed additional mitigation tactics in addition to their automated response techniques, such as traffic-shaping incoming traffic, rebalancing of that traffic by manipulation of anycast policies, application of internal filtering and deployment of scrubbing services. At 13:20 UTC these mitigation tactics were fully in deployment and the services were restored. \cite{Dyn16}
 		
 Followed by that a more globally distributed set of attacks started at 15:50 UTC. Since this second set of attack used the same protocol as the first attack, Dyn could mitigate the attack for the most part by 17:00 UTC. \cite{Dyn16}
  
 In addition to the attacks on Dyn, there were simultaneous attacks on Xbox Live, Microsoft DNS infrastructure, Playstation, Nuclear Fallout game hosting servers and Valve Steam servers. At 22:17 UTC, the final 10-hour long attack was issued on a set of Dyn and Playstation infrastructure. \cite{Antonakakis17}
-This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage. Cloudflare also came to this conclusion, as the other targets attacked DYN variant were all related to providing services for video games. \cite{Cloudflare17}
+This suggests that the attacker was targeting gaming infrastructure and the attacks on Dyn were collateral damage. Cloudflare also came to this conclusion, as the other targets were all related to providing services for video games. \cite{Cloudflare17}
 
 Most of the attacks used were SYN floods on the DNS port 53 with few GRE IP attacks. Additionally, the attacks on the gaming services, mostly Playstation Networks infrastructure were carried out via ACK and GRE IP floods with VSE targeting the Valve Steam Servers. \cite{Antonakakis17}
 
@@ -483,14 +480,14 @@ In the following days numerous smaller TCP attack occurred, which were mitigated
 		\subsubsection{Motivation}
 Jha nor his fellow co-authors admitted any involvement in the Dyn attack and even to this day it's unknown who the perpetrators behind the cyberattack on Dyn were. A group called "New World Hackers" claimed responsibility shortly after the attack. Other groups such as Anonymous and SpainSquad declared that they were the perpetrators behind the attack but none of the claims were confirmed. \cite{Lewis17}
 
-The facts that the targeted services were associated with gaming and Jha's personal use of the botnet suggests that there was no personal financial gain as a motive behind the Dyn attack, but it served as an act of internet vandalism.
+The facts that the targeted services were associated with gaming and Mirai's history with video games suggests that there was no personal financial gain as a motive behind the Dyn attack, but it served as an act of internet vandalism.
 
 	\subsubsection{Economic Impact}
 	In February 2017 data was published by security services company Bitsight, which showed that Dyn lost a considerable number of customers after the incident. Dyn lost business of about 8\% of their domains, about 14'500 shortly after the attack of their total 178'000, which were analyzed by Bitsight. \cite{Varghese17}
 	
 The biggest loss was spotted in websites, which used Dyn and another DNS provider. About 8'000 domains were lost, 24\% of this category of websites. Websites which used Dyn exclusively as a DNS provider mostly continued to use Dyn, only losing 4\% or around 6'000 websites. Bitsight stated though that there is no indication if any of the lost customers went back to Dyn after the attack as it was only a snapshot of the monitored websites. \cite{Varghese17}
 
-Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 \cite{Macrotrends} would be around \$260'000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other affected internet giants, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
+Furthermore, the experienced inaccessibility caused a lot of damage for the involved websites. Estimating the loss for Amazon would be with their reported profit of almost 136 billion USD in 2016 \cite{Macrotrends} would be around \$260'000 per minute. Assuming the downtime was around 3 hours, the estimated damage adds up to 46 million during this timeframe. With other internet giants being affected, the damage dealt in the Dyn attack is in the region of multiple hundred million, if not billions.
 
 	\subsubsection{Aftermath}
 	The Dyn attack as the biggest DDoS attack until the attack on GitHub in 2018 brought the spotlight to Mirai to the media in masses and highlighted the vulnerabilities of IoT devices and the importance of investing into DDoS protection services. It served as a wake-up call to many IoT manufacturers. Matthew Prince, the CEO of Cloudflare, a popular DDoS protection service stated that various IoT manufacturers asked the sales team for help to protect against attacks. Especially companies manufacturing IoT devices, where the malfunctioning of the devices could have serious implications, such as in the automobile or healthcare industries, were especially concerned. \cite{Melendez17}
@@ -577,6 +574,8 @@ Text
 \bibitem{Kolias17} C. Kolias, G. Kambourakis, A. Stavrou and J. Voas, \emph{"DDoS in the IoT: Mirai and Other Botnets"}; in Computer, vol. 50, no. 7, pp. 80-84, 2017, DOI: 10.1109/MC.2017.201.
 
 \bibitem{Kottler18} February 28th DDoS Incident Report; \url{https://github.blog/2018-03-01-ddos-incident-report/}, November, 2019.
+
+\bibitem{Krebs21} B. Krebs: \emph{Court Hands Down Hard Jail Time For DDoS}; \url{https://krebsonsecurity.com/2019/01/courts-hand-down-hard-jail-time-for-ddos/}, January, 2019.
 
 \bibitem{Krebs16} B. Krebs: \emph{Did the Mirai Botnet Really Take Liberia Offline?}; \url{https://krebsonsecurity.com/2016/11/did-the-mirai-botnet-really-take-liberia-offline/}, November, 2016.
 
